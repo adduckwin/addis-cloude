@@ -26,25 +26,25 @@
 
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
-body{font-family:'Circe',-apple-system,BlinkMacSystemFont,sans-serif;font-size:16px;line-height:1.5;color:#1A1A1A;background:#fff;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+body{font-family:'Circe',-apple-system,BlinkMacSystemFont,sans-serif;font-size:16px;line-height:1.5;color:#000000;background:#fff;-webkit-font-smoothing:antialiased;overflow-x:hidden}
 a{color:inherit;text-decoration:none}
 button{font-family:inherit;cursor:pointer;border:none;background:none}
 input,textarea,select{font-family:inherit;font-size:inherit}
 ul,ol{list-style:none}
 h1,h2,h3,h4,h5,h6{line-height:1.1;font-weight:700}
 img{max-width:100%;display:block}
-:focus-visible{outline:2px solid #1A1A1A;outline-offset:2px}
+:focus-visible{outline:2px solid #000000;outline-offset:2px}
 
-.container{max-width:1280px;margin:0 auto;padding:0 24px}
+.container{max-width:1200px;margin:0 auto;padding:0 24px}
 .container--narrow{max-width:800px}
 
-.section{padding:80px 0}
-.section--alt{background:#F7F7F7}
-.section--cream{background:#F5F5F5}
+.section{padding:80px 0;position:relative}
+.section--alt{background:#000000;color:#ffffff}
+.section--cream{background:#000000;color:#ffffff}
 
-.section-eyebrow{font-size:14px;font-weight:600;text-transform:uppercase;letter-spacing:0.1em;color:#1A1A1A;margin-bottom:16px}
-.section-title{font-family:'Circe',sans-serif;font-size:40px;font-weight:700;color:#2C1810;margin-bottom:16px}
-.section-subtitle{font-size:18px;color:#555555;line-height:1.75;max-width:640px}
+.section-eyebrow{font-size:14px;font-weight:600;text-transform:uppercase;letter-spacing:0.1em;color:currentColor;opacity:0.6;margin-bottom:16px}
+.section-title{font-family:'Circe',sans-serif;font-size:40px;font-weight:700;color:currentColor;margin-bottom:16px}
+.section-subtitle{font-size:18px;color:currentColor;opacity:0.8;line-height:1.75;max-width:640px}
 .section-header{margin-bottom:48px}
 .section-header--center{text-align:center}
 .section-header--center .section-subtitle{margin:0 auto}
@@ -52,45 +52,57 @@ img{max-width:100%;display:block}
  @media(min-width:768px){.section-title{font-size:52px}.section{padding:120px 0}}
  @media(min-width:1024px){.section{padding:140px 0}}
 
-.hero{position:relative;padding:60px 0 80px;background:linear-gradient(135deg,#F5F5F5 0%,#F8F8F8 100%);min-height:85vh;display:flex;align-items:center}
+.hero{position:relative;padding:60px 0 80px;background:#000000;color:#ffffff;min-height:85vh;display:flex;align-items:center}
  @media(min-width:768px){.hero{padding:80px 0 120px;min-height:90vh}}
 .hero__inner{display:grid;grid-template-columns:1fr;gap:40px;align-items:center}
  @media(min-width:768px){.hero__inner{grid-template-columns:1fr 1fr;gap:60px}}
 
-.hero__badge{display:inline-flex;align-items:center;gap:8px;padding:8px 16px;background:rgba(26,26,26,0.08);color:#333333;border-radius:999px;font-size:14px;font-weight:600;margin-bottom:24px}
-.hero__title{font-family:'Circe',sans-serif;font-size:40px;font-weight:700;color:#2C1810;line-height:1.15;margin-bottom:24px}
+.hero__badge{display:inline-flex;align-items:center;gap:8px;padding:8px 16px;background:rgba(255,255,255,0.15);color:#ffffff;border-radius:999px;font-size:14px;font-weight:600;margin-bottom:24px}
+.hero__title{font-family:'Circe',sans-serif;font-size:40px;font-weight:700;color:currentColor;line-height:1.15;margin-bottom:24px}
  @media(min-width:640px){.hero__title{font-size:56px}}
  @media(min-width:1024px){.hero__title{font-size:68px}}
-.hero__desc{font-size:18px;color:#555555;line-height:1.75;margin-bottom:32px;max-width:520px}
+.hero__desc{font-size:18px;color:rgba(255,255,255,0.8);line-height:1.75;margin-bottom:32px;max-width:520px}
 .hero__actions{display:flex;flex-wrap:wrap;gap:16px}
 .hero__stats{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:40px}
 .hero__stat{text-align:center}
-.hero__stat-value{font-family:'Circe',sans-serif;font-size:28px;font-weight:700;color:#2C1810}
-.hero__stat-label{font-size:13px;color:#777777;margin-top:4px}
-.hero__visual{position:relative;border-radius:24px;overflow:hidden;aspect-ratio:4/3;background:linear-gradient(145deg,#D0D0D0,#A89080)}
+.hero__stat-value{font-family:'Circe',sans-serif;font-size:28px;font-weight:700;color:currentColor}
+.hero__stat-label{font-size:13px;color:rgba(255,255,255,0.6);margin-top:4px}
+.hero__visual{position:relative;border-radius:0;overflow:hidden;aspect-ratio:4/3;background:#000000;border:1px solid rgba(255,255,255,0.1)}
 .hero__visual-inner{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center}
-.hero__visual-circle{width:120px;height:120px;border-radius:50%;background:rgba(255,255,255,0.2);display:flex;align-items:center;justify-content:center;margin-bottom:16px}
-.hero__visual-circle span{font-family:'Circe',sans-serif;font-size:48px;font-weight:700;color:rgba(255,255,255,0.8)}
-.hero__visual-text{color:rgba(255,255,255,0.8);font-size:14px;font-weight:500;text-transform:uppercase;letter-spacing:0.15em}
+.hero__visual-circle{width:120px;height:120px;border-radius:50%;background:rgba(255,255,255,0.05);display:flex;align-items:center;justify-content:center;margin-bottom:16px}
+.hero__visual-circle span{font-family:'Circe',sans-serif;font-size:48px;font-weight:700;color:#ffffff}
+.hero__visual-text{color:rgba(255,255,255,0.6);font-size:14px;font-weight:600;text-transform:uppercase;letter-spacing:0.15em}
 
-.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:12px 24px;font-size:14px;font-weight:600;line-height:1.5;border-radius:8px;transition:all 0.25s ease;white-space:nowrap;border:2px solid transparent;cursor:pointer}
-.btn--primary{background:#1A1A1A;color:#F5F5F5;border-color:#1A1A1A}
-.btn--primary:hover{background:#222222;border-color:#3D2418;transform:translateY(-1px);box-shadow:0 4px 12px rgba(0,0,0,0.04)}
-.btn--secondary{background:#1A1A1A;color:#fff;border-color:#1A1A1A}
-.btn--secondary:hover{background:#333333;border-color:#333333;transform:translateY(-1px);box-shadow:0 4px 12px rgba(0,0,0,0.04)}
-.btn--outline{background:transparent;color:#2C1810;border-color:#E8E8E8}
-.btn--outline:hover{border-color:#1A1A1A;background:#F8F8F8}
-.btn--lg{padding:16px 32px;font-size:16px;border-radius:12px}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:12px 24px;font-size:14px;font-weight:600;line-height:1.5;border-radius:999px;transition:all 0.25s ease;white-space:nowrap;border:2px solid transparent;cursor:pointer}
+.btn--primary{background:#000000;color:#ffffff;border-color:#000000}
+.btn--primary:hover{background:#333333;border-color:#333333;transform:translateY(-2px);box-shadow:0 8px 24px rgba(0,0,0,0.1)}
+.btn--secondary{background:#000000;color:#ffffff;border-color:#000000}
+.btn--secondary:hover{background:#333333;border-color:#333333;transform:translateY(-2px);box-shadow:0 8px 24px rgba(0,0,0,0.1)}
+.btn--outline{background:transparent;color:currentColor;border-color:currentColor;opacity:0.8}
+.btn--outline:hover{opacity:1;background:currentColor;color:#ffffff}
+.hero .btn--outline:hover, .section--alt .btn--outline:hover, .section--cream .btn--outline:hover {background:currentColor;color:#000000}
+.btn--lg{padding:16px 32px;font-size:16px;border-radius:999px}
 .btn--sm{padding:8px 16px;font-size:12px}
 .btn--full{width:100%}
 
-.badge{display:inline-flex;align-items:center;padding:4px 12px;font-size:12px;font-weight:500;border-radius:999px;line-height:1.4}
-.badge--secondary{background:rgba(26,26,26,0.08);color:#333333}
-.badge--success{background:rgba(26,26,26,0.08);color:#1A1A1A}
+.badge{display:inline-flex;align-items:center;padding:4px 12px;font-size:12px;font-weight:600;border-radius:0;line-height:1.4}
+.badge--secondary{background:#ffffff;color:#000000;border:1px solid #000000}
+.badge--success{background:#000000;color:#ffffff}
 
-.chip{display:inline-flex;align-items:center;gap:8px;padding:8px 16px;font-size:14px;font-weight:500;border-radius:999px;border:1px solid #E8E8E8;background:#fff;color:#555555;cursor:pointer;transition:all 0.15s ease;user-select:none}
-.chip:hover,.chip--active{border-color:#1A1A1A;color:#2C1810;background:#F8F8F8}
-.chip--active{background:#1A1A1A;color:#F5F5F5;border-color:#1A1A1A}
+.chip{display:inline-flex;align-items:center;gap:8px;padding:8px 16px;font-size:14px;font-weight:500;border-radius:0;border:1px solid transparent;background:rgba(0,0,0,0.05);color:#555555;cursor:pointer;transition:all 0.25s ease;user-select:none}
+.chip:hover,.chip--active{border-color:transparent;color:#000000;background:rgba(0,0,0,0.1);transform:translateY(-1px)}
+.chip--active{background:#000000;color:#ffffff}
+
+.chip--sm { padding: 6px 12px; font-size: 13px; }
+.hero::before{content:'';position:absolute;inset:0;background-image:url('images/pattern_2.pdf.png?v=3');background-size:cover;background-position:center;background-repeat:no-repeat;opacity:0.15;pointer-events:none;z-index:0}
+.hero > * { z-index:1; position:relative; }
+.section--alt { position:relative; overflow:hidden; }
+.section--alt::before { content:''; position:absolute; bottom:24px; right:24px; width:150px; height:150px; background-image:url('images/triangle_2.png'); background-size:contain; background-position:bottom right; background-repeat:no-repeat; opacity:0.06; pointer-events:none; z-index:0; }
+.section--alt > * { z-index:1; position:relative; }
+.section--cream { position:relative; overflow:hidden; }
+.section--cream::before { content:''; position:absolute; bottom:24px; right:24px; width:150px; height:150px; background-image:url('images/triangle_2.png'); background-size:contain; background-position:bottom right; background-repeat:no-repeat; opacity:0.06; pointer-events:none; z-index:0; }
+.section--cream > * { z-index:1; position:relative; }
+
 
 .grid-2{display:grid;grid-template-columns:1fr;gap:24px}
 .grid-3{display:grid;grid-template-columns:1fr;gap:24px}
@@ -100,13 +112,13 @@ img{max-width:100%;display:block}
  @media(min-width:768px){.grid-3{grid-template-columns:1fr 1fr 1fr}.grid-2-1{grid-template-columns:2fr 1fr}}
  @media(min-width:1024px){.grid-4{grid-template-columns:repeat(4,1fr)}}
 
-.feature-card{padding:32px;border-radius:16px;background:#fff;border:1px solid #F0F0F0;transition:all 0.25s ease}
-.feature-card:hover{box-shadow:0 8px 24px rgba(0,0,0,0.06);transform:translateY(-2px)}
-.feature-card__icon{width:48px;height:48px;border-radius:12px;background:#F5F5F5;display:flex;align-items:center;justify-content:center;margin-bottom:20px;font-size:24px}
-.feature-card__title{font-size:18px;font-weight:600;margin-bottom:8px;color:#2C1810}
+.feature-card{padding:32px;border-radius:0;background:#fff;border:none;transition:all 0.25s ease}
+.feature-card:hover{transform:translateY(-2px)}
+.feature-card__icon{width:48px;height:48px;border-radius:0;background:#F0F0F0;display:flex;align-items:center;justify-content:center;margin-bottom:20px;font-size:24px}
+.feature-card__title{font-size:18px;font-weight:600;margin-bottom:8px;color:#000000}
 .feature-card__text{font-size:14px;color:#555555;line-height:1.75}
 
-.segment-card{position:relative;border-radius:16px;overflow:hidden;aspect-ratio:3/4;cursor:pointer}
+.segment-card{position:relative;border-radius:0;overflow:hidden;aspect-ratio:3/4;cursor:pointer}
 .segment-card__bg{position:absolute;inset:0;transition:transform 0.4s ease}
 .segment-card:hover .segment-card__bg{transform:scale(1.05)}
 .segment-card__overlay{position:absolute;inset:0;background:linear-gradient(180deg,transparent 30%,rgba(26,14,8,0.85) 100%)}
@@ -116,111 +128,137 @@ img{max-width:100%;display:block}
 
 .process-step{display:flex;gap:24px;padding:32px 0;border-bottom:1px solid #F0F0F0}
 .process-step:last-child{border-bottom:none}
-.process-step__number{font-family:'Circe',sans-serif;font-size:40px;font-weight:700;color:#1A1A1A;line-height:1;min-width:48px}
+.process-step__number{font-family:'Circe',sans-serif;font-size:40px;font-weight:700;color:#000000;line-height:1;min-width:48px}
 .process-step__title{font-size:18px;font-weight:600;margin-bottom:8px}
 .process-step__text{font-size:14px;color:#555555;line-height:1.75}
+.section--alt .process-step,.section--cream .process-step{border-color:rgba(255,255,255,0.12)}
+.section--alt .process-step__number,.section--cream .process-step__number{color:rgba(255,255,255,0.5)}
+.section--alt .process-step__title,.section--cream .process-step__title{color:#ffffff}
+.section--alt .process-step__text,.section--cream .process-step__text{color:rgba(255,255,255,0.65)}
 
-.timeline{position:relative;padding-left:48px}
-.timeline::before{content:'';position:absolute;left:19px;top:0;bottom:0;width:2px;background:#E8E8E8}
+.timeline{position:relative;padding-left:32px}
+.timeline::before{content:'';position:absolute;left:0;top:0;bottom:0;width:2px;background:#E8E8E8;transform:translateX(-50%);z-index:0}
 .timeline__item{position:relative;padding-bottom:40px}
 .timeline__item:last-child{padding-bottom:0}
-.timeline__dot{position:absolute;left:-48px;top:4px;width:18px;height:18px;border-radius:50%;background:#1A1A1A;border:3px solid #fff;box-shadow:0 0 0 2px #1A1A1A}
+.timeline__dot{position:absolute;left:-32px;top:4px;width:14px;height:14px;border-radius:50%;background:#1A1A1A;box-shadow:0 0 0 4px #fff, 0 0 0 6px #1A1A1A;transform:translateX(-50%);z-index:1}
 .timeline__title{font-size:18px;font-weight:600;margin-bottom:8px}
 .timeline__text{font-size:14px;color:#555555;line-height:1.75}
 
-.quote-card{padding:40px;background:#F5F5F5;border-radius:16px;border-left:4px solid #1A1A1A}
-.quote-card__text{font-family:'Circe',sans-serif;font-size:20px;line-height:1.25;color:#2C1810;margin-bottom:24px}
+.quote-card{padding:40px;background:#F0F0F0;border-radius:0;border-left:4px solid #000000}
+.quote-card__text{font-family:'Circe',sans-serif;font-size:20px;line-height:1.25;color:#000000;margin-bottom:24px}
 .quote-card__author{font-weight:600}
 .quote-card__role{font-size:14px;color:#777777}
 
-.catalog-products{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:24px}
+.catalog-products{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:32px 24px;justify-content:center}
 
-.product-card{background:#fff;border-radius:12px;border:1px solid #F0F0F0;overflow:hidden;transition:all 0.25s ease;cursor:pointer}
-.product-card:hover{box-shadow:0 8px 32px rgba(0,0,0,0.06);transform:translateY(-3px)}
-.product-card__image{aspect-ratio:1;display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden}
-.product-card__body{padding:20px}
-.product-card__category{font-size:12px;color:#777777;text-transform:uppercase;letter-spacing:0.05em;margin-bottom:4px}
-.product-card__name{font-size:16px;font-weight:600;margin-bottom:8px;color:#2C1810}
-.product-card__profile{display:flex;gap:12px;margin-bottom:12px}
-.product-card__param{font-size:12px;color:#777777}
-.product-card__price{font-size:18px;font-weight:700;color:#2C1810}
+.article-hero{position:relative;height:55vh;min-height:400px;display:flex;align-items:flex-end;padding-bottom:64px;border-radius:0;overflow:hidden;margin:0 0 48px;background:#000}
+.article-hero__bg{position:absolute;inset:0;background-size:cover;background-position:center;z-index:0;opacity:0.8}
+.article-hero__overlay{position:absolute;inset:0;background:linear-gradient(to top, rgba(0,0,0,0.9) 0%, rgba(0,0,0,0.3) 50%, rgba(0,0,0,0.1) 100%);z-index:1}
+.article-hero__content{position:relative;z-index:2;color:#fff}
+.article-hero__meta{display:flex;gap:12px;align-items:center;font-size:14px;margin-bottom:16px;font-weight:600;text-transform:uppercase;letter-spacing:0.05em;color:rgba(255,255,255,0.8)}
+.article-hero__category{background:rgba(255,255,255,0.15);padding:4px 12px;border-radius:999px;color:#fff}
+.article-hero__title{font-size:40px;line-height:1.15;margin-bottom:16px;max-width:800px;font-family:'Circe',sans-serif;font-weight:700}
+.article-hero__summary{font-size:20px;line-height:1.6;color:rgba(255,255,255,0.8);max-width:700px}
+@media(min-width:768px){.article-hero__title{font-size:56px}}
+
+.article-content p{margin-bottom:24px}
+.article-content ul{margin-bottom:24px;padding-left:24px;list-style:disc}
+.article-content li{margin-bottom:8px}
+.article-content strong{font-weight:700;color:#000}
+
+.product-card{background:transparent;border-radius:0;border:none;overflow:hidden;transition:all 0.35s ease;cursor:pointer;display:flex;flex-direction:column;height:100%}
+.product-card:hover{transform:translateY(-4px)}
+.product-card__image{aspect-ratio:1;display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden;background:#F0F0F0;border-radius:0;transition:all 0.35s ease}
+.product-card:hover .product-card__image{background:#E8E8E8}
+.product-card__badges{position:absolute;top:12px;right:12px;display:flex;flex-direction:column;align-items:flex-end;gap:6px;z-index:2;pointer-events:none}
+.product-card__badge{pointer-events:auto;font-size:11px;padding:4px 10px;background:rgba(0,0,0,0.85);color:#fff;font-weight:600;letter-spacing:0.03em}
+.product-card__body{padding:16px 0 0;text-align:center;flex:1;display:flex;flex-direction:column}
+.product-card__category{font-size:11px;color:currentColor;opacity:0.5;text-transform:uppercase;letter-spacing:0.08em;margin-bottom:6px}
+.product-card__name{font-size:15px;font-weight:700;margin-bottom:10px;color:currentColor;line-height:1.3}
+.product-card__profile{display:flex;gap:12px;margin-bottom:12px;justify-content:center;flex-wrap:wrap}
+.product-card__param{font-size:11px;color:currentColor;opacity:0.6}
+.product-card__price{font-size:18px;font-weight:700;color:currentColor}
 .product-card__price-unit{font-size:12px;color:#777777;font-weight:400}
-.product-card__actions{display:flex;gap:8px;margin-top:16px}
+.product-card__actions{display:flex;gap:8px;margin-top:auto;padding-top:12px;justify-content:center}
 
-.taste-bar{display:flex;align-items:center;gap:12px;margin-bottom:8px}
-.taste-bar__label{font-size:12px;color:#777777;min-width:72px}
-.taste-bar__track{flex:1;height:4px;background:#F0F0F0;border-radius:2px;overflow:hidden}
-.taste-bar__fill{height:100%;border-radius:2px;background:#1A1A1A}
+.taste-bar{display:flex;align-items:center;gap:8px;margin-bottom:6px}
+.taste-bar__label{font-size:11px;color:#777777;min-width:68px;text-align:left}
+.taste-bar__track{flex:1;height:3px;background:#E0E0E0;border-radius:0;overflow:hidden}
+.taste-bar__fill{height:100%;border-radius:0;background:#000000}
 
-.pdp-layout{display:grid;grid-template-columns:1fr;gap:40px}
- @media(min-width:1024px){.pdp-layout{grid-template-columns:1fr 1fr;gap:64px}}
-.pdp-image{aspect-ratio:1;border-radius:16px;display:flex;align-items:center;justify-content:center}
-.pdp-info__title{font-family:'Circe',sans-serif;font-size:32px;font-weight:700;color:#2C1810;margin-bottom:8px}
+.pdp-layout{display:grid;grid-template-columns:1fr;gap:40px;align-items:start}
+ @media(min-width:768px){.pdp-layout{grid-template-columns:1fr 1fr;gap:60px}}
+.pdp-image{aspect-ratio:1;border-radius:0;display:flex;align-items:center;justify-content:center;background:#F0F0F0}
+.pdp-info{background:transparent;border:none;padding:0;text-align:center}
+.pdp-info__category{font-size:14px;color:currentColor;opacity:0.6;text-transform:uppercase;letter-spacing:0.05em;margin-bottom:8px}
+.pdp-info__title{font-family:'Circe',sans-serif;font-size:32px;font-weight:700;color:currentColor;margin-bottom:12px;line-height:1.2}
  @media(min-width:768px){.pdp-info__title{font-size:42px}}
 .pdp-info__subtitle{font-size:18px;color:#555555;margin-bottom:24px}
-.pdp-info__price{font-size:28px;font-weight:700;color:#2C1810;margin-bottom:24px}
-.pdp-facts{display:grid;grid-template-columns:1fr 1fr;gap:16px;padding:24px;background:#F8F8F8;border-radius:12px;margin-bottom:32px}
+.pdp-info__price{font-size:28px;font-weight:700;color:#000000;margin-bottom:24px}
+.pdp-facts{display:grid;grid-template-columns:1fr 1fr;gap:16px;padding:24px;background:#F0F0F0;border-radius:0;margin-bottom:32px}
 .pdp-fact__label{font-size:12px;color:#777777;text-transform:uppercase;letter-spacing:0.05em;margin-bottom:4px}
-.pdp-fact__value{font-size:14px;font-weight:600;color:#2C1810}
+.pdp-fact__value{font-size:14px;font-weight:600;color:#000000}
 
 .breadcrumbs{display:flex;align-items:center;gap:8px;font-size:14px;color:#777777;padding:24px 0;flex-wrap:wrap}
 .breadcrumbs__link{color:#555555;transition:color 0.15s ease;cursor:pointer}
-.breadcrumbs__link:hover{color:#2C1810}
+.breadcrumbs__link:hover{color:#000000}
 .breadcrumbs__sep{color:#999999}
-.breadcrumbs__current{color:#1A1A1A}
+.breadcrumbs__current{color:#000000}
 
-.cta-banner{padding:64px 32px;background:#1A1A1A;border-radius:24px;color:#F5F5F5;text-align:center;overflow:hidden}
+.cta-banner{padding:64px 32px;background:#000000;border-radius:0;color:#ffffff;text-align:center;overflow:hidden}
 .cta-banner__title{font-family:'Circe',sans-serif;font-size:28px;font-weight:700;margin-bottom:16px}
  @media(min-width:768px){.cta-banner__title{font-size:40px}}
 .cta-banner__text{font-size:16px;color:#999999;margin-bottom:32px;max-width:520px;margin-left:auto;margin-right:auto}
 .cta-banner__actions{display:flex;flex-wrap:wrap;gap:16px;justify-content:center}
 
-.article-card{background:#fff;border-radius:12px;border:1px solid #F0F0F0;overflow:hidden;transition:all 0.25s ease;cursor:pointer}
-.article-card:hover{box-shadow:0 8px 32px rgba(0,0,0,0.06);transform:translateY(-2px)}
-.article-card__image{aspect-ratio:16/9}
-.article-card__body{padding:20px}
-.article-card__category{font-size:12px;font-weight:600;text-transform:uppercase;letter-spacing:0.05em;color:#1A1A1A;margin-bottom:8px}
-.article-card__title{font-size:16px;font-weight:600;margin-bottom:8px;color:#2C1810;line-height:1.25}
-.article-card__excerpt{font-size:14px;color:#555555;line-height:1.75;margin-bottom:16px}
+.article-card{background:transparent;border-radius:0;border:none;overflow:hidden;transition:all 0.35s ease;cursor:pointer}
+.article-card:hover{transform:translateY(-4px)}
+.article-card__image{aspect-ratio:16/9;border-radius:0;overflow:hidden;transition:all 0.35s ease}
+.article-card:hover .article-card__image{opacity:0.9}
+.article-card__body{padding:20px 8px;text-align:center}
+.article-card__category{font-size:12px;font-weight:600;text-transform:uppercase;letter-spacing:0.05em;color:currentColor;opacity:0.8;margin-bottom:8px}
+.article-card__title{font-size:16px;font-weight:600;margin-bottom:8px;color:currentColor;line-height:1.25}
+.article-card__excerpt{font-size:14px;color:currentColor;opacity:0.7;line-height:1.75;margin-bottom:16px}
 .article-card__meta{font-size:12px;color:#777777}
 
-.case-card{background:#fff;border-radius:16px;border:1px solid #F0F0F0;overflow:hidden;transition:all 0.25s ease}
-.case-card:hover{box-shadow:0 8px 32px rgba(0,0,0,0.06)}
-.case-card__image{aspect-ratio:16/9}
-.case-card__body{padding:32px}
-.case-card__label{font-size:12px;font-weight:600;text-transform:uppercase;letter-spacing:0.05em;color:#1A1A1A;margin-bottom:12px}
-.case-card__title{font-family:'Circe',sans-serif;font-size:20px;font-weight:700;margin-bottom:12px;color:#2C1810}
+.case-card{background:transparent;border-radius:0;border:none;overflow:hidden;transition:all 0.35s ease}
+.case-card:hover{transform:translateY(-4px)}
+.case-card__image{aspect-ratio:16/9;border-radius:0;overflow:hidden;transition:all 0.35s ease}
+.case-card:hover .case-card__image{opacity:0.9}
+.case-card__body{padding:24px 8px;text-align:center}
+.case-card__label{font-size:12px;font-weight:600;text-transform:uppercase;letter-spacing:0.05em;color:#000000;margin-bottom:12px}
+.case-card__title{font-family:'Circe',sans-serif;font-size:20px;font-weight:700;margin-bottom:12px;color:#000000}
 .case-card__text{font-size:14px;color:#555555;line-height:1.75;margin-bottom:24px}
-.case-card__metrics{display:flex;gap:24px;padding-top:24px;border-top:1px solid #F0F0F0;flex-wrap:wrap}
-.case-card__metric-value{font-family:'Circe',sans-serif;font-size:20px;font-weight:700;color:#2C1810}
+.case-card__metrics{display:flex;gap:24px;padding-top:24px;border-top:1px solid #F0F0F0;flex-wrap:wrap;justify-content:center}
+.case-card__metric-value{font-family:'Circe',sans-serif;font-size:20px;font-weight:700;color:#000000}
 .case-card__metric-label{font-size:12px;color:#777777}
 
 .faq-item{border-bottom:1px solid #F0F0F0}
-.faq-question{display:flex;align-items:center;justify-content:space-between;width:100%;padding:24px 0;font-size:16px;font-weight:600;color:#2C1810;text-align:left;cursor:pointer;transition:color 0.15s ease}
-.faq-question:hover{color:#1A1A1A}
+.faq-question{display:flex;align-items:center;justify-content:space-between;width:100%;padding:24px 0;font-size:16px;font-weight:600;color:#000000;text-align:left;cursor:pointer;transition:color 0.15s ease}
+.faq-question:hover{color:#000000}
 .faq-question__icon{width:24px;height:24px;transition:transform 0.25s ease;flex-shrink:0;margin-left:16px}
 .faq-item--open .faq-question__icon{transform:rotate(45deg)}
-.faq-answer{max-height:0;overflow:hidden;transition:max-height 0.4s ease,padding 0.25s ease}
-.faq-item--open .faq-answer{max-height:500px}
-.faq-answer__inner{padding-bottom:24px;font-size:14px;color:#555555;line-height:1.75}
+.faq-answer{display:grid;grid-template-rows:0fr;transition:grid-template-rows 0.4s ease}
+.faq-item--open .faq-answer{grid-template-rows:1fr}
+.faq-answer__inner{overflow:hidden}
 
 .page-404{min-height:80vh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:64px 24px}
 .page-404__code{font-family:'Circe',sans-serif;font-size:80px;font-weight:700;color:#E8E8E8;line-height:1;margin-bottom:24px}
 .page-404__title{font-family:'Circe',sans-serif;font-size:28px;font-weight:700;margin-bottom:16px}
 .page-404__text{font-size:16px;color:#555555;max-width:400px;margin-bottom:32px}
 
-.solution-card{padding:40px;background:#fff;border-radius:16px;border:1px solid #F0F0F0;transition:all 0.25s ease}
-.solution-card:hover{box-shadow:0 8px 24px rgba(0,0,0,0.06)}
-.solution-card__icon{width:56px;height:56px;border-radius:16px;background:#F5F5F5;display:flex;align-items:center;justify-content:center;margin-bottom:24px;font-size:28px}
-.solution-card__title{font-family:'Circe',sans-serif;font-size:20px;font-weight:700;margin-bottom:12px;color:#2C1810}
-.solution-card__list{display:flex;flex-direction:column;gap:8px;margin:16px 0}
-.solution-card__list-item{display:flex;align-items:flex-start;gap:8px;font-size:14px;color:#555555;line-height:1.75}
+.solution-card{padding:40px;background:#fff;border-radius:0;border:none;transition:all 0.25s ease;display:flex;flex-direction:column;align-items:center;text-align:center}
+.solution-card:hover{transform:translateY(-2px)}
+.solution-card__icon{width:56px;height:56px;border-radius:0;background:#F0F0F0;display:flex;align-items:center;justify-content:center;margin-bottom:24px;font-size:28px}
+.solution-card__title{font-family:'Circe',sans-serif;font-size:20px;font-weight:700;margin-bottom:12px;color:#000000}
+.solution-card__list{display:flex;flex-direction:column;gap:8px;margin:16px 0;width:100%}
+.solution-card__list-item{display:flex;align-items:flex-start;gap:8px;font-size:14px;color:#555555;line-height:1.75;text-align:left}
 .solution-card__list-item::before{content:'\2713';color:#1A1A1A;font-weight:700;flex-shrink:0;margin-top:1px}
 
 .form-group{margin-bottom:24px}
-.form-label{display:block;font-size:14px;font-weight:500;color:#1A1A1A;margin-bottom:8px}
-.form-input,.form-textarea,.form-select{width:100%;padding:12px 16px;font-size:16px;color:#1A1A1A;background:#fff;border:1px solid #E8E8E8;border-radius:8px;transition:border-color 0.15s ease,box-shadow 0.15s ease}
-.form-input:focus,.form-textarea:focus,.form-select:focus{outline:none;border-color:#1A1A1A;box-shadow:0 0 0 3px rgba(26,26,26,0.15)}
+.form-label{display:block;font-size:14px;font-weight:500;color:#000000;margin-bottom:8px}
+.form-input,.form-textarea,.form-select{width:100%;padding:12px 16px;font-size:16px;color:#000000;background:#fff;border:1px solid #E8E8E8;border-radius:0;transition:border-color 0.15s ease,box-shadow 0.15s ease}
+.form-input:focus,.form-textarea:focus,.form-select:focus{outline:none;border-color:#000000;box-shadow:0 0 0 3px rgba(0,0,0,0.1)}
 .form-textarea{resize:vertical;min-height:120px}
 .form-hint{font-size:12px;color:#777777;margin-top:4px}
 .form-row{display:grid;grid-template-columns:1fr;gap:16px}
@@ -229,20 +267,21 @@ img{max-width:100%;display:block}
 .page{display:none}
 .page--active{display:block}
 
-.notification{position:fixed;bottom:24px;right:24px;padding:16px 24px;background:#1A1A1A;color:#F5F5F5;border-radius:12px;box-shadow:0 16px 48px rgba(0,0,0,0.1);z-index:500;transform:translateY(120%);transition:transform 0.25s ease;font-size:14px;font-weight:500}
+.notification{position:fixed;bottom:24px;right:24px;padding:16px 24px;background:#000000;color:#ffffff;border-radius:0;box-shadow:none;z-index:500;transform:translateY(120%);transition:transform 0.25s ease;font-size:14px;font-weight:500}
 .notification--visible{transform:translateY(0)}
 
-.back-to-top{position:fixed;bottom:24px;left:24px;width:44px;height:44px;border-radius:50%;background:#1A1A1A;color:#F5F5F5;display:flex;align-items:center;justify-content:center;box-shadow:0 8px 24px rgba(0,0,0,0.06);z-index:100;opacity:0;transform:translateY(20px);transition:all 0.25s ease;cursor:pointer}
+.back-to-top{position:fixed;bottom:24px;left:24px;width:44px;height:44px;border-radius:50%;background:#000000;color:#ffffff;display:flex;align-items:center;justify-content:center;box-shadow:none;z-index:100;opacity:0;transform:translateY(20px);transition:all 0.25s ease;cursor:pointer}
 .back-to-top--visible{opacity:1;transform:translateY(0)}
-.back-to-top:hover{background:#1A1A1A}
+.back-to-top:hover{background:#000000}
 
-.header{position:sticky;top:0;z-index:200;background:rgba(255,255,255,0.97);border-bottom:1px solid #F0F0F0}
+.header{position:sticky;top:0;z-index:200;background:rgba(255,255,255,0.95);border-bottom:none;box-shadow:0 4px 24px rgba(0,0,0,0.03)}
 .header__inner{display:flex;align-items:center;justify-content:space-between;height:72px;max-width:1520px;margin:0 auto;padding:0 24px}
-.header__logo{font-family:'Circe',sans-serif;font-size:28px;font-weight:700;color:#2C1810;letter-spacing:-0.02em}
+.header__logo{display:flex;align-items:center;cursor:pointer}
+.header__logo img{height:46px;width:auto}
 .header__nav{display:none}
 .header__nav-list{display:flex;align-items:center;gap:4px}
 .header__nav-link{padding:8px 12px;font-size:14px;font-weight:500;color:#555555;border-radius:8px;transition:all 0.15s ease;cursor:pointer}
-.header__nav-link:hover,.header__nav-link--active{color:#2C1810;background:#F8F8F8}
+.header__nav-link:hover,.header__nav-link--active{color:#000000;background:#F0F0F0}
 .header__actions{display:flex;align-items:center;gap:8px}
 .header__burger{display:flex;flex-direction:column;gap:5px;padding:8px;cursor:pointer}
 .header__burger span{display:block;width:22px;height:2px;background:#1A1A1A;border-radius:2px;transition:all 0.25s ease}
@@ -255,10 +294,10 @@ img{max-width:100%;display:block}
 .mobile-nav--open{transform:translateX(0)}
 .mobile-nav__list{display:flex;flex-direction:column;gap:4px}
 .mobile-nav__link{display:block;padding:16px 12px;font-size:18px;font-weight:500;color:#1A1A1A;border-radius:8px;transition:all 0.15s ease;cursor:pointer}
-.mobile-nav__link:hover{background:#F8F8F8;color:#1A1A1A}
+.mobile-nav__link:hover{background:#F0F0F0;color:#000000}
 .mobile-nav__divider{height:1px;background:#E8E8E8;margin:16px 0}
 
-.footer{background:#1A1A1A;color:#F5F5F5;padding:64px 0 32px}
+.footer{background:#000000;color:#ffffff;padding:64px 0 32px}
 .footer__grid{display:grid;grid-template-columns:1fr;gap:40px;margin-bottom:48px}
  @media(min-width:768px){.footer__grid{grid-template-columns:2fr 1fr 1fr 1fr}}
 .footer__brand{max-width:320px}
@@ -267,7 +306,7 @@ img{max-width:100%;display:block}
 .footer__heading{font-size:12px;font-weight:600;text-transform:uppercase;letter-spacing:0.08em;color:#555555;margin-bottom:16px}
 .footer__links{display:flex;flex-direction:column;gap:8px}
 .footer__link{font-size:14px;color:#999999;transition:color 0.15s ease;cursor:pointer}
-.footer__link:hover{color:#F5F5F5}
+.footer__link:hover{color:#ffffff}
 .footer__bottom{padding-top:32px;border-top:1px solid rgba(255,255,255,0.2);display:flex;flex-direction:column;gap:16px;align-items:center;text-align:center}
  @media(min-width:768px){.footer__bottom{flex-direction:row;justify-content:space-between}}
 .footer__copy{font-size:14px;color:#999999}
@@ -291,7 +330,9 @@ img{max-width:100%;display:block}
 
 <header class="header" id="header">
 <div class="header__inner">
-<a class="header__logo" onclick="navigate('home')" style="cursor:pointer"><img src="images/logo.png" alt="Addis" style="width:86px;height:86px;object-fit:contain"></a>
+<div class="header__logo" onclick="window.navigateApp('home')">
+   <img src="images/logo-1.png" alt="Addis" style="filter: brightness(0);">
+</div>
 <nav class="header__nav" aria-label="Основная навигация">
 <ul class="header__nav-list">
 <li><a class="header__nav-link" onclick="navigate('business')">Для бизнеса</a></li>
@@ -336,7 +377,6 @@ img{max-width:100%;display:block}
 <div class="container" style="max-width:1520px">
 <div class="hero__inner">
 <div class="hero__content" style="display:flex;flex-direction:column;justify-content:center;min-height:60vh">
-<div class="hero__badge">&#9749; Обжарка и поставки для HoReCa и retail</div>
 <h1 class="hero__title">Кофе, который работает на ваш бизнес</h1>
 <p class="hero__desc">Поставляем specialty и fine commercial кофе для кофеен, ресторанов, офисов и розницы. Стабильные партии, прозрачные условия, поддержка на каждом этапе.</p>
 <div class="hero__actions">
@@ -344,12 +384,7 @@ img{max-width:100%;display:block}
 <button class="btn btn--outline btn--lg" onclick="navigate('catalog')">Смотреть каталог</button>
 </div>
 </div>
-<div class="hero__visual">
-<div class="hero__visual-inner">
-<div class="hero__visual-circle"><span>A</span></div>
-<div class="hero__visual-text">ADDIS COFFEE</div>
-</div>
-</div>
+
 </div>
 </div>
 </div>
@@ -373,16 +408,16 @@ img{max-width:100%;display:block}
 <div class="section section--alt">
 <div class="container">
 <div class="section-header section-header--center">
-<div class="section-eyebrow">Почему Addis</div>
-<h2 class="section-title">Преимущества работы с нами</h2>
+<div class="section-eyebrow">О нас</div>
+<h2 class="section-title">Наши принципы</h2>
 </div>
 <div class="grid-3">
-<div class="feature-card"><div class="feature-card__icon">&#9749;</div><div class="feature-card__title">Свежая обжарка</div><div class="feature-card__text">Обжариваем под заказ. Зерно попадает к вам за 24–48 часов после обжарки.</div></div>
-<div class="feature-card"><div class="feature-card__icon">&#128202;</div><div class="feature-card__title">Прозрачные условия</div><div class="feature-card__text">Фиксированный прайс, понятные условия доставки, без скрытых платежей.</div></div>
-<div class="feature-card"><div class="feature-card__icon">&#127919;</div><div class="feature-card__title">Подбор под задачи</div><div class="feature-card__text">Помогаем сформировать кофейную карту: от базового эспрессо до сезонных микролотов.</div></div>
-<div class="feature-card"><div class="feature-card__icon">&#128230;</div><div class="feature-card__title">Стабильность поставок</div><div class="feature-card__text">Собственный склад зелёного зерна, долгосрочные контракты с импортёрами.</div></div>
-<div class="feature-card"><div class="feature-card__icon">&#127891;</div><div class="feature-card__title">Обучение команды</div><div class="feature-card__text">Проводим каппинги, тренинги для бариста, помогаем настроить оборудование.</div></div>
-<div class="feature-card"><div class="feature-card__icon">&#128260;</div><div class="feature-card__title">Гибкие форматы</div><div class="feature-card__text">Фасовка от 250 г до 25 кг. Зерно или молотый. Свой бренд или наш.</div></div>
+<div class="feature-card"><div class="feature-card__title">Ценность</div><div class="feature-card__text">Мы работаем в зоне «доступного премиума» — это выгоднее импортных брендов при стабильно высочайшем качестве.</div></div>
+<div class="feature-card"><div class="feature-card__title">Продукт</div><div class="feature-card__text">Понятный, удобный и рабочий кофе, который не ломает процессы в вашей кофейне и всегда раскрывается стабильно.</div></div>
+<div class="feature-card"><div class="feature-card__title">Простота</div><div class="feature-card__text">Мы — бренд с человеческим лицом. К нам легко обратиться напрямую и всегда получить быстрое решение.</div></div>
+<div class="feature-card"><div class="feature-card__title">Рост</div><div class="feature-card__text">Мы помогаем вашему бизнесу расти, регулярно привозя новые лоты для экспериментов с профилями и вкусом.</div></div>
+<div class="feature-card"><div class="feature-card__title">Глубина</div><div class="feature-card__text">Мы детально разбираем каждый лот: от терруара и особенностей урожая до точечной подстройки оборудования.</div></div>
+<div class="feature-card"><div class="feature-card__title">Выбор</div><div class="feature-card__text">Мы специализируемся не только на эспрессо, но и делаем огромный фокус на фильтр, альтернативу и дрип-кофе.</div></div>
 </div>
 </div>
 </div>
@@ -436,14 +471,14 @@ img{max-width:100%;display:block}
 <div class="timeline">
 <div class="timeline__item"><div class="timeline__dot"></div><div class="timeline__title">Закупка зелёного зерна</div><div class="timeline__text">Прямые контракты с фермами Бразилии, Эфиопии, Колумбии, Кении.</div></div>
 <div class="timeline__item"><div class="timeline__dot"></div><div class="timeline__title">Профиль обжарки</div><div class="timeline__text">Каждый лот обжаривается по индивидуальному профилю.</div></div>
-<div class="timeline__item"><div class="timeline__dot"></div><div class="timeline__title">Контроль качества</div><div class="timeline__text">Каппинг каждой партии по SCA-протоколу. Отбраковка — минимум 3%.</div></div>
-<div class="timeline__item"><div class="timeline__dot"></div><div class="timeline__title">Упаковка и отгрузка</div><div class="timeline__text">Дегазационные клапаны, азотная среда, маркировка даты обжарки.</div></div>
+<div class="timeline__item"><div class="timeline__dot"></div><div class="timeline__title">Контроль качества</div><div class="timeline__text">Каппинг каждой партии по протоколам CVA. Отбраковка — минимум 3%.</div></div>
+<div class="timeline__item"><div class="timeline__dot"></div><div class="timeline__title">Упаковка и отгрузка</div><div class="timeline__text">Дегазационные клапаны, маркировка даты обжарки.</div></div>
 </div>
 </div>
 <div style="display:flex;align-items:center;justify-content:center">
 <div style="width:100%;aspect-ratio:4/3;border-radius:24px;background:linear-gradient(135deg,#C8C8C8,#A0A0A0);display:flex;align-items:center;justify-content:center">
 <div style="text-align:center;color:#fff">
-<div style="font-size:48px;margin-bottom:8px">&#9881;</div>
+<div style="font-size:24px;margin-bottom:8px;letter-spacing:0.25em;opacity:0.5">ADDIS</div>
 <div style="font-size:14px;opacity:0.7;text-transform:uppercase;letter-spacing:0.1em">Обжарочный цех</div>
 </div>
 </div>
@@ -462,14 +497,14 @@ img{max-width:100%;display:block}
 <p class="section-subtitle">Обучение бариста, настройка оборудования — включено в партнёрство</p>
 </div>
 <div style="display:flex;flex-direction:column;gap:16px">
-<div style="display:flex;gap:16px;align-items:flex-start"><div style="width:40px;height:40px;border-radius:8px;background:#1A1A1A;color:#fff;display:flex;align-items:center;justify-content:center;font-weight:700;flex-shrink:0">1</div><div><div style="font-weight:600;margin-bottom:4px">Каппинги и дегустации</div><div style="font-size:14px;color:#555555">Знакомство с линейкой, обучение оценке качества</div></div></div>
-<div style="display:flex;gap:16px;align-items:flex-start"><div style="width:40px;height:40px;border-radius:8px;background:#1A1A1A;color:#fff;display:flex;align-items:center;justify-content:center;font-weight:700;flex-shrink:0">2</div><div><div style="font-weight:600;margin-bottom:4px">Настройка оборудования</div><div style="font-size:14px;color:#555555">Помощь с настройкой помола, температуры, давления</div></div></div>
-<div style="display:flex;gap:16px;align-items:flex-start"><div style="width:40px;height:40px;border-radius:8px;background:#1A1A1A;color:#fff;display:flex;align-items:center;justify-content:center;font-weight:700;flex-shrink:0">3</div><div><div style="font-weight:600;margin-bottom:4px">Разработка рецептур</div><div style="font-size:14px;color:#555555">Составление кофейной карты, подбор блендов</div></div></div>
+<div style="display:flex;gap:16px;align-items:flex-start"><div style="width:40px;height:40px;border-radius:0;background:#000000;color:#fff;display:flex;align-items:center;justify-content:center;font-weight:700;flex-shrink:0">1</div><div><div style="font-weight:600;margin-bottom:4px">Каппинги и дегустации</div><div style="font-size:14px;color:#555555">Знакомство с линейкой, обучение оценке качества</div></div></div>
+<div style="display:flex;gap:16px;align-items:flex-start"><div style="width:40px;height:40px;border-radius:0;background:#000000;color:#fff;display:flex;align-items:center;justify-content:center;font-weight:700;flex-shrink:0">2</div><div><div style="font-weight:600;margin-bottom:4px">Настройка оборудования</div><div style="font-size:14px;color:#555555">Помощь с настройкой помола, температуры, давления</div></div></div>
+<div style="display:flex;gap:16px;align-items:flex-start"><div style="width:40px;height:40px;border-radius:0;background:#000000;color:#fff;display:flex;align-items:center;justify-content:center;font-weight:700;flex-shrink:0">3</div><div><div style="font-weight:600;margin-bottom:4px">Разработка рецептур</div><div style="font-size:14px;color:#555555">Составление кофейной карты, подбор блендов</div></div></div>
 </div>
 <div style="margin-top:32px"><button class="btn btn--primary btn--lg" onclick="navigate('training')">Подробнее об обучении</button></div>
 </div>
 <div>
-<div class="quote-card" style="border-left-color:#2C1810;background:#F8F8F8">
+<div class="quote-card" style="border-left-color:#000000;background:#F0F0F0">
 <div class="quote-card__text" style="font-size:18px">&#171;Addis не просто поставляет кофе — они помогают нам расти. Обучение бариста сэкономило нам месяцы экспериментов.&#187;</div>
 <div class="quote-card__author">Алексей Морозов</div>
 <div class="quote-card__role">Управляющий, &#171;Зерно и Корица&#187;, Москва</div>
@@ -514,7 +549,7 @@ img{max-width:100%;display:block}
 <div class="cta-banner__text">Запросите прайс — подберём оптимальный ассортимент под ваш формат и объёмы.</div>
 <div class="cta-banner__actions">
 <button class="btn btn--secondary btn--lg" onclick="navigate('price-request')">Запросить прайс</button>
-<button class="btn btn--outline btn--lg" style="border-color:rgba(255,255,255,0.3);color:#F5F5F5" onclick="navigate('contacts')">Связаться с нами</button>
+<button class="btn btn--outline btn--lg" style="border-color:rgba(255,255,255,0.3);color:#ffffff" onclick="navigate('contacts')">Связаться с нами</button>
 </div>
 </div>
 </div>
@@ -524,7 +559,7 @@ img{max-width:100%;display:block}
 <!-- BUSINESS -->
 <section class="page" id="page-business">
 <div class="container"><div class="breadcrumbs"><span class="breadcrumbs__link" onclick="navigate('home')">Главная</span><span class="breadcrumbs__sep">/</span><span class="breadcrumbs__current">Для бизнеса</span></div></div>
-<div class="hero" style="min-height:auto;padding:48px 0">
+<div class="hero" style="min-height:450px;display:flex;flex-direction:column;justify-content:center;padding:120px 0">
 <div class="container container--narrow">
 <div class="hero__badge">Для HoReCa</div>
 <h1 class="hero__title" style="font-size:36px">Всё, что нужно вашему кофейному бизнесу</h1>
@@ -536,10 +571,10 @@ img{max-width:100%;display:block}
 <div class="container">
 <div class="section-header section-header--center"><div class="section-eyebrow">Для кого</div><h2 class="section-title">Кому подходит Addis</h2></div>
 <div class="grid-4">
-<div class="feature-card"><div class="feature-card__icon">&#127980;</div><div class="feature-card__title">Кофейни</div><div class="feature-card__text">От моно-локаций до сетей. Эспрессо-бленды, моносорта, сезонные лоты.</div></div>
-<div class="feature-card"><div class="feature-card__icon">&#127860;</div><div class="feature-card__title">Рестораны</div><div class="feature-card__text">Кофе для гастрономического меню. Стабильный бленд, крупные партии.</div></div>
-<div class="feature-card"><div class="feature-card__icon">&#127970;</div><div class="feature-card__title">Офисы</div><div class="feature-card__text">Кофе для команды: надёжные бленды, удобная фасовка, подписка.</div></div>
-<div class="feature-card"><div class="feature-card__icon">&#127988;</div><div class="feature-card__title">Retail</div><div class="feature-card__text">Фасовка для полок и маркетплейсов. Собственная торговая марка.</div></div>
+<div class="feature-card"><div class="feature-card__title">Кофейни</div><div class="feature-card__text">От моно-локаций до сетей. Эспрессо-бленды, моносорта, сезонные лоты.</div></div>
+<div class="feature-card"><div class="feature-card__title">Рестораны</div><div class="feature-card__text">Кофе для гастрономического меню. Стабильный бленд, крупные партии.</div></div>
+<div class="feature-card"><div class="feature-card__title">Офисы</div><div class="feature-card__text">Кофе для команды: надёжные бленды, удобная фасовка, подписка.</div></div>
+<div class="feature-card"><div class="feature-card__title">Retail</div><div class="feature-card__text">Фасовка для полок и маркетплейсов. Собственная торговая марка.</div></div>
 </div>
 </div>
 </div>
@@ -567,7 +602,7 @@ img{max-width:100%;display:block}
 </div>
 <div class="section section--cream">
 <div class="container container--narrow">
-<div class="cta-banner"><div class="cta-banner__title">Готовы начать сотрудничество?</div><div class="cta-banner__text">Оставьте заявку — менеджер свяжется с вами в течение часа.</div><div class="cta-banner__actions"><button class="btn btn--secondary btn--lg" onclick="navigate('price-request')">Запросить прайс</button><button class="btn btn--outline btn--lg" style="border-color:rgba(255,255,255,0.3);color:#F5F5F5" onclick="navigate('contacts')">Позвонить</button></div></div>
+<div class="cta-banner"><div class="cta-banner__title">Готовы начать сотрудничество?</div><div class="cta-banner__text">Оставьте заявку — менеджер свяжется с вами в течение часа.</div><div class="cta-banner__actions"><button class="btn btn--secondary btn--lg" onclick="navigate('price-request')">Запросить прайс</button><button class="btn btn--outline btn--lg" style="border-color:rgba(255,255,255,0.3);color:#ffffff" onclick="navigate('contacts')">Позвонить</button></div></div>
 </div>
 </div>
 </section>
@@ -577,19 +612,41 @@ img{max-width:100%;display:block}
 <div class="container"><div class="breadcrumbs"><span class="breadcrumbs__link" onclick="navigate('home')">Главная</span><span class="breadcrumbs__sep">/</span><span class="breadcrumbs__current">Каталог кофе</span></div></div>
 <div class="section" style="padding-top:0">
 <div class="container">
-<div style="margin-bottom:32px"><h1 class="section-title" style="margin-bottom:8px">Каталог кофе</h1><p class="text-secondary">14 позиций specialty кофе с оценками Q Grade</p></div>
-<div style="display:flex;gap:8px;flex-wrap:wrap;margin-bottom:32px" id="filterChips">
-<button class="chip chip--active" data-filter="all">Все</button>
-<button class="chip" data-filter="espresso">Эспрессо</button>
-<button class="chip" data-filter="filter">Фильтр</button>
-<button class="chip" data-filter="mono">Моносорта</button>
-<button class="chip" data-filter="blend">Бленды</button>
-<button class="chip" data-filter="new">Новинки</button>
+<div style="margin-bottom:32px"><h1 class="section-title" style="margin-bottom:8px">Каталог кофе</h1><p class="text-secondary" id="catalogSubtitle">Specialty кофе с оценками Q Grade</p></div>
+<style>#filterChips::-webkit-scrollbar{display:none;}</style>
+<div id="catalogFilters" style="margin-bottom:32px">
+    <div style="display:flex;gap:8px;margin-bottom:16px;flex-wrap:wrap" id="primaryFilters">
+        <button class="chip chip--active" data-group="all">Все товары</button>
+        <button class="chip" data-group="coffee">Кофе</button>
+        <button class="chip" data-group="tea">Чай</button>
+        <button class="chip" data-group="cacao">Какао</button>
+        <button class="chip" data-group="accessories">Аксессуары</button>
+    </div>
+    <div id="subFiltersWrapper" style="display:none; padding-top:16px; border-top:1px solid #E8E8E8">
+        <div style="display:none;gap:8px;flex-wrap:wrap" id="subFilters-coffee" class="sub-filter-group">
+            <button class="chip chip--sm chip--active" data-filter="coffee-all">Весь кофе</button>
+            <button class="chip chip--sm" data-filter="new">Новинки</button>
+            <button class="chip chip--sm" data-filter="espresso">Эспрессо</button>
+            <button class="chip chip--sm" data-filter="filter">Фильтр</button>
+            <button class="chip chip--sm" data-filter="drip">Дрип-кофе</button>
+            <button class="chip chip--sm" data-filter="mono">Моносорта</button>
+            <button class="chip chip--sm" data-filter="blend">Бленды</button>
+        </div>
+        <div style="display:none;gap:8px;flex-wrap:wrap" id="subFilters-tea" class="sub-filter-group">
+            <button class="chip chip--sm chip--active" data-filter="tea">Весь чай</button>
+            <button class="chip chip--sm" data-filter="tea-black">Чёрный</button>
+            <button class="chip chip--sm" data-filter="tea-green">Зелёный</button>
+            <button class="chip chip--sm" data-filter="tea-oolong">Улун</button>
+            <button class="chip chip--sm" data-filter="tea-white">Белый</button>
+            <button class="chip chip--sm" data-filter="tea-puer">Пуэр</button>
+            <button class="chip chip--sm" data-filter="tea-matcha">Матча</button>
+            <button class="chip chip--sm" data-filter="tea-herbal">Травяной</button>
+            <button class="chip chip--sm" data-filter="tea-bound">Связанный</button>
+        </div>
+    </div>
 </div>
+<div class="catalog-products" id="catalogProducts"></div>
 </div>
-</div>
-<div class="section" style="padding-top:0">
-<div class="container"><div class="catalog-products" id="catalogProducts"></div></div>
 </div>
 </section>
 
@@ -610,10 +667,10 @@ img{max-width:100%;display:block}
 <div class="section section--alt" style="padding-top:0">
 <div class="container">
 <div class="grid-2">
-<div class="solution-card"><div class="solution-card__icon">&#9749;</div><div class="solution-card__title">Для кофейни</div><div class="solution-card__text">Полный ассортимент для кофейного бара.</div><div class="solution-card__list"><div class="solution-card__list-item">2–3 эспрессо-бленда под разный профиль</div><div class="solution-card__list-item">3–5 моносортов для фильтра</div><div class="solution-card__list-item">Сезонная ротация 2–4 позиции в квартал</div><div class="solution-card__list-item">Обучение бариста</div></div><button class="btn btn--primary" style="margin-top:24px" onclick="navigate('price-request')">Запросить подборку</button></div>
-<div class="solution-card"><div class="solution-card__icon">&#127860;</div><div class="solution-card__title">Для ресторана</div><div class="solution-card__text">Кофе как часть гастрономического опыта.</div><div class="solution-card__list"><div class="solution-card__list-item">1 надёжный эспрессо-бленд</div><div class="solution-card__list-item">1–2 премиальных моносорта</div><div class="solution-card__list-item">Дрип-пакеты для room service</div><div class="solution-card__list-item">Обучение официантов</div></div><button class="btn btn--primary" style="margin-top:24px" onclick="navigate('price-request')">Запросить подборку</button></div>
-<div class="solution-card"><div class="solution-card__icon">&#127970;</div><div class="solution-card__title">Для офиса</div><div class="solution-card__text">Кофе, который радует команду каждый день.</div><div class="solution-card__list"><div class="solution-card__list-item">1–2 бленда под супер-автомат</div><div class="solution-card__list-item">Фасовка 1 кг или 2.5 кг</div><div class="solution-card__list-item">Подписка с доставкой</div><div class="solution-card__list-item">Консультация по оборудованию</div></div><button class="btn btn--primary" style="margin-top:24px" onclick="navigate('price-request')">Запросить подборку</button></div>
-<div class="solution-card"><div class="solution-card__icon">&#127988;</div><div class="solution-card__title">Для retail</div><div class="solution-card__text">Фасовка для полок и маркетплейсов.</div><div class="solution-card__list"><div class="solution-card__list-item">Фасовка 250 г, 500 г, 1 кг</div><div class="solution-card__list-item">Дизайн упаковки под ваш бренд</div><div class="solution-card__list-item">Маркировка и сертификация</div><div class="solution-card__list-item">Логистика на маркетплейсы</div></div><button class="btn btn--primary" style="margin-top:24px" onclick="navigate('price-request')">Запросить подборку</button></div>
+<div class="solution-card"><div class="solution-card__title">Для кофейни</div><div class="solution-card__text">Полный ассортимент для кофейного бара.</div><div class="solution-card__list"><div class="solution-card__list-item">2–3 эспрессо-бленда под разный профиль</div><div class="solution-card__list-item">3–5 моносортов для фильтра</div><div class="solution-card__list-item">Сезонная ротация 2–4 позиции в квартал</div><div class="solution-card__list-item">Обучение бариста</div></div><button class="btn btn--primary" style="margin-top:24px" onclick="navigate('price-request')">Запросить подборку</button></div>
+<div class="solution-card"><div class="solution-card__title">Для ресторана</div><div class="solution-card__text">Кофе как часть гастрономического опыта.</div><div class="solution-card__list"><div class="solution-card__list-item">1 надёжный эспрессо-бленд</div><div class="solution-card__list-item">1–2 премиальных моносорта</div><div class="solution-card__list-item">Дрип-пакеты для room service</div><div class="solution-card__list-item">Обучение официантов</div></div><button class="btn btn--primary" style="margin-top:24px" onclick="navigate('price-request')">Запросить подборку</button></div>
+<div class="solution-card"><div class="solution-card__title">Для офиса</div><div class="solution-card__text">Кофе, который радует команду каждый день.</div><div class="solution-card__list"><div class="solution-card__list-item">1–2 бленда под супер-автомат</div><div class="solution-card__list-item">Фасовка 1 кг или 2.5 кг</div><div class="solution-card__list-item">Подписка с доставкой</div><div class="solution-card__list-item">Консультация по оборудованию</div></div><button class="btn btn--primary" style="margin-top:24px" onclick="navigate('price-request')">Запросить подборку</button></div>
+<div class="solution-card"><div class="solution-card__title">Для retail</div><div class="solution-card__text">Фасовка для полок и маркетплейсов.</div><div class="solution-card__list"><div class="solution-card__list-item">Фасовка 250 г, 500 г, 1 кг</div><div class="solution-card__list-item">Дизайн упаковки под ваш бренд</div><div class="solution-card__list-item">Маркировка и сертификация</div><div class="solution-card__list-item">Логистика на маркетплейсы</div></div><button class="btn btn--primary" style="margin-top:24px" onclick="navigate('price-request')">Запросить подборку</button></div>
 </div>
 </div>
 </div>
@@ -627,27 +684,28 @@ img{max-width:100%;display:block}
 <!-- PRODUCTION -->
 <section class="page" id="page-production">
 <div class="container"><div class="breadcrumbs"><span class="breadcrumbs__link" onclick="navigate('home')">Главная</span><span class="breadcrumbs__sep">/</span><span class="breadcrumbs__current">Производство</span></div></div>
-<div class="hero" style="min-height:auto;padding:48px 0">
+<div class="hero" style="min-height:450px;display:flex;flex-direction:column;justify-content:center;padding:120px 0">
 <div class="container container--narrow">
-<div class="hero__badge">Производство</div>
 <h1 class="hero__title" style="font-size:36px">Прозрачность от зерна до чашки</h1>
 <p class="hero__desc">Обжариваем кофе на собственном производстве в Москве. Каждый этап контролируется.</p>
 </div>
 </div>
-<div class="section" style="padding-top:0">
+<div class="section" style="padding:100px 0">
 <div class="container">
-<div class="grid-2" style="align-items:center">
-<div style="width:100%;aspect-ratio:4/3;border-radius:16px;background:linear-gradient(135deg,#C8C8C8,#A0A0A0);display:flex;align-items:center;justify-content:center">
-<div style="text-align:center;color:#fff"><div style="font-size:48px;margin-bottom:8px">&#9881;</div><div style="font-size:14px;opacity:0.7;text-transform:uppercase;letter-spacing:0.1em">Обжарочный цех</div></div>
+<div class="grid-2" style="gap:64px; align-items:center">
+<div style="position:relative; width: 100%; aspect-ratio:4/3; border-radius:0; overflow:hidden; box-shadow:none;">
+  <video autoplay loop muted playsinline style="position:absolute; inset:0; width:100%; height:100%; object-fit:cover; filter: contrast(1.1) brightness(0.85);">
+    <source src="https://47580324.fs1.hubspotusercontent-na1.net/hubfs/47580324/Videos/Equipment/coffee%20beans%20in%20giesen%20roaster.mp4" type="video/mp4">
+  </video>
+  <div style="position:absolute; inset:0; box-shadow:inset 0 0 0 1px rgba(0,0,0,0.08); border-radius:0;"></div>
 </div>
-<div>
+<div style="display: flex; flex-direction: column; justify-content: center;">
 <h2 class="section-title" style="font-size:28px">Как мы обжариваем</h2>
-<p class="text-secondary" style="margin-bottom:24px;line-height:1.75">Каждый лот зелёного зерна проходит дегустацию перед обжаркой. Индивидуальный профиль.</p>
+<p style="color:#555555; margin-bottom:32px; line-height:1.75">Каждый лот зелёного зерна проходит дегустацию перед обжаркой. Индивидуальный профиль.</p>
 <div style="display:flex;flex-direction:column;gap:16px">
-<div style="padding:16px;background:#F8F8F8;border-radius:8px"><div style="font-weight:600;margin-bottom:4px">Ростер Loring S35</div><div style="font-size:14px;color:#555555">Энергоэффективный ростер с точным контролем температуры.</div></div>
-<div style="padding:16px;background:#F8F8F8;border-radius:8px"><div style="font-weight:600;margin-bottom:4px">SCA-протокол каппинга</div><div style="font-size:14px;color:#555555">Каждая партия оценивается по 8 параметрам SCA. Минимальный балл — 80.</div></div>
-<div style="padding:16px;background:#F8F8F8;border-radius:8px"><div style="font-weight:600;margin-bottom:4px">Дегазация и упаковка</div><div style="font-size:14px;color:#555555">Упаковка с дегазационным клапаном в азотной среде.</div></div>
-</div>
+<div style="padding:16px;background:#F0F0F0;border-radius:0"><div style="font-weight:600;margin-bottom:4px">Ростер Giesen W15</div><div style="font-size:14px;color:#555555">Классический ростер с точным контролем профилей обжарки.</div></div>
+<div style="padding:16px;background:#F0F0F0;border-radius:0"><div style="font-weight:600;margin-bottom:4px">Протоколы CVA</div><div style="font-size:14px;color:#555555">Каждая партия строго оценивается по протоколам Coffee Value Assessment.</div></div>
+<div style="padding:16px;background:#F0F0F0;border-radius:0"><div style="font-weight:600;margin-bottom:4px">Дегазация и упаковка</div><div style="font-size:14px;color:#555555">Герметичная упаковка с дегазационным клапаном.</div></div>
 </div>
 </div>
 </div>
@@ -657,9 +715,10 @@ img{max-width:100%;display:block}
 <div class="section-header section-header--center"><div class="section-eyebrow">Контроль качества</div><h2 class="section-title">Этапы контроля</h2></div>
 <div class="timeline">
 <div class="timeline__item"><div class="timeline__dot"></div><div class="timeline__title">Входной контроль зелёного зерна</div><div class="timeline__text">Проверка влажности, размера, дефектов.</div></div>
-<div class="timeline__item"><div class="timeline__dot"></div><div class="timeline__title">Тестовая обжарка</div><div class="timeline__text">Обжарка 300 г образца для построения профиля.</div></div>
+<div class="timeline__item"><div class="timeline__dot"></div><div class="timeline__title">Тестовая обжарка</div><div class="timeline__text">Обжарка 100 г образца для построения профиля.</div></div>
 <div class="timeline__item"><div class="timeline__dot"></div><div class="timeline__title">Промышленная обжарка</div><div class="timeline__text">Обжарка партии по утверждённому профилю.</div></div>
 <div class="timeline__item"><div class="timeline__dot"></div><div class="timeline__title">Финальный каппинг</div><div class="timeline__text">Каждая партия проходит дегустацию перед упаковкой.</div></div>
+<div class="timeline__item"><div class="timeline__dot"></div><div class="timeline__title">Архивация образцов</div><div class="timeline__text">Хранение контрольного образца в течение 2 месяцев для работы с рекламациями.</div></div>
 <div class="timeline__item"><div class="timeline__dot"></div><div class="timeline__title">Упаковка и маркировка</div><div class="timeline__text">Вакуумная упаковка с клапаном. Дата обжарки на каждой пачке.</div></div>
 </div>
 </div>
@@ -671,10 +730,19 @@ img{max-width:100%;display:block}
 </div>
 </section>
 
-<!-- TRAINING -->
+<!-- CASES -->
+<section class="page" id="page-cases">
+<div class="container"><div class="breadcrumbs"><span class="breadcrumbs__link" onclick="navigate('home')">Главная</span><span class="breadcrumbs__sep">/</span><span class="breadcrumbs__current">Кейсы и партнёры</span></div></div>
+<div class="section" style="padding-top:0"><div class="container container--narrow"><div class="section-header section-header--center"><div class="section-eyebrow">Кейсы</div><h1 class="section-title">Результаты наших партнёров</h1><p class="section-subtitle">Реальные истории бизнеса, который вырос вместе с Addis</p></div></div></div>
+<div class="section" style="padding-top:0"><div class="container"><div class="grid-2">
+<div class="case-card"><div class="case-card__image" style="background:linear-gradient(135deg,#D0D0D0,#B0B0B0)"></div><div class="case-card__body"><div class="case-card__label">Сеть кофейн · Москва</div><div class="case-card__title">«Утро» — 12 точек</div><div class="case-card__text">Сеть перешла на Addis после нестабильных поставок. Подобрали 2 эспрессо-бленда и 4 моносорта.</div><div class="quote-card" style="margin-top:24px;padding:24px"><div class="quote-card__text" style="font-size:16px">«Стабильность — это главное. С Addis мы знаем, что каждая партия будет такой же.»</div><div class="quote-card__author">Мария Соколова</div><div class="quote-card__role">Совладелец сети «Утро»</div></div><div class="case-card__metrics" style="margin-top:24px"><div><div class="case-card__metric-value">−15%</div><div class="case-card__metric-label">стоимость</div></div><div><div class="case-card__metric-value">+23%</div><div class="case-card__metric-label">повторные</div></div><div><div class="case-card__metric-value">12/12</div><div class="case-card__metric-label">точек</div></div></div></div></div>
+<div class="case-card"><div class="case-card__image" style="background:linear-gradient(135deg,#C8C8C8,#A0A0A0)"></div><div class="case-card__body"><div class="case-card__label">Ресторан · Санкт-Петербург</div><div class="case-card__title">«Базис» — запуск с нуля</div><div class="case-card__text">Подобрали оборудование, зерно, обучили команду и составили кофейную карту.</div><div class="quote-card" style="margin-top:24px;padding:24px"><div class="quote-card__text" style="font-size:16px">«Addis провели нас за руку от выбора машины до финального меню.»</div><div class="quote-card__author">Дмитрий Волков</div><div class="quote-card__role">Шеф-повар ресторана «Базис»</div></div><div class="case-card__metrics" style="margin-top:24px"><div><div class="case-card__metric-value">+38%</div><div class="case-card__metric-label">выручка</div></div><div><div class="case-card__metric-value">4.9&#9733;</div><div class="case-card__metric-label">рейтинг</div></div><div><div class="case-card__metric-value">8</div><div class="case-card__metric-label">позиций</div></div></div></div></div>
+</div></div></div>
+</section>
+
 <section class="page" id="page-training">
 <div class="container"><div class="breadcrumbs"><span class="breadcrumbs__link" onclick="navigate('home')">Главная</span><span class="breadcrumbs__sep">/</span><span class="breadcrumbs__current">Обучение и запуск</span></div></div>
-<div class="hero" style="min-height:auto;padding:48px 0">
+<div class="hero" style="min-height:450px;display:flex;flex-direction:column;justify-content:center;padding:120px 0">
 <div class="container container--narrow">
 <div class="hero__badge">Обучение</div>
 <h1 class="hero__title" style="font-size:36px">Запускаем не только кофе</h1>
@@ -684,36 +752,11 @@ img{max-width:100%;display:block}
 <div class="section" style="padding-top:0">
 <div class="container">
 <div class="grid-3">
-<div class="feature-card"><div class="feature-card__icon">&#127891;</div><div class="feature-card__title">Обучение бариста</div><div class="feature-card__text">Практические занятия: настройка помола, экстракция, латте-арт.</div></div>
-<div class="feature-card"><div class="feature-card__icon">&#9881;</div><div class="feature-card__title">Настройка оборудования</div><div class="feature-card__text">Выезд специалиста. Настройка кофемашины, помола, воды.</div></div>
-<div class="feature-card"><div class="feature-card__icon">&#128203;</div><div class="feature-card__title">Разработка меню</div><div class="feature-card__text">Помощь в формировании кофейной карты и рецептур.</div></div>
-<div class="feature-card"><div class="feature-card__icon">&#128067;</div><div class="feature-card__title">Каппинги</div><div class="feature-card__text">Регулярные дегустации новой линейки по SCA-протоколу.</div></div>
-<div class="feature-card"><div class="feature-card__icon">&#128214;</div><div class="feature-card__title">База знаний</div><div class="feature-card__text">Статьи, гайды, видео-материалы для команды.</div></div>
-<div class="feature-card"><div class="feature-card__icon">&#129309;</div><div class="feature-card__title">Консультации</div><div class="feature-card__text">Личный менеджер всегда на связи.</div></div>
-</div>
-</div>
-</div>
-<div class="section section--cream">
-<div class="container container--narrow">
-<div class="cta-banner"><div class="cta-banner__title">Запишитесь на бесплатную консультацию</div><div class="cta-banner__text">Мы предложим программу обучения под ваши задачи.</div><div class="cta-banner__actions"><button class="btn btn--secondary btn--lg" onclick="navigate('price-request')">Записаться</button></div></div>
-</div>
-</div>
-</section>
-
-<!-- CASES -->
-<section class="page" id="page-cases">
-<div class="container"><div class="breadcrumbs"><span class="breadcrumbs__link" onclick="navigate('home')">Главная</span><span class="breadcrumbs__sep">/</span><span class="breadcrumbs__current">Кейсы и партнёры</span></div></div>
-<div class="section" style="padding-top:0">
-<div class="container container--narrow">
-<div class="section-header section-header--center"><div class="section-eyebrow">Кейсы</div><h1 class="section-title">Результаты наших партнёров</h1><p class="section-subtitle">Реальные истории бизнеса, который вырос вместе с Addis</p></div>
-</div>
-</div>
-<div class="section" style="padding-top:0">
-<div class="container">
-<div class="grid-2">
-<div class="case-card"><div class="case-card__image" style="background:linear-gradient(135deg,#D0D0D0,#B0B0B0)"></div><div class="case-card__body"><div class="case-card__label">Сеть кофеен &#183; Москва</div><div class="case-card__title">&#171;Утро&#187; — 12 точек</div><div class="case-card__text">Сеть перешла на Addis после нестабильных поставок. Подобрали 2 эспрессо-бленда и 4 моносорта.</div><div class="quote-card" style="margin-top:24px;padding:24px"><div class="quote-card__text" style="font-size:16px">&#171;Стабильность — это главное. С Addis мы знаем, что каждая партия будет такой же.&#187;</div><div class="quote-card__author">Мария Соколова</div><div class="quote-card__role">Совладелец сети &#171;Утро&#187;</div></div><div class="case-card__metrics" style="margin-top:24px"><div><div class="case-card__metric-value">&#8722;15%</div><div class="case-card__metric-label">стоимость</div></div><div><div class="case-card__metric-value">+23%</div><div class="case-card__metric-label">повторные</div></div><div><div class="case-card__metric-value">12/12</div><div class="case-card__metric-label">точек</div></div></div></div></div>
-<div class="case-card"><div class="case-card__image" style="background:linear-gradient(135deg,#C8C8C8,#A0A0A0)"></div><div class="case-card__body"><div class="case-card__label">Ресторан &#183; Санкт-Петербург</div><div class="case-card__title">&#171;Базис&#187; — запуск с нуля</div><div class="case-card__text">Подобрали оборудование, зерно, обучили команду и составили кофейную карту.</div><div class="quote-card" style="margin-top:24px;padding:24px"><div class="quote-card__text" style="font-size:16px">&#171;Addis провели нас за руку от выбора машины до финального меню.&#187;</div><div class="quote-card__author">Дмитрий Волков</div><div class="quote-card__role">Шеф-повар ресторана &#171;Базис&#187;</div></div><div class="case-card__metrics" style="margin-top:24px"><div><div class="case-card__metric-value">+38%</div><div class="case-card__metric-label">выручка</div></div><div><div class="case-card__metric-value">4.9&#9733;</div><div class="case-card__metric-label">рейтинг</div></div><div><div class="case-card__metric-value">8</div><div class="case-card__metric-label">позиций</div></div></div></div></div>
-</div>
+<div class="feature-card"><div class="feature-card__title">Обучение бариста</div><div class="feature-card__text">Практические занятия: настройка помола, экстракция, латте-арт.</div></div>
+<div class="feature-card"><div class="feature-card__title">Настройка оборудования</div><div class="feature-card__text">Выезд специалиста. Настройка кофемашины, помола, воды.</div></div>
+<div class="feature-card"><div class="feature-card__title">Разработка меню</div><div class="feature-card__text">Помощь в формировании кофейной карты и рецептур.</div></div>
+<div class="feature-card"><div class="feature-card__title">Каппинги</div><div class="feature-card__text">Регулярные дегустации новой линейки по протоколам CVA.</div></div>
+<div class="feature-card"><div class="feature-card__title">Консультации</div><div class="feature-card__text">Личный менеджер всегда на связи.</div></div>
 </div>
 </div>
 </section>
@@ -737,10 +780,16 @@ img{max-width:100%;display:block}
 </div>
 </section>
 
+<!-- ARTICLE -->
+<section class="page" id="page-article">
+<div class="container"><div class="breadcrumbs"><span class="breadcrumbs__link" onclick="navigate('home')">Главная</span><span class="breadcrumbs__sep">/</span><span class="breadcrumbs__link" onclick="navigate('journal')">Журнал</span><span class="breadcrumbs__sep">/</span><span class="breadcrumbs__current" id="articleBreadcrumb">Статья</span></div></div>
+<div id="articleContent"></div>
+</section>
+
 <!-- ABOUT -->
 <section class="page" id="page-about">
 <div class="container"><div class="breadcrumbs"><span class="breadcrumbs__link" onclick="navigate('home')">Главная</span><span class="breadcrumbs__sep">/</span><span class="breadcrumbs__current">О бренде</span></div></div>
-<div class="hero" style="min-height:auto;padding:48px 0">
+<div class="hero" style="min-height:450px;display:flex;flex-direction:column;justify-content:center;padding:120px 0">
 <div class="container container--narrow">
 <div class="hero__badge">О бренде</div>
 <h1 class="hero__title" style="font-size:36px">Addis — кофе без лишних слов</h1>
@@ -757,15 +806,7 @@ img{max-width:100%;display:block}
 </div>
 </div>
 </div>
-<div class="section section--alt">
-<div class="container">
-<div class="grid-3">
-<div class="feature-card text-center"><div style="font-family:'Circe',sans-serif;font-size:40px;font-weight:700;color:#1A1A1A;margin-bottom:12px">2019</div><div class="feature-card__title">Год основания</div><div class="feature-card__text">Начали с небольшого ростерного цеха</div></div>
-<div class="feature-card text-center"><div style="font-family:'Circe',sans-serif;font-size:40px;font-weight:700;color:#1A1A1A;margin-bottom:12px">50+</div><div class="feature-card__title">Позиций в каталоге</div><div class="feature-card__text">Эспрессо-бленды, моносорта, сезонные лоты</div></div>
-<div class="feature-card text-center"><div style="font-family:'Circe',sans-serif;font-size:40px;font-weight:700;color:#1A1A1A;margin-bottom:12px">200+</div><div class="feature-card__title">Партнёров HoReCa</div><div class="feature-card__text">Кофейни, рестораны, отели, офисы</div></div>
-</div>
-</div>
-</div>
+
 <div class="section">
 <div class="container container--narrow">
 <div class="section-header"><div class="section-eyebrow">Принципы</div><h2 class="section-title">Во что мы верим</h2></div>
@@ -788,15 +829,15 @@ img{max-width:100%;display:block}
 <div style="margin-bottom:32px">
 <h3 style="font-size:18px;margin-bottom:16px">Контактная информация</h3>
 <div style="display:flex;flex-direction:column;gap:16px">
-<div><div style="font-size:12px;color:#777777;text-transform:uppercase;letter-spacing:0.05em;margin-bottom:4px">Телефон</div><span style="font-size:18px;font-weight:600;color:#2C1810">+7 (495) 123-45-67</span></div>
-<div><div style="font-size:12px;color:#777777;text-transform:uppercase;letter-spacing:0.05em;margin-bottom:4px">Email</div><span style="font-size:18px;font-weight:600;color:#2C1810">hello @addis.coffee</span></div>
+<div><div style="font-size:12px;color:#777777;text-transform:uppercase;letter-spacing:0.05em;margin-bottom:4px">Телефон</div><span style="font-size:18px;font-weight:600;color:#000000">+7 (495) 123-45-67</span></div>
+<div><div style="font-size:12px;color:#777777;text-transform:uppercase;letter-spacing:0.05em;margin-bottom:4px">Email</div><span style="font-size:18px;font-weight:600;color:#000000">hello @addis.coffee</span></div>
 <div><div style="font-size:12px;color:#777777;text-transform:uppercase;letter-spacing:0.05em;margin-bottom:4px">Адрес</div><div style="font-size:16px;color:#555555">Москва, ул. Кофейная, д. 12, стр. 3</div></div>
 <div><div style="font-size:12px;color:#777777;text-transform:uppercase;letter-spacing:0.05em;margin-bottom:4px">Режим работы</div><div style="font-size:16px;color:#555555">Пн–Пт: 9:00 – 18:00</div></div>
 </div>
 </div>
 <div style="display:flex;gap:12px;flex-wrap:wrap"><button class="btn btn--outline btn--sm">Telegram</button><button class="btn btn--outline btn--sm">WhatsApp</button><button class="btn btn--outline btn--sm">Instagram</button></div>
 </div>
-<div style="background:#F8F8F8;border-radius:16px;padding:32px;border:1px solid #F0F0F0">
+<div style="background:#F0F0F0;border-radius:0;padding:32px;border:none">
 <h3 style="font-size:18px;margin-bottom:24px">Быстрая заявка</h3>
 <form onsubmit="handleFormSubmit(event)">
 <div class="form-group"><label class="form-label">Имя *</label><input type="text" class="form-input" placeholder="Ваше имя" required></div>
@@ -806,8 +847,8 @@ img{max-width:100%;display:block}
 </form>
 </div>
 </div>
-<div style="background:#F5F5F5;border-radius:16px;height:300px;display:flex;align-items:center;justify-content:center;color:#777777">
-<div style="text-align:center"><div style="font-size:48px;margin-bottom:8px">&#128205;</div><div>Карта с расположением производства</div><div style="font-size:14px">Москва, ул. Кофейная, д. 12</div></div>
+<div style="background:#F0F0F0;border-radius:0;height:300px;display:flex;align-items:center;justify-content:center;color:#777777">
+<div style="text-align:center"><div style="font-size:13px;font-weight:600;letter-spacing:0.15em;text-transform:uppercase;color:#AAAAAA;margin-bottom:12px">Карта</div><div style="color:#555555">Расположение производства</div><div style="font-size:14px;margin-top:4px;color:#AAAAAA">Москва, ул. Кофейная, д. 12</div></div>
 </div>
 </div>
 </div>
@@ -820,7 +861,7 @@ img{max-width:100%;display:block}
 <div class="container container--narrow">
 <div class="section-header section-header--center"><div class="section-eyebrow">Прайс-лист</div><h1 class="section-title">Получить прайс-лист</h1><p class="section-subtitle">Заполните форму — менеджер подготовит персональный прайс</p></div>
 <div style="max-width:640px;margin:0 auto">
-<div style="background:#F8F8F8;border-radius:16px;padding:40px;border:1px solid #F0F0F0">
+<div style="background:#F0F0F0;border-radius:0;padding:40px;border:none">
 <form onsubmit="handleFormSubmit(event)">
 <div class="form-row">
 <div class="form-group"><label class="form-label">Имя *</label><input type="text" class="form-input" placeholder="Ваше имя" required></div>
@@ -872,7 +913,7 @@ img{max-width:100%;display:block}
 <footer class="footer">
 <div class="container" style="max-width:1520px">
 <div class="footer__grid">
-<div class="footer__brand"><div class="footer__logo"><img src="images/logo.png" alt="Addis" style="width:86px;height:86px;object-fit:contain"></div><p class="footer__desc">Specialty и fine commercial кофе для бизнеса. Обжарка, поставки, обучение, поддержка.</p></div>
+<div class="footer__brand"><div class="footer__logo"><img src="images/logo.png" alt="Addis" style="width:86px;height:86px;object-fit:contain;mix-blend-mode:multiply"></div><p class="footer__desc">Specialty и fine commercial кофе для бизнеса. Обжарка, поставки, обучение, поддержка.</p></div>
 <div><div class="footer__heading">Каталог</div><div class="footer__links"><span class="footer__link" onclick="navigate('catalog')">Все позиции</span><span class="footer__link" onclick="navigate('catalog')">Эспрессо-бленды</span><span class="footer__link" onclick="navigate('catalog')">Моносорта</span><span class="footer__link" onclick="navigate('catalog')">Сезонные лоты</span><span class="footer__link" onclick="navigate('catalog')">Дрип-пакеты</span></div></div>
 <div><div class="footer__heading">Бизнес</div><div class="footer__links"><span class="footer__link" onclick="navigate('business')">Для HoReCa</span><span class="footer__link" onclick="navigate('solutions')">Решения</span><span class="footer__link" onclick="navigate('training')">Обучение</span><span class="footer__link" onclick="navigate('production')">Производство</span><span class="footer__link" onclick="navigate('cases')">Кейсы</span><span class="footer__link" onclick="navigate('price-request')">Получить прайс</span></div></div>
 <div><div class="footer__heading">Компания</div><div class="footer__links"><span class="footer__link" onclick="navigate('about')">О бренде</span><span class="footer__link" onclick="navigate('journal')">Журнал</span><span class="footer__link" onclick="navigate('faq')">FAQ</span><span class="footer__link" onclick="navigate('contacts')">Контакты</span></div></div>
@@ -889,37 +930,86 @@ img{max-width:100%;display:block}
 <svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2"><path d="M10 16V4M4 10l6-6 6 6"/></svg>
 </button>
 
+<script src="js/articles.js"></script>
 <script>
 (function(){
 
 var products=[
-{id:'ethiopia-heirloom-espresso',name:'Эфиопия Хейлум',category:'espresso',type:'Эспрессо',origin:'Эфиопия',process:'Натуральная',roast:'Средняя',density:'Средняя',acidity:'Средняя',body:'Среднее',notes:'Шоколад, сухофрукты, орехи, цитрус',brew:'Эспрессо, Мока',qScore:82.5,harvest:2025,price:0,unit:'за 1 кг',tags:['espresso','mono','new'],featured:true,fp:{acidity:6,sweetness:7,body:7,bitterness:3},c1:'#606060',c2:'#303030'},
-{id:'rwanda-eldon-espresso',name:'Руанда Эльдон',category:'espresso',type:'Эспрессо',origin:'Руанда',process:'Мытая',roast:'Средняя',density:'Высокая',acidity:'Высокая',body:'Среднее',notes:'Шоколад, орехи, перец, фрукты, ягоды',brew:'Эспрессо',qScore:83.75,harvest:2026,varieties:'SL12, SL14, Бурбон',tags:['espresso','mono'],featured:true,fp:{acidity:9,sweetness:8,body:8,bitterness:2},c1:'#383838',c2:'#181818'},
-{id:'brazil-moka-espresso',name:'Бразилия Мока Пиберри',category:'espresso',type:'Эспрессо',origin:'Бразилия',process:'Натуральная',roast:'Средняя',density:'Средняя',acidity:'Средняя',body:'Среднее',notes:'Карамель, сухофрукты, орехи, шоколад',brew:'Эспрессо, турка',qScore:83,harvest:2026,varieties:'Мока Пиберри',tags:['espresso','mono'],featured:true,fp:{acidity:7,sweetness:8,body:7,bitterness:3},c1:'#505050',c2:'#202020'},
-{id:'colombia-decaf-espresso',name:'Колумбия Декаф',category:'espresso',type:'Эспрессо (без кофеина)',origin:'Колумбия',process:'Декаф, сахарный тростник',roast:'Средняя',density:'Средняя',acidity:'Средняя',body:'Среднее',notes:'Тростниковый сахар, косточковые фрукты, шоколад',brew:'Эспрессо',qScore:83,harvest:2025,tags:['espresso','mono'],featured:false,fp:{acidity:7,sweetness:7,body:7,bitterness:3},c1:'#282828',c2:'#101010'},
-{id:'addis-jebena',name:'Addis Jebena',category:'espresso',type:'Бленд',origin:'Бразилия 80% + Робуста 20%',process:'Смешанная',roast:'Средне-тёмная',density:'Высокая',acidity:'Низкая',body:'Плотное',notes:'Сухофрукты, орехи, молочный шоколад',brew:'Эспрессо',price:0,unit:'за 1 кг',tags:['blend','espresso'],featured:true,fp:{acidity:3,sweetness:4,body:4,bitterness:3},c1:'#505050',c2:'#303030'},
-{id:'addis-buna',name:'Addis Buna',category:'espresso',type:'Бленд',origin:'Бразилия 50% + Эфиопия 50%',process:'Смешанная',roast:'Средняя',density:'Средняя',acidity:'Средняя',body:'Среднее',notes:'Сухофрукты, орехи, молочный шоколад, цитрус',brew:'Эспрессо',price:0,unit:'за 1 кг',tags:['blend','espresso'],featured:true,fp:{acidity:3,sweetness:4,body:4,bitterness:3},c1:'#484848',c2:'#282828'},
-{id:'rwanda-eldon-filter',name:'Руанда Эльдон',category:'filter',type:'Фильтр',origin:'Руанда',process:'Мытая',roast:'Светлая',density:'Высокая',acidity:'Высокая',body:'Среднее',notes:'Шоколад, орехи, перец, фрукты, ягоды',brew:'V60, Аэропресс, Кемекс',qScore:83.75,harvest:2026,varieties:'SL12, SL14, Бурбон',tags:['filter','mono','new'],featured:true,fp:{acidity:9,sweetness:8,body:8,bitterness:2},c1:'#606060',c2:'#303030'},
-{id:'brazil-moka-filter',name:'Бразилия Мока Пиберри',category:'filter',type:'Фильтр',origin:'Бразилия',process:'Натуральная',roast:'Светло-средняя',density:'Средняя',acidity:'Средняя',body:'Среднее',notes:'Сухофрукты, орехи, шоколад',brew:'V60, Кемекс',qScore:83,harvest:2026,varieties:'Мока Пиберри',tags:['filter','mono'],featured:false,fp:{acidity:7,sweetness:8,body:7,bitterness:2},c1:'#383838',c2:'#181818'},
-{id:'brazil-grande',name:'Бразилия Гранде',category:'filter',type:'Фильтр',origin:'Бразилия',process:'Натуральная, полуанаэробная',roast:'Светлая',density:'Высокая',acidity:'Высокая',body:'Плотное',notes:'Белое вино, вяленые фрукты, тёмный шоколад',brew:'V60, Аэропресс',qScore:86.75,harvest:2026,tags:['filter','mono','new'],featured:true,fp:{acidity:8,sweetness:9,body:9,bitterness:1},c1:'#454545',c2:'#252525'},
-{id:'kenya-aa',name:'Кения АА',category:'filter',type:'Фильтр',origin:'Кения',process:'Мытая',roast:'Светлая',density:'Высокая',acidity:'Высокая',body:'Среднее',notes:'Чёрная смородина, апельсин, клюква, шоколад',brew:'V60, Калита',qScore:86.75,harvest:2026,tags:['filter','mono'],featured:true,fp:{acidity:9,sweetness:8,body:8,bitterness:2},c1:'#686868',c2:'#484848'},
-{id:'colombia-decaf-filter',name:'Колумбия Декаф',category:'filter',type:'Фильтр (без кофеина)',origin:'Колумбия',process:'Декаф, сахарный тростник',roast:'Средняя',density:'Средняя',acidity:'Средняя',body:'Среднее',notes:'Тростниковый сахар, косточковые фрукты, шоколад',brew:'V60, Кемекс',qScore:83,harvest:2025,tags:['filter','mono'],featured:false,fp:{acidity:7,sweetness:7,body:7,bitterness:2},c1:'#303030',c2:'#151515'},
-{id:'burundi',name:'Бурунди Ред Бурбон',category:'filter',type:'Фильтр',origin:'Бурунди',process:'Мытая',roast:'Светлая',density:'Высокая',acidity:'Высокая',body:'Среднее',notes:'Апельсин, малина, персик, карамель',brew:'V60, Аэропресс',qScore:85,harvest:2026,varieties:'Ред Бурбон',tags:['filter','mono'],featured:true,fp:{acidity:9,sweetness:8,body:8,bitterness:2},c1:'#404040',c2:'#202020'},
-{id:'rwanda-nova',name:'Руанда Нова',category:'filter',type:'Фильтр',origin:'Руанда',process:'Мытая',roast:'Светло-средняя',density:'Высокая',acidity:'Высокая',body:'Среднее',notes:'Классическая африканская арабика с яркой кислотностью',brew:'V60, Калита',qScore:85,harvest:2026,varieties:'Ред Бурбон',qMod:'+',tags:['filter','mono','new'],featured:true,fp:{acidity:9,sweetness:8,body:8,bitterness:2},c1:'#383838',c2:'#181818'},
-{id:'colombia-andes',name:'Колумбия Андес',category:'filter',type:'Фильтр',origin:'Колумбия',process:'Мытая',roast:'Светлая',density:'Высокая',acidity:'Высокая',body:'Среднее',notes:'Ананас, помело, карамель, красные ягоды, можжевельник, цитрусовые',brew:'V60, Аэропресс, Кемекс',qScore:86,harvest:2026,tags:['filter','mono','new'],featured:true,fp:{acidity:9,sweetness:8,body:8,bitterness:1},c1:'#505050',c2:'#202020'}
+{id:'e1',name:'Эфиопия Heirloom',type:'Эспрессо',category:'espresso',notes:'Шоколад, сухофрукты, орехи, цитрусовые ноты',price:0,unit:'кг',tags:['mono'],acidity:'6/10',body:'7/10',origin:'Местные разновидности / натуральная / урожай 2025',c1:'#7A4A3A',c2:'#4A2B20',qScore:82.5,fp:{'bouquet': 6, 'smell': 6, 'aftertaste': 6, 'aroma': 7, 'acidity': 6, 'sweetness': 7, 'body': 7}},
+{id:'e2',name:'Уганда Вугар Элгон',type:'Эспрессо',category:'espresso',notes:'Шоколад, орехи, перец, фрукты, ягоды',price:0,unit:'кг',tags:['mono'],acidity:'9/10',body:'8/10',origin:'SL 12, SL 14, Бурбон / мытая / урожай 2026',c1:'#6E3E4FFF',c2:'#3D1B28',qScore:83.75,fp:{'bouquet': 8, 'aftertaste': 7, 'smell': 9, 'aroma': 8, 'acidity': 9, 'sweetness': 8, 'body': 8}},
+{id:'e3',name:'Бразилия Мока Пиберри',type:'Эспрессо',category:'espresso',notes:'Карамель, сухофрукты, орехи, шоколад',price:0,unit:'кг',tags:['mono'],acidity:'7/10',body:'7/10',origin:'Мока Пиберри / натуральная / урожай 2026',c1:'#8B5A2B',c2:'#4A3219',qScore:83,fp:{'bouquet': 7.5, 'smell': 7, 'aftertaste': 7, 'aroma': 7.5, 'acidity': 7, 'sweetness': 8, 'body': 7}},
+{id:'e4',name:'Колумбия Декаф',type:'Эспрессо',category:'espresso',notes:'Тростниковый сахар, косточковые фрукты, шоколад',price:0,unit:'кг',tags:['mono'],acidity:'7/10',body:'7/10',origin:'Катурра / мытая / EA Sugar Cane Декаф / урожай 2025',c1:'#4A5D23',c2:'#2B3B10',qScore:83,fp:{'bouquet': 7, 'smell': 7, 'aftertaste': 7, 'aroma': 7.5, 'acidity': 7, 'sweetness': 7, 'body': 7}},
+{id:'b1',name:'Addis Jebena',type:'Бленд',category:'blend',notes:'Сухофрукты, орехи, молочный шоколад',price:0,unit:'кг',tags:[],acidity:'3/10',body:'4/10',origin:'Бразилия 80% + Уганда робуста 20%',c1:'#4A4E69',c2:'#22223B',fp:{'acidity': 3, 'sweetness': 4, 'body': 4}},
+{id:'b2',name:'Addis Buna',type:'Бленд',category:'blend',notes:'Сухофрукты, орехи, молочный шоколад, цитрус',price:0,unit:'кг',tags:['bestseller'],acidity:'3/10',body:'4/10',origin:'Бразилия 50% + Эфиопия 50%',c1:'#8E5572',c2:'#441D35',fp:{'acidity': 3, 'sweetness': 4, 'body': 4}},
+{id:'f1',name:'Уганда Вугар Элгон',type:'Фильтр',category:'filter',notes:'Шоколад, орехи, перец, фрукты, ягоды',price:0,unit:'кг',tags:['mono','new'],acidity:'9/10',body:'8/10',origin:'SL 12, SL 14, Бурбон / мытая / урожай 2026',c1:'#D4A373',c2:'#9C6644',qScore:83.75,fp:{'bouquet': 9, 'smell': 10, 'aftertaste': 8, 'aroma': 9, 'acidity': 9, 'sweetness': 8, 'body': 8}},
+{id:'f2',name:'Бразилия Мока Пиберри',type:'Фильтр',category:'filter',notes:'Сухофрукты, орехи, шоколад',price:0,unit:'кг',tags:['mono'],acidity:'7/10',body:'7/10',origin:'Мока Пиберри / натуральная / урожай 2026',c1:'#E3B873',c2:'#A37833',qScore:83,fp:{'bouquet': 7.5, 'aftertaste': 7, 'smell': 7, 'aroma': 7.5, 'acidity': 7, 'sweetness': 8, 'body': 7}},
+{id:'f3',name:'Бразилия Ранчо Гранде',type:'Фильтр',category:'filter',notes:'Белое вино, вяленые фрукты, тёмный шоколад',price:0,unit:'кг',tags:['mono','special'],acidity:'8/10',body:'9/10',origin:'Топазио, Катуаи / полуанаэробная / урожай 2026',c1:'#A98467',c2:'#6B4C3A',qScore:86.75,fp:{'smell': 10, 'aroma': 10, 'bouquet': 9, 'aftertaste': 9, 'acidity': 8, 'sweetness': 9, 'body': 9}},
+{id:'f4',name:'Кения АА',type:'Фильтр',category:'filter',notes:'Чёрная смородина, апельсин, клюква, шоколад',price:0,unit:'кг',tags:['mono'],acidity:'9/10',body:'8/10',origin:'Местные разновидности / мытая / урожай 2026',c1:'#E07A5F',c2:'#813405',qScore:86.75,fp:{'smell': 9, 'aroma': 10, 'bouquet': 9, 'aftertaste': 8, 'acidity': 9, 'sweetness': 8, 'body': 8}},
+{id:'f5',name:'Колумбия Декаф',type:'Фильтр',category:'filter',notes:'Тростниковый сахар, косточковые фрукты, шоколад',price:0,unit:'кг',tags:['mono'],acidity:'7/10',body:'7/10',origin:'Катурра / мытая / EA Sugar Cane Декаф / урожай 2025',c1:'#CCD5AE',c2:'#83916A',qScore:83,fp:{'bouquet': 7, 'smell': 7, 'aftertaste': 7, 'aroma': 7.5, 'acidity': 7, 'sweetness': 7, 'body': 7}},
+{id:'f6',name:'Бурунди Бурасира',type:'Фильтр',category:'filter',notes:'Апельсин, малина, персик, карамель',price:0,unit:'кг',tags:['mono','new'],acidity:'9/10',body:'8/10',origin:'Красный Бурбон / мытая / урожай 2026',c1:'#F4A261',c2:'#C74F31',qScore:85,fp:{'smell': 9, 'aroma': 8, 'bouquet': 8, 'aftertaste': 7, 'acidity': 9, 'sweetness': 8, 'body': 8}},
+{id:'f7',name:'Руанда Нова',type:'Фильтр',category:'filter',notes:'Классическая африканская арабика с яркой кислотностью',price:0,unit:'кг',tags:['mono','new'],acidity:'9/10',body:'8/10',origin:'Красный Бурбон / мытая / урожай 2026',c1:'#2A9D8F',c2:'#162633',qScore:85,qMod:'+',fp:{'bouquet': 9, 'smell': 9, 'aftertaste': 8, 'aroma': 8, 'acidity': 9, 'sweetness': 8, 'body': 8}},
+{id:'f8',name:'Колумбия Вельвет Андес',type:'Фильтр',category:'filter',notes:'Ананас, помело, карамель, ягоды, можжевельник',price:0,unit:'кг',tags:['mono','special'],acidity:'9/10',body:'8/10',origin:'Кастильо, Катурра / инфьюз / урожай 2026',c1:'#E9C46A',c2:'#D48241',qScore:86,fp:{'bouquet': 9, 'smell': 10, 'aftertaste': 8, 'aroma': 10, 'acidity': 9, 'sweetness': 8, 'body': 8}},
+{id:'f9',name:'Эфиопия Челелекту',type:'Фильтр',category:'filter',notes:'Пряности, цветы, черемуха, черный чай, темные ягоды',price:0,unit:'кг',tags:['mono','special'],acidity:'9/10',body:'8/10',origin:'Местные разновидности / мытая / урожай 2026',c1:'#B5838D',c2:'#4D4855',qScore:85.25,fp:{'bouquet': 9, 'smell': 10, 'aftertaste': 8, 'aroma': 10, 'acidity': 9, 'sweetness': 9, 'body': 8}},
+{id:'acc-scale-timemore',name:'Весы Timemore Black Mirror Basic Plus',category:'accessories',type:'Аксессуар',price:5500,unit:'шт.',notes:'Точные кофейные весы со встроенным таймером',tags:['accessories','new'],featured:true,c1:'#333333',c2:'#1A1A1A'},
+{id:'acc-tamper-motta',name:'Темпер Motta 58 мм',category:'accessories',type:'Аксессуар',price:3200,unit:'шт.',notes:'Классический стальной темпер с деревянной ручкой',tags:['accessories'],featured:false,c1:'#8B5A2B',c2:'#4A3219'},
+{id:'acc-portafilter-e61',name:'Бездонный холдер E61',category:'accessories',type:'Аксессуар',price:4800,unit:'шт.',notes:'Для контроля экстракции и красивых шотов',tags:['accessories'],featured:false,c1:'#CCCCCC',c2:'#999999'},
+{id:'acc-cafiza',name:'Чистящее средство Cafiza',category:'accessories',type:'Химия',price:1500,unit:'900 г',notes:'Порошок для очистки групп эспрессо-машин. Эффективно удаляет кофейные масла.',tags:['accessories'],featured:true,c1:'#0055A4',c2:'#002244'},
+{id:'cacao-natural',name:'Какао натуральный',category:'cacao',type:'Какао',price:900,unit:'500 г',notes:'Натуральный какао-порошок без добавления сахара. Идеально подходит для выпечки и домашних напитков.',tags:['cacao'],featured:true,c1:'#4A2E15',c2:'#2B180A'},
+{id:'cacao-alkalized',name:'Какао алкализованный',category:'cacao',type:'Какао',price:1050,unit:'500 г',notes:'Какао-порошок с более мягким, густым шоколадным вкусом и глубоким темным цветом.',tags:['cacao'],featured:false,c1:'#381C09',c2:'#1A0A02'},
+{id:'hot-chocolate',name:'Горячий шоколад',category:'cacao',type:'Какао',price:850,unit:'500 г',notes:'Классическая смесь для приготовления густого согревающего шоколада.',tags:['cacao','new'],featured:true,c1:'#6B3E2E',c2:'#422418'},
+{id:'d1',name:'Уганда Вугар Элгон',type:'Дрип-кофе',category:'drip',notes:'Шоколад, орехи, перец, фрукты, ягоды',price:0,unit:'8 шт. x 14г',tags:['drip'],acidity:'9/10',body:'8/10',origin:'SL 12, SL 14, Бурбон / мытая / урожай 2026',image:'images/drip-box.png',c1:'#D4A373',c2:'#9C6644',qScore:83.75,fp:{'bouquet': 9, 'smell': 10, 'aftertaste': 8, 'aroma': 9, 'acidity': 9, 'sweetness': 8, 'body': 8}},{id:'d2',name:'Бразилия Мока Пиберри',type:'Дрип-кофе',category:'drip',notes:'Сухофрукты, орехи, шоколад',price:0,unit:'8 шт. x 14г',tags:['drip'],acidity:'7/10',body:'7/10',origin:'Мока Пиберри / натуральная / урожай 2026',image:'images/drip-box.png',c1:'#E3B873',c2:'#A37833',qScore:83,fp:{'bouquet': 7.5, 'aftertaste': 7, 'smell': 7, 'aroma': 7.5, 'acidity': 7, 'sweetness': 8, 'body': 7}},{id:'d3',name:'Бразилия Ранчо Гранде',type:'Дрип-кофе',category:'drip',notes:'Белое вино, вяленые фрукты, тёмный шоколад',price:0,unit:'8 шт. x 14г',tags:['drip'],acidity:'8/10',body:'9/10',origin:'Топазио, Катуаи / полуанаэробная / урожай 2026',image:'images/drip-box.png',c1:'#A98467',c2:'#6B4C3A',qScore:86.75,fp:{'smell': 10, 'aroma': 10, 'bouquet': 9, 'aftertaste': 9, 'acidity': 8, 'sweetness': 9, 'body': 9}},{id:'d4',name:'Кения АА',type:'Дрип-кофе',category:'drip',notes:'Чёрная смородина, апельсин, клюква, шоколад',price:0,unit:'8 шт. x 14г',tags:['drip'],acidity:'9/10',body:'8/10',origin:'Местные разновидности / мытая / урожай 2026',image:'images/drip-box.png',c1:'#E07A5F',c2:'#813405',qScore:86.75,fp:{'smell': 9, 'aroma': 10, 'bouquet': 9, 'aftertaste': 8, 'acidity': 9, 'sweetness': 8, 'body': 8}},{id:'d5',name:'Колумбия Декаф',type:'Дрип-кофе',category:'drip',notes:'Тростниковый сахар, косточковые фрукты, шоколад',price:0,unit:'8 шт. x 14г',tags:['drip'],acidity:'7/10',body:'7/10',origin:'Катурра / мытая / EA Sugar Cane Декаф / урожай 2025',image:'images/drip-box.png',c1:'#CCD5AE',c2:'#83916A',qScore:83,fp:{'bouquet': 7, 'smell': 7, 'aftertaste': 7, 'aroma': 7.5, 'acidity': 7, 'sweetness': 7, 'body': 7}},{id:'d6',name:'Бурунди Бурасира',type:'Дрип-кофе',category:'drip',notes:'Апельсин, малина, персик, карамель',price:0,unit:'8 шт. x 14г',tags:['drip'],acidity:'9/10',body:'8/10',origin:'Красный Бурбон / мытая / урожай 2026',image:'images/drip-box.png',c1:'#F4A261',c2:'#C74F31',qScore:85,fp:{'smell': 9, 'aroma': 8, 'bouquet': 8, 'aftertaste': 7, 'acidity': 9, 'sweetness': 8, 'body': 8}},{id:'d7',name:'Руанда Нова',type:'Дрип-кофе',category:'drip',notes:'Классическая африканская арабика с яркой кислотностью',price:0,unit:'8 шт. x 14г',tags:['drip'],acidity:'9/10',body:'8/10',origin:'Красный Бурбон / мытая / урожай 2026',image:'images/drip-box.png',c1:'#2A9D8F',c2:'#162633',qScore:85,qMod:'+',fp:{'bouquet': 9, 'smell': 9, 'aftertaste': 8, 'aroma': 8, 'acidity': 9, 'sweetness': 8, 'body': 8}},{id:'d8',name:'Колумбия Вельвет Андес',type:'Дрип-кофе',category:'drip',notes:'Ананас, помело, карамель, ягоды, можжевельник',price:0,unit:'8 шт. x 14г',tags:['drip'],acidity:'9/10',body:'8/10',origin:'Кастильо, Катурра / инфьюз / урожай 2026',image:'images/drip-box.png',c1:'#E9C46A',c2:'#D48241',qScore:86,fp:{'bouquet': 9, 'smell': 10, 'aftertaste': 8, 'aroma': 10, 'acidity': 9, 'sweetness': 8, 'body': 8}},{id:'d9',name:'Эфиопия Челелекту',type:'Дрип-кофе',category:'drip',notes:'Пряности, цветы, черемуха, черный чай, темные ягоды',price:0,unit:'8 шт. x 14г',tags:['drip'],acidity:'9/10',body:'8/10',origin:'Местные разновидности / мытая / урожай 2026',image:'images/drip-box.png',c1:'#B5838D',c2:'#4D4855',qScore:85.25,fp:{'bouquet': 9, 'smell': 10, 'aftertaste': 8, 'aroma': 10, 'acidity': 9, 'sweetness': 9, 'body': 8}},{id:'dm1',name:'Addis Drip Mix #1 (Классика)',type:'Дрип-кофе',category:'drip',notes:'Сбалансированный микс 4 разных сортов (шоколад, карамель, орехи).',price:0,unit:'8 шт. x 14г',tags:['drip'],acidity:'3/10',body:'5/10',origin:'Бразилия, Уганда, Колумбия',image:'images/drip-box.png',c1:'#1A1A1A',c2:'#333333'},
+{id:'dm2',name:'Addis Drip Mix #2 (Кислотность)',type:'Дрип-кофе',category:'drip',notes:'Яркий микс 4 сортов (ягоды, фрукты, цветы).',price:0,unit:'8 шт. x 14г',tags:['drip'],acidity:'7/10',body:'4/10',origin:'Кения, Эфиопия, Руанда, Бурунди',image:'images/drip-box.png',c1:'#1A1A1A',c2:'#333333'},
+{id:'tea-1',name:'Английский завтрак',type:'Чай черный листовой',category:'tea',notes:'Крепкий, насыщенный купаж черных чаев',brew:'4–5 г на 250 мл воды, 95–100 °C, 3–5 мин.',price:0,unit:'200 гр',tags:['tea-black'],c1:'#8B4513',c2:'#A0522D'},
+{id:'tea-2',name:'Эрл Грей',type:'Чай черный листовой',category:'tea',notes:'Черный чай с ароматом бергамота',brew:'4–5 г на 250 мл воды, 95–100 °C, 3–5 мин.',price:0,unit:'200 гр',tags:['tea-black'],c1:'#8B4513',c2:'#A0522D'},
+{id:'tea-3',name:'Цейлонский чёрный чай OP',type:'Чай черный листовой',category:'tea',notes:'Классический черный чай с чистым и сбалансированным вкусом',brew:'4–5 г на 250 мл воды, 95–100 °C, 3–5 мин.',price:0,unit:'200 гр',tags:['tea-black'],c1:'#8B4513',c2:'#A0522D'},
+{id:'tea-4',name:'Зелёный чай с жасмином',type:'Чай зелёный листовой',category:'tea',notes:'Нежный зелёный чай с тонким цветочным ароматом жасмина',brew:'4 г на 250 мл воды, 80–85 °C, 2–3 мин.',price:0,unit:'200 гр',tags:['tea-green'],c1:'#8FBC8F',c2:'#458B74'},
+{id:'tea-5',name:'Сенча',type:'Чай зелёный листовой',category:'tea',notes:'Свежий зелёный чай с мягким травянистым вкусом и деликатной терпкостью',brew:'4 г на 250 мл воды, 75–80 °C, 2–3 мин',price:0,unit:'200 гр',tags:['tea-green'],c1:'#8FBC8F',c2:'#458B74'},
+{id:'tea-6',name:'Лунцзин',type:'Чай зелёный листовой',category:'tea',notes:'Утончённый зелёный чай с мягким вкусом, свежей травянистостью и лёгкой ореховой нотой',brew:'75–80 °C · 4 г / 250 мл · 2–3 мин',price:0,unit:'200 гр',tags:['tea-green'],c1:'#8FBC8F',c2:'#458B74'},
+{id:'tea-7',name:'Ассам',type:'Чай черный листовой',category:'tea',notes:'Насыщенный черный чай с плотным вкусом и выразительной терпкостью',brew:'95–100 °C · 4–5 г / 250 мл · 3–5 мин',price:0,unit:'200 гр',tags:['tea-black'],c1:'#8B4513',c2:'#A0522D'},
+{id:'tea-8',name:'Дарджилинг',type:'Чай черный листовой',category:'tea',notes:'Элегантный черный чай с мягким вкусом, тонкой терпкостью и цветочно-мускатной нотой',brew:'90–95 °C · 4–5 г / 250 мл · 3–4 мин',price:0,unit:'200 гр',tags:['tea-black'],c1:'#8B4513',c2:'#A0522D'},
+{id:'tea-9',name:'Кенийский чёрный чай',type:'Чай черный листовой',category:'tea',notes:'Яркий черный чай с насыщенным вкусом, плотным телом и выразительной терпкостью',brew:'95–100 °C · 4–5 г / 250 мл · 3–5 мин',price:0,unit:'200 гр',tags:['tea-black'],c1:'#8B4513',c2:'#A0522D'},
+{id:'tea-10',name:'Чун Ми',type:'Чай зелёный листовой',category:'tea',notes:'Классический зелёный чай с мягким вкусом, лёгкой терпкостью и свежей травянистой нотой',brew:'80–85 °C · 4 г / 250 мл · 2–3 мин',price:0,unit:'200 гр',tags:['tea-green'],c1:'#8FBC8F',c2:'#458B74'},
+{id:'tea-11',name:'Ганпаудер',type:'Чай зелёный листовой',category:'tea',notes:'Выразительный зелёный чай с плотным вкусом, лёгкой терпкостью и характерной дымной нотой',brew:'80–85 °C · 4 г / 250 мл · 2–3 мин',price:0,unit:'200 гр',tags:['tea-green'],c1:'#8FBC8F',c2:'#458B74'},
+{id:'tea-12',name:'Кимун',type:'Чай черный листовой',category:'tea',notes:'Элегантный черный чай с мягким вкусом, тонкой сладостью и деликатной дымно-фруктовой нотой',brew:'90–95 °C · 4–5 г / 250 мл · 3–4 мин',price:0,unit:'200 гр',tags:['tea-black'],c1:'#8B4513',c2:'#A0522D'},
+{id:'tea-13',name:'Би Ло Чунь',type:'Чай зелёный листовой',category:'tea',notes:'Деликатный зелёный чай с мягким вкусом, свежей травянистостью и тонкой цветочно-фруктовой нотой',brew:'75–80 °C · 4 г / 250 мл · 2–3 мин',price:0,unit:'200 гр',tags:['tea-green'],c1:'#8FBC8F',c2:'#458B74'},
+{id:'tea-14',name:'Мао Фэн',type:'Чай зелёный листовой',category:'tea',notes:'Деликатный зелёный чай с мягким вкусом, свежей травянистостью и тонкой цветочно-ореховой нотой',brew:'75–80 °C · 4 г / 250 мл · 2–3 мин',price:0,unit:'200 гр',tags:['tea-green'],c1:'#8FBC8F',c2:'#458B74'},
+{id:'tea-15',name:'Те Гуань Инь',type:'Улун листовой',category:'tea',notes:'Свежий улун с мягким вкусом, цветочным ароматом и деликатной фруктовой нотой',brew:'80–85 °C · 4 г / 250 мл · 2–3 мин',price:0,unit:'200 гр',tags:['tea-oolong'],c1:'#5B8C5A',c2:'#416340'},
+{id:'tea-16',name:'Да Хун Пао',type:'Улун листовой',category:'tea',notes:'Выразительный улун с глубоким вкусом, жарено-ореховыми, древесно-минеральными и сладковатыми нотами',brew:'90–95 °C · 4–5 г / 250 мл · 2–3 мин',price:0,unit:'200 гр',tags:['tea-oolong'],c1:'#5B8C5A',c2:'#416340'},
+{id:'tea-17',name:'Шу Пуэр',type:'Пуэр листовой',category:'tea',notes:'Плотный пуэр с мягким вкусом, древесно-ореховыми и тёплыми землянистыми нотами',brew:'95 °C · 4–5 г / 250 мл · 3–4 мин',price:0,unit:'200 гр',tags:['tea-puer'],c1:'#8B4513',c2:'#A0522D'},
+{id:'tea-18',name:'Бай Му Дань',type:'Чай белый листовой',category:'tea',notes:'Деликатный белый чай с мягким вкусом, цветочно-медовыми и тонкими фруктовыми нотами',brew:'80–85 °C · 4 г / 250 мл · 2–3 мин',price:0,unit:'200 гр',tags:['tea-white'],c1:'#EEDC82',c2:'#DAA520'},
+{id:'tea-19',name:'Шэн Пуэр',type:'Пуэр листовой',category:'tea',notes:'Живой пуэр с ярким вкусом, свежей травянистостью, цветочно-фруктовыми нотами и деликатной терпкостью',brew:'90–95 °C · 4 г / 250 мл · 2–3 мин',price:0,unit:'200 гр',tags:['tea-puer'],c1:'#8B4513',c2:'#A0522D'},
+{id:'tea-20',name:'Дянь Хун',type:'Красный чай листовой',category:'tea',notes:'Мягкий чай с насыщенным вкусом, медово-солодовой сладостью и деликатной фруктовой нотой',brew:'90–95 °C · 4–5 г / 250 мл · 3–4 мин',price:0,unit:'200 гр',tags:['tea-black'],c1:'#8B4513',c2:'#A0522D'},
+{id:'tea-21',name:'Фэнхуан Дань Цун',type:'Улун листовой',category:'tea',notes:'Ароматный улун с ярким вкусом, цветочно-фруктовыми, медовыми и минеральными нотами',brew:'90–95 °C · 4–5 г / 250 мл · 2–3 мин',price:0,unit:'200 гр',tags:['tea-oolong'],c1:'#5B8C5A',c2:'#416340'},
+{id:'tea-22',name:'Алишань',type:'Тайваньский высокогорный улун',category:'tea',notes:'Мягкий улун с деликатным вкусом, цветочно-сливочными и тонкими фруктовыми нотами',brew:'85–90 °C · 4–5 г / 250 мл · 2–3 мин',price:0,unit:'200 гр',tags:['tea-oolong'],c1:'#5B8C5A',c2:'#416340'},
+{id:'tea-23',name:'Бай Хао Инь Чжэнь',type:'Чай белый листовой',category:'tea',notes:'Изысканный белый чай с мягким вкусом, тонкой сладостью и деликатными цветочно-медовыми нотами',brew:'80–85 °C · 4 г / 250 мл · 2–3 мин',price:0,unit:'200 гр',tags:['tea-white'],c1:'#EEDC82',c2:'#DAA520'},
+{id:'tea-24',name:'Цзинь Цзюнь Мэй',type:'Красный чай листовой',category:'tea',notes:'Изысканный чай с мягким вкусом, медово-цветочной сладостью и тонкими фруктовыми нотами',brew:'90–95 °C · 4 г / 250 мл · 2–3 мин',price:0,unit:'200 гр',tags:['tea-black'],c1:'#8B4513',c2:'#A0522D'},
+{id:'tea-25',name:'Шоу Мэй',type:'Чай белый листовой',category:'tea',notes:'Мягкий белый чай с насыщенным вкусом, медовой сладостью и деликатными фруктово-травянистыми нотами',brew:'85–90 °C · 4–5 г / 250 мл · 3–4 мин',price:0,unit:'200 гр',tags:['tea-white'],c1:'#EEDC82',c2:'#DAA520'},
+{id:'tea-26',name:'Лю Бао',type:'Тёмный чай листовой',category:'tea',notes:'Мягкий чай с плотным вкусом, древесно-ореховыми и выдержанными нотами',brew:'95–100 °C · 4–5 г / 250 мл · 3–4 мин',price:0,unit:'200 гр',tags:['tea-puer'],c1:'#5B8C5A',c2:'#416340'},
+{id:'tea-27',name:'Чжэншань Сяочжун',type:'Красный чай листовой',category:'tea',notes:'Мягкий чай с насыщенным вкусом, сладостью сухофруктов и деликатной фруктово-медовой нотой',brew:'90–95 °C · 4–5 г / 250 мл · 2–3 мин',price:0,unit:'200 гр',tags:['tea-black'],c1:'#8B4513',c2:'#A0522D'},
+{id:'tea-28',name:'Индэ Хун',type:'Красный чай листовой',category:'tea',notes:'Мягкий чай с насыщенным вкусом, медово-цветочной сладостью и деликатной солодовой нотой',brew:'90–95 °C · 4–5 г / 250 мл · 3–4 мин',price:0,unit:'200 гр',tags:['tea-black'],c1:'#8B4513',c2:'#A0522D'},
+{id:'tea-29',name:'Матча церемониальная Daily',type:'Чай зелёный порошковый',category:'tea',notes:'Мягкий матча на каждый день с чистым вкусом, деликатным умами и лёгкой травянистой нотой',brew:'80 °C · 2 г / 60 мл · взбить 15 сек',price:0,unit:'200 гр',tags:['tea-matcha'],c1:'#8FBC8F',c2:'#458B74'},
+{id:'tea-30',name:'Матча церемониальная Premium',type:'Чай зелёный порошковый',category:'tea',notes:'Изысканный матча с мягким вкусом, глубоким умами, сладковатыми сливочными нотами и деликатной травянистостью',brew:'80 °C · 2 г / 60 мл · взбить 15 сек',price:0,unit:'200 гр',tags:['tea-matcha'],c1:'#8FBC8F',c2:'#458B74'},
+{id:'tea-31',name:'Матча для латте',type:'Чай зелёный порошковый',category:'tea',notes:'Насыщенный матча с ярким вкусом, мягким умами и деликатной травянистой нотой',brew:'70–80 °C · 2 г / 30–60 мл + 200 мл молока · взбить 15 сек',price:0,unit:'200 гр',tags:['tea-matcha'],c1:'#8FBC8F',c2:'#458B74'},
+{id:'tea-32',name:'Матча для cold drinks',type:'Чай зелёный порошковый',category:'tea',notes:'Яркий матча с чистым вкусом, мягким умами и деликатной травянистой нотой',brew:'5–10 °C · 2 г / 60 мл · взбить / шейк 15 сек',price:0,unit:'200 гр',tags:['tea-matcha'],c1:'#8FBC8F',c2:'#458B74'},
+{id:'tea-33',name:'Матча Signature / Bar Grade',type:'Чай зелёный порошковый',category:'tea',notes:'Насыщенный матча с ярким вкусом, выразительным умами и деликатной травянистой нотой',brew:'70–80 °C · 2 г / 30–60 мл + 200 мл молока · взбить 15 сек',price:0,unit:'200 гр',tags:['tea-matcha'],c1:'#8FBC8F',c2:'#458B74'},
+{id:'tea-34',name:'Ходзича powder',type:'Чай зелёный порошковый',category:'tea',notes:'Мягкий чай с глубоким жареным вкусом, орехово-карамельными и тостовыми нотами',brew:'70–80 °C · 2 г / 60 мл · взбить 15 сек',price:0,unit:'200 гр',tags:['tea-matcha'],c1:'#8FBC8F',c2:'#458B74'},
+{id:'tea-35',name:'Гэнмайча порошковый',type:'Чай зелёный порошковый',category:'tea',notes:'Мягкий чай с чистым вкусом, тёплыми злаково-ореховыми и деликатно жареными нотами',brew:'80 °C · 2 г / 200 мл · взбить 15 сек',price:0,unit:'200 гр',tags:['tea-matcha'],c1:'#8FBC8F',c2:'#458B74'},
+{id:'tea-36',name:'Ройбуш',type:'Травяной напиток',category:'tea',notes:'Мягкий напиток с естественной сладостью, древесно-медовыми и деликатно ореховыми нотами',brew:'95–100 °C · 4–5 г / 250 мл · 5–7 мин',price:0,unit:'200 гр',tags:['tea-herbal'],c1:'#9ACD32',c2:'#6B8E23'},
+{id:'tea-37',name:'Гибискус / Каркаде',type:'Травяной напиток',category:'tea',notes:'Яркий напиток с насыщенной кислинкой, ягодно-фруктовым профилем и освежающим вкусом',brew:'95–100 °C · 4–5 г / 250 мл · 5–7 мин',price:0,unit:'200 гр',tags:['tea-herbal'],c1:'#9ACD32',c2:'#6B8E23'},
+{id:'tea-38',name:'Ромашка',type:'Травяной напиток',category:'tea',notes:'Мягкий напиток с деликатным цветочным вкусом, медовой сладостью и тонкой яблочной нотой',brew:'95–100 °C · 4–5 г / 250 мл · 5–7 мин',price:0,unit:'200 гр',tags:['tea-herbal'],c1:'#9ACD32',c2:'#6B8E23'},
+{id:'tea-39',name:'Мята',type:'Травяной напиток',category:'tea',notes:'Освежающий напиток с чистым вкусом, яркой ментоловой свежестью и мягкой природной сладостью',brew:'95–100 °C · 4–5 г / 250 мл · 5–7 мин',price:0,unit:'200 гр',tags:['tea-herbal'],c1:'#9ACD32',c2:'#6B8E23'},
+{id:'tea-40',name:'Вербена',type:'Травяной напиток',category:'tea',notes:'Деликатный травяной напиток с тонким цитрусовым ароматом, свежим вкусом и мягким освежающим профилем',brew:'95 °C · 2–3 г / 250 мл · 5–7 мин',price:0,unit:'200 гр',tags:['tea-herbal'],c1:'#9ACD32',c2:'#6B8E23'},
+{id:'tea-41',name:'Чабрец',type:'Травяной напиток',category:'tea',notes:'Ароматный травяной напиток с тёплым пряным вкусом, мягкой древесной нотой и характерным свежим степным ароматом',brew:'95 °C · 4–5 г / 250 мл · 5–7 мин',price:0,unit:'200 гр',tags:['tea-herbal'],c1:'#9ACD32',c2:'#6B8E23'},
+{id:'tea-42',name:'Ку Цяо',type:'Травяной напиток',category:'tea',notes:'Мягкий безкофеиновый напиток из татарской гречихи с тёплым злаково-ореховым вкусом, лёгкой карамельной сладостью и нотами свежей выпечки.',brew:'95 °C · 4–5 г / 250 мл · 5–7 мин.',price:0,unit:'200 гр',tags:['tea-herbal'],c1:'#9ACD32',c2:'#6B8E23'},
+{id:'tea-43',name:'Жасминовый цветок',type:'Связанный чай',category:'tea',notes:'Мягкий связанный чай с деликатным вкусом, цветочным ароматом жасмина и эффектной визуальной подачей в прозрачном чайнике',brew:'85–90 °C · 1 шт / 500–700 мл · 3–5 мин',price:0,unit:'200 гр',tags:['tea-bound'],c1:'#EEDC82',c2:'#DAA520'},
+{id:'tea-44',name:'Бай Юй Лянь / Белый лотос благоденствия',type:'Связанный чай',category:'tea',notes:'Деликатный связанный чай с мягким вкусом, тонкими цветочными нотами и изысканной ресторанной подачей',brew:'85–90 °C · 1 шт / 500–700 мл · 3–5 мин',price:0,unit:'200 гр',tags:['tea-bound'],c1:'#EEDC82',c2:'#DAA520'},
+{id:'tea-45',name:'Юй Лун Тао / Нефритовый персик Дракона',type:'Связанный чай',category:'tea',notes:'Элегантный связанный чай с мягким вкусом, деликатной цветочностью и выразительным визуальным раскрытием',brew:'85–90 °C · 1 шт / 500–700 мл · 3–5 мин',price:0,unit:'200 гр',tags:['tea-bound'],c1:'#EEDC82',c2:'#DAA520'},
+{id:'tea-46',name:'Золотая Жемчужина Дракона',type:'Связанный чай',category:'tea',notes:'Эффектный связанный чай с мягким вкусом, цветочным профилем и яркой подачей для чайного сервиса',brew:'85–90 °C · 1 шт / 500–700 мл · 3–5 мин',price:0,unit:'200 гр',tags:['tea-bound'],c1:'#EEDC82',c2:'#DAA520'},
+{id:'tea-47',name:'Моли Цзы Сян Жу И / Жасминовое счастливое кольцо желаний',type:'Связанный чай',category:'tea',notes:'Изящный связанный чай с мягким вкусом, тонким жасминовым ароматом и красивым раскрытием в прозрачной посуде',brew:'85–90 °C · 1 шт / 500–700 мл · 3–5 мин',price:0,unit:'200 гр',tags:['tea-bound'],c1:'#EEDC82',c2:'#DAA520'},
+{id:'tea-48',name:'Габа',type:'Улун листовой',category:'tea',notes:'Мягкий улун с насыщенным вкусом, сладковато-фруктовым профилем, медовыми и деликатными хлебно-ягодными нотами',brew:'85–90 °C · 4–5 г / 250 мл · 2–3 мин',price:0,unit:'200 гр',tags:['tea-oolong'],c1:'#5B8C5A',c2:'#416340'}
 ];
 
-var articles=[
-{id:1,title:'Как выбрать кофе для кофейни: полное руководство',category:'guide',excerpt:'Разбираем, на что обращать внимание при выборе зерна.',date:'12 апреля 2026',readTime:'8 мин'},
-{id:2,title:'Эспрессо vs фильтр: что выгоднее для бизнеса',category:'business',excerpt:'Сравниваем маржинальность эспрессо и фильтр-кофе.',date:'8 апреля 2026',readTime:'6 мин'},
-{id:3,title:'Натуральная обработка: что это и как влияет на вкус',category:'origin',excerpt:'Разбираемся в методах обработки зелёного зерна.',date:'3 апреля 2026',readTime:'10 мин'},
-{id:4,title:'Настройка помола: пошаговый гайд для бариста',category:'brewing',excerpt:'Как правильно настроить помол для эспрессо.',date:'28 марта 2026',readTime:'7 мин'},
-{id:5,title:'Запуск кофейного направления в ресторане',category:'business',excerpt:'Пошаговый план внедрения кофе в ресторанное меню.',date:'22 марта 2026',readTime:'12 мин'},
-{id:6,title:'V60, Kalita, AeroPress: какой метод выбрать',category:'brewing',excerpt:'Сравниваем популярные методы альтернативного приготовления.',date:'15 марта 2026',readTime:'5 мин'},
-{id:7,title:'Новый лот из Колумбии: ферма El Paraíso',category:'news',excerpt:'Рассказываем о новом микролоте из региона Уила.',date:'10 марта 2026',readTime:'4 мин'},
-{id:8,title:'Private Label: как запустить свой бренд кофе',category:'business',excerpt:'Всё о запуске собственной линейки кофе.',date:'5 марта 2026',readTime:'9 мин'},
-{id:9,title:'Хранение кофе: правила для бизнеса',category:'guide',excerpt:'Как правильно хранить кофе в кофейне.',date:'1 марта 2026',readTime:'5 мин'}
-];
+
 
 var faqs=[
 {q:'Какой минимальный объём заказа?',a:'Минимальный заказ — 5 кг. Для объёмов от 15 кг действуют оптовые скидки.'},
@@ -942,22 +1032,70 @@ var sw=lg?'55%':'65%';
 var sh=lg?'65%':'75%';
 var fs=lg?'80px':'36px';
 var ns=lg?'14px':'11px';
+if(p.image){return '<img src="'+p.image+'" style="width:75%;height:75%;object-fit:contain;mix-blend-mode:multiply" alt="">';}
 var sn=p.name.split(' ').slice(0,2).join(' ');
-return '<div style="width:'+sw+';height:'+sh+';border-radius:8px;background:linear-gradient(135deg,'+p.c1+','+p.c2+');display:flex;flex-direction:column;align-items:center;justify-content:center;box-shadow:0 4px 16px rgba(0,0,0,0.15)"><div style="font-family:\"Circe\",sans-serif;font-size:'+fs+';color:rgba(255,255,255,0.8);font-weight:700">A</div><div style="font-size:'+ns+';color:rgba(255,255,255,0.8);margin-top:4px;text-align:center;padding:0 8px">'+sn+'</div></div>';
+return '<div style="width:'+sw+';height:'+sh+';border-radius:0;background:linear-gradient(135deg,'+p.c1+','+p.c2+');display:flex;flex-direction:column;align-items:center;justify-content:center"><div style="font-family:\"Circe\",sans-serif;font-size:'+fs+';color:rgba(255,255,255,0.8);font-weight:700">A</div><div style="font-size:'+ns+';color:rgba(255,255,255,0.8);margin-top:4px;text-align:center;padding:0 8px">'+sn+'</div></div>';
 }
 
 function renderProductCard(p){
 var b='';
-if(p.tags.indexOf('new')!==-1)b+='<span class="product-card__badge badge badge--secondary">Новинка</span>';
-if(p.qScore)b+='<span class="product-card__badge badge badge--success">Q '+p.qScore+(p.qMod||'')+'</span>';
-return '<div class="product-card" onclick="window.showProduct(\''+p.id+'\')"><div class="product-card__image">'+makeBag(p,false)+b+'</div><div class="product-card__body"><div class="product-card__category">'+p.type+'</div><div class="product-card__name">'+p.name+'</div><div class="product-card__profile"><span class="product-card__param">&#127777; '+p.acidity+'</span><span class="product-card__param">&#128167; '+p.body+'</span><span class="product-card__param">&#127758; '+p.origin.split(',')[0].trim()+'</span></div><div class="taste-bar"><span class="taste-bar__label">Кислотность</span><div class="taste-bar__track"><div class="taste-bar__fill" style="width:'+(p.fp.acidity*10)+'%"></div></div></div><div class="taste-bar"><span class="taste-bar__label">Сладость</span><div class="taste-bar__track"><div class="taste-bar__fill" style="width:'+(p.fp.sweetness*10)+'%"></div></div></div><div class="taste-bar"><span class="taste-bar__label">Плотность</span><div class="taste-bar__track"><div class="taste-bar__fill" style="width:'+(p.fp.body*10)+'%"></div></div></div>'+((p.price&&p.price>0)?'<div style="display:flex;align-items:baseline;gap:8px;margin-top:12px"><span class="product-card__price">'+p.price.toLocaleString()+' &#8381;</span><span class="product-card__price-unit">'+p.unit+'</span></div><div class="product-card__actions"><button class="btn btn--primary btn--sm" onclick="event.stopPropagation();window.navigateApp(\'price-request\')">В запрос</button><button class="btn btn--outline btn--sm" onclick="event.stopPropagation();window.showProduct(\''+p.id+'\')">Подробнее</button></div>':'<div class="product-card__actions" style="margin-top:16px"><button class="btn btn--primary btn--sm" style="width:100%" onclick="event.stopPropagation();window.navigateApp(\'price-request\')">Запросить прайс</button></div>')+'</div></div>';
+var badgeHtml='';
+if(p.tags.indexOf('new')!==-1)badgeHtml+='<span class="product-card__badge" style="background:#fff;color:#000;border:1px solid #000">Новинка</span>';
+if(p.qScore)badgeHtml+='<span class="product-card__badge">Q '+p.qScore+(p.qMod||'')+'</span>';
+if(badgeHtml) b='<div class="product-card__badges">'+badgeHtml+'</div>';
+
+var details='';
+if(p.fp && p.origin) {
+details = '<div class="product-card__profile"><span class="product-card__param">Кислотность '+p.acidity+'</span><span class="product-card__param">Тело '+p.body+'</span><span class="product-card__param">'+p.origin.split(',')[0].trim()+'</span></div><div class="taste-bar"><span class="taste-bar__label">Кислотность</span><div class="taste-bar__track"><div class="taste-bar__fill" style="width:'+(p.fp.acidity*10)+'%"></div></div></div><div class="taste-bar"><span class="taste-bar__label">Сладость</span><div class="taste-bar__track"><div class="taste-bar__fill" style="width:'+(p.fp.sweetness*10)+'%"></div></div></div><div class="taste-bar"><span class="taste-bar__label">Плотность</span><div class="taste-bar__track"><div class="taste-bar__fill" style="width:'+(p.fp.body*10)+'%"></div></div></div>';
+} else {
+details = '<div style="font-size:14px;color:#555555;margin-bottom:16px;min-height:50px">'+(p.notes||'')+'</div>';
+}
+
+var priceHtml = ((p.price&&p.price>0)?'<div style="display:flex;align-items:baseline;justify-content:center;gap:8px;margin-top:auto;padding-top:12px"><span class="product-card__price">'+p.price.toLocaleString()+' &#8381;</span><span class="product-card__price-unit">'+p.unit+'</span></div><div class="product-card__actions"><button class="btn btn--primary btn--sm" onclick="event.stopPropagation();window.navigateApp(\'price-request\')">В запрос</button><button class="btn btn--outline btn--sm" onclick="event.stopPropagation();window.showProduct(\''+p.id+'\')">Подробнее</button></div>':'<div class="product-card__actions" style="margin-top:auto;padding-top:16px"><button class="btn btn--primary btn--sm" style="width:100%" onclick="event.stopPropagation();window.navigateApp(\'price-request\')">Запросить прайс</button></div>');
+
+return '<div class="product-card" onclick="window.showProduct(\''+p.id+'\')"><div class="product-card__image">'+makeBag(p,false)+b+'</div><div class="product-card__body"><div class="product-card__category">'+p.type+'</div><div class="product-card__name">'+p.name+'</div>'+details+priceHtml+'</div></div>';
 }
 
 function renderArticleCard(a){
-var grads=['linear-gradient(135deg,#D0D0D0,#B0B0B0)','linear-gradient(135deg,#C8C8C8,#A0A0A0)','linear-gradient(135deg,#B8B8B8,#A0A0A0)'];
 var cats={guide:'Гайд',business:'Бизнес',brewing:'Приготовление',origin:'Происхождение',news:'Новости'};
-return '<article class="article-card" data-category="'+a.category+'"><div class="article-card__image" style="background:'+grads[a.id%3]+'"></div><div class="article-card__body"><div class="article-card__category">'+(cats[a.category]||a.category)+'</div><div class="article-card__title">'+a.title+'</div><div class="article-card__excerpt">'+a.excerpt+'</div><div class="article-card__meta">'+a.date+' &#183; '+a.readTime+'</div></div></article>';
+var imgStyle = a.image ? "background-image: url('"+a.image+"'); background-size: cover; background-position: center;" : 'background: linear-gradient(135deg,#D0D0D0,#A0A0A0)';
+var catName = cats[a.category]||a.category;
+return '<article class="article-card" data-category="'+a.category+'" onclick="window.showArticle(\''+a.id+'\')"><div class="article-card__image" style="'+imgStyle+'"></div><div class="article-card__body"><div class="article-card__category">'+catName+'</div><div class="article-card__title">'+a.title+'</div><div class="article-card__excerpt">'+(a.summary||a.excerpt||'')+'</div><div class="article-card__meta">'+a.date+'</div></div></article>';
 }
+
+window.showArticle=function(id){
+var a=null;
+for(var i=0;i<window.articles.length;i++){if(window.articles[i].id==id){a=window.articles[i];break;}}
+if(!a){switchPage('404');return;}
+var bc=document.getElementById('articleBreadcrumb');
+if(bc)bc.textContent=a.title;
+var cats={guide:'Гайд',business:'Бизнес',brewing:'Приготовление',origin:'Происхождение',news:'Новости'};
+var catName = cats[a.category]||a.category;
+var html='<div class="article-hero"><div class="article-hero__bg" style="background-image:url('+a.image+')"></div><div class="article-hero__overlay"></div><div class="container container--narrow article-hero__content">';
+html+='<div class="article-hero__meta"><span class="article-hero__category">'+catName+'</span><span class="article-hero__date">'+a.date+'</span></div>';
+html+='<h1 class="article-hero__title">'+a.title+'</h1>';
+html+='<p class="article-hero__summary">'+(a.summary||a.excerpt||'')+'</p>';
+html+='</div></div>';
+html+='<div class="section"><div class="container container--narrow">';
+html+='<div class="article-content" style="font-size:20px;color:#333;line-height:1.7;margin-bottom:48px">';
+if(a.content){
+html+=a.content;
+}else{
+html+='<p>Контент временно недоступен.</p>';
+}
+html+='</div>';
+html+='<div style="border-top:1px solid #EAEAEA;padding-top:32px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px"><button class="btn btn--outline btn--lg" onclick="window.navigateApp(\'journal\')">&#8592; К списку статей</button>';
+if(a.tags && a.tags.length>0){
+html+='<div style="display:flex;gap:8px;flex-wrap:wrap">';
+for(var j=0;j<a.tags.length;j++) html+='<span class="chip" style="background:#F0F0F0;border:none" onclick="window.navigateApp(\'journal\')">'+a.tags[j]+'</span>';
+html+='</div>';
+}
+html+='</div></div></div>';
+var el=document.getElementById('articleContent');
+if(el)el.innerHTML=html;
+switchPage('article');
+window.scrollTo(0,0);
+};
 
 window.showProduct=function(pid){
 var p=null;
@@ -977,11 +1115,15 @@ if(related.length>=4)break;
 }
 
 var badges='';
-if(p.tags.indexOf('new')!==-1)badges+='<span class="badge badge--secondary" style="margin-right:8px">Новинка</span>';
-if(p.tags.indexOf('seasonal')!==-1)badges+='<span class="badge badge--success">Сезонный лот</span>';
+if(p.tags.indexOf('new')!==-1)badges+='<span style="display:inline-block;padding:4px 12px;font-size:12px;font-weight:600;background:#fff;color:#000;border:1px solid #000;margin-right:8px">Новинка</span>';
+if(p.tags.indexOf('seasonal')!==-1)badges+='<span style="display:inline-block;padding:4px 12px;font-size:12px;font-weight:600;background:#000;color:#fff">Сезонный лот</span>';
 
 var espText=(p.category==='espresso'||p.category==='blend')?'Идеально для эспрессо и молочных напитков.':'Может использоваться для эспрессо, но лучше раскрывается в фильтре.';
 var filText=(p.category==='filter'||p.category==='seasonal')?'Отличный выбор для V60, AeroPress, Chemex.':'Не рекомендуется для альтернативного приготовления.';
+
+var isAcc = p.category === 'accessories';
+var isCacao = p.category === 'cacao';
+var isNonCoffee = isAcc || isCacao;
 
 var html='';
 html+='<div class="section"><div class="container"><div class="pdp-layout">';
@@ -990,35 +1132,50 @@ html+='<div class="pdp-info">';
 html+='<div style="margin-bottom:16px">'+badges+'</div>';
 html+='<h1 class="pdp-info__title">'+p.name+'</h1>';
 html+='<div class="pdp-info__subtitle">'+p.type+(p.varieties?' · '+p.varieties:'')+'</div>';
-if(p.qScore)html+='<div style="display:inline-flex;align-items:center;gap:8px;padding:8px 16px;background:#F5F5F5;border-radius:8px;margin-bottom:16px"><span style="font-size:12px;color:#777777;text-transform:uppercase;letter-spacing:0.05em">Q Score</span><span style="font-family:"Circe",sans-serif;font-size:24px;font-weight:700;color:#2C1810">'+p.qScore+(p.qMod||'')+'</span></div>';
+if(p.qScore)html+='<div style="display:inline-flex;align-items:center;gap:8px;padding:8px 16px;background:#F0F0F0;border-radius:0;margin-bottom:16px"><span style="font-size:12px;color:#777777;text-transform:uppercase;letter-spacing:0.05em">Q Score</span><span style="font-family:"Circe",sans-serif;font-size:24px;font-weight:700;color:#000000">'+p.qScore+(p.qMod||'')+'</span></div>';
+if(p.price&&p.price>0)html+='<div class="pdp-info__price">'+p.price.toLocaleString()+' &#8381; <span style="font-size:16px;color:#777;font-weight:400">'+p.unit+'</span></div>';
+
+if(!isNonCoffee) {
 html+='<div class="pdp-facts">';
-html+='<div><div class="pdp-fact__label">Происхождение</div><div class="pdp-fact__value">'+p.origin+'</div></div>';
-html+='<div><div class="pdp-fact__label">Обработка</div><div class="pdp-fact__value">'+p.process+'</div></div>';
-html+='<div><div class="pdp-fact__label">Обжарка</div><div class="pdp-fact__value">'+p.roast+'</div></div>';
-html+='<div><div class="pdp-fact__label">Плотность</div><div class="pdp-fact__value">'+p.density+'</div></div>';
-html+='<div><div class="pdp-fact__label">Кислотность</div><div class="pdp-fact__value">'+p.acidity+'</div></div>';
-html+='<div><div class="pdp-fact__label">Тело</div><div class="pdp-fact__value">'+p.body+'</div></div>';
-html+='<div><div class="pdp-fact__label">Приготовление</div><div class="pdp-fact__value">'+p.brew+'</div></div>';
-html+='<div><div class="pdp-fact__label">Вкус</div><div class="pdp-fact__value">'+p.notes+'</div></div>';
-if(p.harvest)html+='<div><div class="pdp-fact__label">Урожай</div><div class="pdp-fact__value">'+p.harvest+'</div></div>';
+if(p.origin) html+='<div><div class="pdp-fact__label">Происхождение</div><div class="pdp-fact__value">'+p.origin+'</div></div>';
+if(p.process) html+='<div><div class="pdp-fact__label">Обработка</div><div class="pdp-fact__value">'+p.process+'</div></div>';
+if(p.roast) html+='<div><div class="pdp-fact__label">Обжарка</div><div class="pdp-fact__value">'+p.roast+'</div></div>';
+if(p.density) html+='<div><div class="pdp-fact__label">Плотность</div><div class="pdp-fact__value">'+p.density+'</div></div>';
+if(p.acidity) html+='<div><div class="pdp-fact__label">Кислотность</div><div class="pdp-fact__value">'+p.acidity+'</div></div>';
+if(p.body) html+='<div><div class="pdp-fact__label">Тело</div><div class="pdp-fact__value">'+p.body+'</div></div>';
+if(p.brew) html+='<div><div class="pdp-fact__label">Приготовление</div><div class="pdp-fact__value">'+p.brew+'</div></div>';
+if(p.notes) html+='<div><div class="pdp-fact__label">Вкус</div><div class="pdp-fact__value">'+p.notes+'</div></div>';
+if(p.harvest) html+='<div><div class="pdp-fact__label">Урожай</div><div class="pdp-fact__value">'+p.harvest+'</div></div>';
 html+='</div>';
+} else {
+html+='<div style="font-size:16px;color:#555555;line-height:1.75;margin-bottom:32px">'+p.notes+'</div>';
+}
+
 html+='<div style="display:flex;gap:12px;flex-wrap:wrap">';
-html+='<button class="btn btn--primary btn--lg" onclick="window.navigateApp(\'price-request\')">Запросить прайс</button>';
+html+='<button class="btn btn--primary btn--lg" onclick="window.navigateApp(\'price-request\')">В корзину (запрос)</button>';
 html+='<button class="btn btn--outline btn--lg" onclick="window.navigateApp(\'catalog\')">Вернуться в каталог</button>';
 html+='</div>';
-html+='<div style="margin-top:32px;padding:24px;background:#F8F8F8;border-radius:12px;border-left:3px solid #1A1A1A">';
+html+='<div style="margin-top:32px;padding:24px;background:#F0F0F0;border-radius:0;border-left:3px solid #000000">';
 html+='<div style="font-weight:600;margin-bottom:8px">Для HoReCa</div>';
-html+='<div style="font-size:14px;color:#555555;line-height:1.75">Доступен оптом. Минимальная партия — 5 кг. Бесплатные образцы. Персональные условия от 15 кг.</div>';
+html+='<div style="font-size:14px;color:#555555;line-height:1.75">Оптовые условия предоставляются индивидуально.</div>';
 html+='</div>';
 html+='</div></div></div></div>';
 
+if(!isNonCoffee && p.fp) {
 html+='<div class="section section--alt"><div class="container container--narrow">';
 html+='<h2 class="section-title" style="font-size:28px">Вкусовой профиль</h2>';
 html+='<div style="display:grid;gap:16px;margin-top:24px">';
-html+='<div class="taste-bar"><span class="taste-bar__label">Кислотность</span><div class="taste-bar__track" style="height:8px"><div class="taste-bar__fill" style="width:'+(p.fp.acidity*10)+'%"></div></div><span style="font-size:14px;font-weight:600;min-width:30px;text-align:right">'+p.fp.acidity+'/10</span></div>';
-html+='<div class="taste-bar"><span class="taste-bar__label">Сладость</span><div class="taste-bar__track" style="height:8px"><div class="taste-bar__fill" style="width:'+(p.fp.sweetness*10)+'%"></div></div><span style="font-size:14px;font-weight:600;min-width:30px;text-align:right">'+p.fp.sweetness+'/10</span></div>';
-html+='<div class="taste-bar"><span class="taste-bar__label">Плотность</span><div class="taste-bar__track" style="height:8px"><div class="taste-bar__fill" style="width:'+(p.fp.body*10)+'%"></div></div><span style="font-size:14px;font-weight:600;min-width:30px;text-align:right">'+p.fp.body+'/10</span></div>';
-html+='<div class="taste-bar"><span class="taste-bar__label">Горечь</span><div class="taste-bar__track" style="height:8px"><div class="taste-bar__fill" style="width:'+(p.fp.bitterness*10)+'%"></div></div><span style="font-size:14px;font-weight:600;min-width:30px;text-align:right">'+p.fp.bitterness+'/10</span></div>';
+var metrics = [
+  {k:'bouquet', l:'Букет'}, {k:'smell', l:'Запах'}, {k:'aroma', l:'Аромат'}, 
+  {k:'acidity', l:'Кислотность'}, {k:'sweetness', l:'Сладость'}, 
+  {k:'body', l:'Тело'}, {k:'aftertaste', l:'Послевкусие'}
+];
+for(var m=0; m<metrics.length; m++){
+  var val = p.fp[metrics[m].k];
+  if(val !== undefined) {
+    html+='<div class="taste-bar"><span class="taste-bar__label" style="min-width:96px">'+metrics[m].l+'</span><div class="taste-bar__track" style="height:8px"><div class="taste-bar__fill" style="width:'+(val*10)+'%"></div></div><span style="font-size:14px;font-weight:600;min-width:30px;text-align:right">'+val+'/10</span></div>';
+  }
+}
 html+='</div>';
 html+='<div style="margin-top:24px;font-size:14px;color:#555555;line-height:1.75"><strong>Дескрипторы:</strong> '+p.notes+'</div>';
 html+='</div></div>';
@@ -1029,6 +1186,7 @@ html+='<div class="grid-2" style="margin-top:24px">';
 html+='<div class="feature-card"><div class="feature-card__title">Для эспрессо</div><div class="feature-card__text">'+espText+'</div></div>';
 html+='<div class="feature-card"><div class="feature-card__title">Для фильтра</div><div class="feature-card__text">'+filText+'</div></div>';
 html+='</div></div></div>';
+}
 
 if(related.length>0){
 html+='<div class="section section--alt"><div class="container"><h2 class="section-title" style="font-size:28px">Похожие товары</h2><div class="catalog-products" style="margin-top:24px">';
@@ -1042,11 +1200,28 @@ switchPage('product');
 
 function renderCatalog(){
 var filtered=products;
-if(currentFilter!=='all'){
-filtered=products.filter(function(p){return p.tags.indexOf(currentFilter)!==-1||p.category===currentFilter;});
+
+if(window.currentGroup === 'coffee') {
+  filtered = filtered.filter(function(p){ return p.category==='espresso'||p.category==='filter'||p.category==='blend'||p.category==='drip'; });
+} else if(window.currentGroup === 'tea') {
+  filtered = filtered.filter(function(p){ return p.category==='tea'; });
+} else if(window.currentGroup === 'cacao') {
+  filtered = filtered.filter(function(p){ return p.category==='cacao'; });
+} else if(window.currentGroup === 'accessories') {
+  filtered = filtered.filter(function(p){ return p.category==='accessories'; });
 }
+
+if(window.currentFilter !== 'all' && window.currentFilter !== 'coffee-all' && window.currentFilter !== 'tea' && window.currentFilter !== 'cacao' && window.currentFilter !== 'accessories') {
+  filtered = filtered.filter(function(p){ return p.tags.indexOf(window.currentFilter)!==-1 || p.category===window.currentFilter; });
+}
+
 var c=document.getElementById('catalogProducts');
 if(!c)return;
+var subtitle=document.getElementById('catalogSubtitle');
+if(subtitle){
+  var countWord=filtered.length===1?'позиция':filtered.length>=2&&filtered.length<=4?'позиции':'позиций';
+  subtitle.textContent=filtered.length+' '+countWord;
+}
 if(filtered.length===0){
 c.innerHTML='<div class="text-center" style="grid-column:1/-1;padding:64px 0"><div style="font-size:20px;margin-bottom:16px">Ничего не найдено</div><div class="text-secondary">Попробуйте изменить фильтры</div></div>';
 }else{
@@ -1060,7 +1235,7 @@ function renderJournal(){
 var c=document.getElementById('journalArticles');
 if(!c)return;
 var html='';
-for(var i=0;i<articles.length;i++){html+=renderArticleCard(articles[i]);}
+for(var i=0;i<window.articles.length;i++){html+=renderArticleCard(window.articles[i]);}
 c.innerHTML=html;
 }
 
@@ -1069,7 +1244,7 @@ var c=document.getElementById('faqList');
 if(!c)return;
 var html='';
 for(var i=0;i<faqs.length;i++){
-html+='<div class="faq-item" data-faq="'+i+'"><button class="faq-question" onclick="window.toggleFAQ('+i+')" aria-expanded="false"><span>'+faqs[i].q+'</span><svg class="faq-question__icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12h14"/></svg></button><div class="faq-answer"><div class="faq-answer__inner">'+faqs[i].a+'</div></div></div>';
+html+='<div class="faq-item" data-faq="'+i+'"><button class="faq-question" onclick="window.toggleFAQ('+i+')" aria-expanded="false"><span>'+faqs[i].q+'</span><svg class="faq-question__icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12h14"/></svg></button><div class="faq-answer"><div class="faq-answer__inner"><div style="padding-bottom:24px;font-size:14px;color:#555555;line-height:1.75">'+faqs[i].a+'</div></div></div></div>';
 }
 c.innerHTML=html;
 }
@@ -1089,7 +1264,7 @@ item.querySelector('.faq-question').setAttribute('aria-expanded','true');
 }
 };
 
-function switchPage(pageId){
+function switchPage(pageId, noHistory){
 var allPages=document.querySelectorAll('.page');
 for(var i=0;i<allPages.length;i++){
 allPages[i].classList.remove('page--active');
@@ -1102,7 +1277,22 @@ var p404=document.getElementById('page-404');
 if(p404)p404.classList.add('page--active');
 }
 currentPageId=pageId;
+
+var navLinks = document.querySelectorAll('.header__nav-link');
+for(var j=0; j<navLinks.length; j++){
+  var onclick = navLinks[j].getAttribute('onclick');
+  if(onclick && onclick.indexOf("'" + pageId + "'") !== -1){
+    navLinks[j].classList.add('header__nav-link--active');
+  }else{
+    navLinks[j].classList.remove('header__nav-link--active');
+  }
+}
+
 window.scrollTo(0,0);
+if(!noHistory) {
+  var urlHash = pageId === 'home' ? '' : '#' + pageId;
+  history.pushState({pageId: pageId}, '', window.location.pathname + window.location.search + urlHash);
+}
 }
 
 window.navigateApp=function(page){
@@ -1128,13 +1318,21 @@ document.body.style.overflow='';
 
 window.handleFormSubmit=function(event){
 event.preventDefault();
+var form = event.target;
+// Собираем данные в FormData для реальной отправки на бэкенд
+var formData = new FormData(form);
 var el=document.getElementById('notification');
+
+// Симуляция fetch-запроса на /api/submit
+// fetch('/api/submit', { method: 'POST', body: formData }).then(...)
+setTimeout(function(){
 if(el){
-el.textContent='Заявка отправлена! Мы свяжемся с вами в ближайшее время.';
+el.textContent='Заявка успешно отправлена! (симуляция POST)';
 el.classList.add('notification--visible');
 setTimeout(function(){el.classList.remove('notification--visible');},4000);
 }
-event.target.reset();
+form.reset();
+}, 500);
 };
 
 var burger=document.getElementById('burger');
@@ -1177,30 +1375,72 @@ homeF.innerHTML=hf;
 var homeJ=document.getElementById('homeJournal');
 if(homeJ){
 var hj='';
-for(var j=0;j<3&&j<articles.length;j++){hj+=renderArticleCard(articles[j]);}
+for(var j=0;j<3&&j<window.articles.length;j++){hj+=renderArticleCard(window.articles[j]);}
 homeJ.innerHTML=hj;
 }
 
+// 2-level filter logic — must be set BEFORE first renderCatalog() call
+window.currentGroup = 'all';
+window.currentFilter = 'all';
 renderCatalog();
 renderJournal();
 renderFAQ();
 
-var filterChips=document.getElementById('filterChips');
-if(filterChips){
-filterChips.addEventListener('click',function(e){
-var chip=e.target.closest('.chip');
-if(!chip)return;
-var filter=chip.getAttribute('data-filter');
-if(!filter)return;
-currentFilter=filter;
-var allChips=filterChips.querySelectorAll('.chip');
-for(var i=0;i<allChips.length;i++)allChips[i].classList.remove('chip--active');
-chip.classList.add('chip--active');
-renderCatalog();
-});
-}
+    var pf = document.getElementById('primaryFilters');
+    if(pf){
+        pf.addEventListener('click', function(e){
+            var chip = e.target.closest('.chip');
+            if(!chip) return;
+            var group = chip.getAttribute('data-group');
+            if(!group) return;
+            
+            window.currentGroup = group;
+            if(group === 'coffee') window.currentFilter = 'coffee-all';
+            else if(group === 'tea') window.currentFilter = 'tea';
+            else if(group === 'cacao') window.currentFilter = 'cacao';
+            else if(group === 'accessories') window.currentFilter = 'accessories';
+            else window.currentFilter = 'all';
+            
+            var allP = pf.querySelectorAll('.chip');
+            for(var i=0; i<allP.length; i++) allP[i].classList.remove('chip--active');
+            chip.classList.add('chip--active');
+            
+            var sfw = document.getElementById('subFiltersWrapper');
+            var sfg = document.querySelectorAll('.sub-filter-group');
+            for(var i=0; i<sfg.length; i++) sfg[i].style.display = 'none';
+            
+            var targetSub = document.getElementById('subFilters-' + group);
+            if(targetSub) {
+                sfw.style.display = 'block';
+                targetSub.style.display = 'flex';
+                var allS = targetSub.querySelectorAll('.chip');
+                for(var i=0; i<allS.length; i++) allS[i].classList.remove('chip--active');
+                if(allS.length > 0) allS[0].classList.add('chip--active');
+            } else {
+                sfw.style.display = 'none';
+            }
+            renderCatalog();
+        });
+    }
 
-var journalChips=document.getElementById('journalChips');
+    var sfgroups = document.querySelectorAll('.sub-filter-group');
+    for(var i=0; i<sfgroups.length; i++){
+        sfgroups[i].addEventListener('click', function(e){
+            var chip = e.target.closest('.chip');
+            if(!chip) return;
+            var filter = chip.getAttribute('data-filter');
+            if(!filter) return;
+            window.currentFilter = filter;
+            
+            var groupParent = chip.closest('.sub-filter-group');
+            var allS = groupParent.querySelectorAll('.chip');
+            for(var j=0; j<allS.length; j++) allS[j].classList.remove('chip--active');
+            chip.classList.add('chip--active');
+            
+            renderCatalog();
+        });
+    }
+    var journalChips=document.getElementById('journalChips');
 if(journalChips){
 journalChips.addEventListener('click',function(e){
 var chip=e.target.closest('.chip');
@@ -1221,8 +1461,28 @@ cards[j].style.display='none';
 });
 }
 
-switchPage('home');
+var hash = window.location.hash.replace('#', '');
+if(hash) { 
+  switchPage(hash, true); 
+} else { 
+  switchPage('home', true); 
 }
+}
+
+window.addEventListener('popstate', function(e) {
+  var id = e.state ? e.state.pageId : (window.location.hash.replace('#', '') || 'home');
+  switchPage(id, true);
+});
+
+window.addEventListener('scroll', function() {
+  var btn = document.getElementById('backToTop');
+  if(!btn) return;
+  if(window.scrollY > 400) {
+    btn.classList.add('back-to-top--visible');
+  } else {
+    btn.classList.remove('back-to-top--visible');
+  }
+});
 
 if(document.readyState==='loading'){
 document.addEventListener('DOMContentLoaded',initApp);
@@ -1232,5 +1492,6 @@ initApp();
 
 })();
 </script>
+
 </body>
 </html>
