@@ -24,21 +24,6 @@
   font-style: normal;
 }
 
-/* ============================================================
-   BRAND BOOK TOKENS — warm palette extracted from
-   uploads/addis-book-a4-1-light.pdf (sampled May 2026)
-   Used in: .section--paper, .principle*, optional .cta-banner--espresso
-   Coexists with existing monochrome system; not yet global.
-============================================================ */
-:root{
-  --addis-espresso:       #44250F;  /* heading & primary text on warm paper */
-  --addis-espresso-soft:  #6E4F3A;  /* body / secondary text on warm paper */
-  --addis-espresso-mute:  rgba(68,37,15,0.55);
-  --addis-paper:          #FBF8F1;  /* warm off-white sheet bg */
-  --addis-sand:           #DFD6C9;  /* beige triangle / pattern */
-  --addis-sand-yellow:    #EDD6A0;  /* yellow-tint accent (book p.2) */
-}
-
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
 body{font-family:'Circe',-apple-system,BlinkMacSystemFont,sans-serif;font-size:16px;line-height:1.5;color:#000000;background:#fff;-webkit-font-smoothing:antialiased;overflow-x:hidden}
@@ -109,7 +94,7 @@ img{max-width:100%;display:block}
 .chip--active{background:#000000;color:#ffffff}
 
 .chip--sm { padding: 6px 12px; font-size: 13px; }
-.hero::before{content:'';position:absolute;inset:0;background-image:url('images/pattern-hero.png');background-size:cover;background-position:center;background-repeat:no-repeat;opacity:0.15;pointer-events:none;z-index:0}
+.hero::before{content:'';position:absolute;inset:0;background-image:url('images/pattern_2.pdf.png?v=3');background-size:cover;background-position:center;background-repeat:no-repeat;opacity:0.15;pointer-events:none;z-index:0}
 .hero > * { z-index:1; position:relative; }
 .section--alt { position:relative; overflow:hidden; }
 .section--alt::before { content:''; position:absolute; bottom:24px; right:24px; width:150px; height:150px; background-image:url('images/triangle_2.png'); background-size:contain; background-position:bottom right; background-repeat:no-repeat; opacity:0.06; pointer-events:none; z-index:0; }
@@ -141,8 +126,23 @@ img{max-width:100%;display:block}
 .segment-card__title{font-family:'Circe',sans-serif;font-size:20px;font-weight:700;margin-bottom:8px}
 .segment-card__desc{font-size:14px;color:rgba(255,255,255,0.8);line-height:1.75}
 
-/* Legacy .process-step / .timeline classes removed May 2026 —
-   replaced everywhere by .principles / .principle. */
+.process-step{display:flex;gap:24px;padding:32px 0;border-bottom:1px solid #F0F0F0}
+.process-step:last-child{border-bottom:none}
+.process-step__number{font-family:'Circe',sans-serif;font-size:40px;font-weight:700;color:#000000;line-height:1;min-width:48px}
+.process-step__title{font-size:18px;font-weight:600;margin-bottom:8px}
+.process-step__text{font-size:14px;color:#555555;line-height:1.75}
+.section--alt .process-step,.section--cream .process-step{border-color:rgba(255,255,255,0.12)}
+.section--alt .process-step__number,.section--cream .process-step__number{color:rgba(255,255,255,0.5)}
+.section--alt .process-step__title,.section--cream .process-step__title{color:#ffffff}
+.section--alt .process-step__text,.section--cream .process-step__text{color:rgba(255,255,255,0.65)}
+
+.timeline{position:relative;padding-left:32px}
+.timeline::before{content:'';position:absolute;left:0;top:0;bottom:0;width:2px;background:#E8E8E8;transform:translateX(-50%);z-index:0}
+.timeline__item{position:relative;padding-bottom:40px}
+.timeline__item:last-child{padding-bottom:0}
+.timeline__dot{position:absolute;left:-32px;top:4px;width:14px;height:14px;border-radius:50%;background:#1A1A1A;box-shadow:0 0 0 4px #fff, 0 0 0 6px #1A1A1A;transform:translateX(-50%);z-index:1}
+.timeline__title{font-size:18px;font-weight:600;margin-bottom:8px}
+.timeline__text{font-size:14px;color:#555555;line-height:1.75}
 
 .quote-card{padding:40px;background:#F0F0F0;border-radius:0;border-left:4px solid #000000}
 .quote-card__text{font-family:'Circe',sans-serif;font-size:20px;line-height:1.25;color:#000000;margin-bottom:24px}
@@ -168,8 +168,8 @@ img{max-width:100%;display:block}
 
 .product-card{background:transparent;border-radius:0;border:none;overflow:hidden;transition:all 0.35s ease;cursor:pointer;display:flex;flex-direction:column;height:100%}
 .product-card:hover{transform:translateY(-4px)}
-.product-card__image{aspect-ratio:1;display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden;background:#fafafa;border-radius:0;transition:all 0.35s ease}
-.product-card:hover .product-card__image{background:#f3f3f3}
+.product-card__image{aspect-ratio:1;display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden;background:#F0F0F0;border-radius:0;transition:all 0.35s ease}
+.product-card:hover .product-card__image{background:#E8E8E8}
 .product-card__badges{position:absolute;top:12px;right:12px;display:flex;flex-direction:column;align-items:flex-end;gap:6px;z-index:2;pointer-events:none}
 .product-card__badge{pointer-events:auto;font-size:11px;padding:4px 10px;background:rgba(0,0,0,0.85);color:#fff;font-weight:600;letter-spacing:0.03em}
 .product-card__body{padding:16px 0 0;text-align:center;flex:1;display:flex;flex-direction:column}
@@ -324,596 +324,6 @@ img{max-width:100%;display:block}
 .cta-banner{padding:40px 20px}
 .cta-banner__title{font-size:24px}
 }
-
-/* ============================================================
-   SPACING PASS — pre-deploy rhythm cleanup (v2)
-   Outranks the inline styles peppered through the markup.
-   Goal: confident, symmetric, premium-minimal vertical rhythm.
-   ============================================================ */
-
-/* ---- Section rhythm ---- */
-.section { padding: 80px 0 !important; }
-@media (min-width: 768px)  { .section { padding: 104px 0 !important; } }
-@media (min-width: 1024px) { .section { padding: 120px 0 !important; } }
-
-/* When a section sits IMMEDIATELY after the previous section (and was
-   originally `padding-top:0` in markup) — give a small breathing buffer
-   instead of zero. Pure 0 hurts: when the bg color changes (e.g. solutions
-   page: white title section → black cards section), cards kiss the top
-   edge of the new bg with no buffer. */
-.page > .hero + .section[style*="padding-top:0"],
-.page > .section + .section[style*="padding-top:0"] {
-  padding-top: 48px !important;
-}
-@media (min-width: 768px) {
-  .page > .hero + .section[style*="padding-top:0"],
-  .page > .section + .section[style*="padding-top:0"] {
-    padding-top: 64px !important;
-  }
-}
-
-/* ---- Solution cards (Решения page) ---- */
-/* Cards live on black sections but have white bg — without an explicit
-   color reset they inherit white text from .section--alt, making the
-   description text invisible on white. */
-.solution-card {
-  color: #1A1A1A;
-  gap: 0;
-}
-.solution-card__title {
-  margin-bottom: 12px;
-}
-.solution-card__text {
-  font-size: 14px;
-  color: #555555;
-  line-height: 1.75;
-  margin-bottom: 8px;
-}
-.solution-card__list { color: inherit; margin-top: 12px; }
-.solution-card__list-item { color: #1A1A1A; opacity: 0.78; }
-.solution-card .btn { margin-top: 28px !important; }
-
-/* When a section is the FIRST after breadcrumbs (no hero in between),
-   give it real top padding so content doesn't kiss the breadcrumb. */
-.page > .container + .section[style*="padding-top:0"] {
-  padding-top: 48px !important;
-}
-@media (min-width: 768px) {
-  .page > .container + .section[style*="padding-top:0"] { padding-top: 64px !important; }
-}
-
-/* Production page has an inline `padding:100px 0` that breaks rhythm — normalize */
-#page-production .section[style*="padding:100px 0"] {
-  padding: 80px 0 !important;
-}
-@media (min-width: 768px)  { #page-production .section[style*="padding:100px 0"] { padding: 104px 0 !important; } }
-@media (min-width: 1024px) { #page-production .section[style*="padding:100px 0"] { padding: 120px 0 !important; } }
-
-/* ---- Section headers ---- */
-.section-header { margin-bottom: 48px; }
-@media (min-width: 768px)  { .section-header { margin-bottom: 56px; } }
-@media (min-width: 1024px) { .section-header { margin-bottom: 64px; } }
-.section-eyebrow   { margin-bottom: 12px; }
-.section-title     { margin-bottom: 16px; line-height: 1.1; }
-.section-subtitle  { margin-top: 0; }
-
-/* ---- Breadcrumbs ---- */
-.breadcrumbs { padding: 28px 0 4px !important; }
-@media (min-width: 768px) { .breadcrumbs { padding: 36px 0 4px !important; } }
-
-/* ---- Inner-page hero — symmetric, controlled ---- */
-.page:not(#page-home) .hero {
-  min-height: 0 !important;
-  padding: 88px 0 !important;
-  display: flex !important;
-  flex-direction: column !important;
-  justify-content: center !important;
-}
-@media (min-width: 768px)  { .page:not(#page-home) .hero { padding: 112px 0 !important; } }
-@media (min-width: 1024px) { .page:not(#page-home) .hero { padding: 128px 0 !important; } }
-.page:not(#page-home) .hero__title  { margin-bottom: 20px; }
-.page:not(#page-home) .hero__badge  { margin-bottom: 20px; }
-.page:not(#page-home) .hero__desc   { margin-bottom: 32px; }
-.page:not(#page-home) .hero__actions { gap: 12px; }
-
-/* ---- Home hero — kill the empty 2nd column ---- */
-#page-home .hero { padding: 96px 0 !important; min-height: 0 !important; }
-@media (min-width: 768px)  { #page-home .hero { padding: 120px 0 !important; min-height: 560px !important; } }
-@media (min-width: 1024px) { #page-home .hero { padding: 144px 0 !important; min-height: 640px !important; } }
-#page-home .hero__inner { grid-template-columns: 1fr !important; gap: 0 !important; }
-#page-home .hero__content { min-height: 0 !important; max-width: 720px; }
-#page-home .hero__title { margin-bottom: 24px; }
-#page-home .hero__desc  { margin-bottom: 36px; }
-
-/* ---- Page title blocks ( "Каталог кофе", "Журнал Addis" ) ---- */
-.section > .container > div[style*="margin-bottom:32px"]:first-child {
-  margin-bottom: 48px !important;
-}
-.section > .container > div[style*="margin-bottom:32px"]:first-child > .section-title {
-  margin-bottom: 12px !important;
-}
-
-/* ---- Filter chip rows ---- */
-#catalogFilters { margin-bottom: 56px !important; }
-#journalChips   { margin-bottom: 56px !important; }
-
-/* ---- "View all / Open catalog" trailing buttons under grids ---- */
-.section .text-center[style*="margin-top:40px"] { margin-top: 56px !important; }
-@media (min-width: 1024px) { .section .text-center[style*="margin-top:40px"] { margin-top: 64px !important; } }
-
-/* ---- CTA banner — confident standalone presence ---- */
-.cta-banner { padding: 56px 24px; }
-@media (min-width: 768px)  { .cta-banner { padding: 72px 48px; } }
-@media (min-width: 1024px) { .cta-banner { padding: 88px 64px; } }
-.cta-banner__title { margin-bottom: 16px; }
-.cta-banner__text  { margin-bottom: 32px; }
-
-/* CTA banner inside grid-2-1 (home: "Готовы обсудить?") — tighter, paired with steps */
-.grid-2-1 .cta-banner { padding: 40px 32px; }
-@media (min-width: 768px) { .grid-2-1 .cta-banner { padding: 48px 40px; } }
-
-/* ---- Process steps / Timeline — list rhythm ---- */
-/* removed — replaced by .principles */
-
-/* ---- Feature/case/solution card density ---- */
-.feature-card { padding: 28px; }
-@media (min-width: 1024px) { .feature-card { padding: 32px; } }
-.solution-card { padding: 32px; }
-@media (min-width: 1024px) { .solution-card { padding: 40px; } }
-
-/* ---- Grid gaps — slightly more breathing on desktop ---- */
-@media (min-width: 1024px) {
-  .grid-2 { gap: 32px; }
-  .grid-3 { gap: 32px; }
-  .grid-4 { gap: 28px; }
-  .grid-2-1 { gap: 48px; }
-}
-
-/* ---- Quote card paired with section ---- */
-.quote-card { padding: 36px 40px; }
-
-/* ---- Footer — final block ---- */
-.footer { padding: 80px 0 40px; }
-@media (min-width: 768px)  { .footer { padding: 96px 0 48px; } }
-@media (min-width: 1024px) { .footer { padding: 112px 0 56px; } }
-.footer__grid { margin-bottom: 56px; }
-@media (min-width: 1024px) { .footer__grid { margin-bottom: 72px; } }
-.footer__bottom { padding-top: 40px; }
-
-/* ---- Header ---- */
-.header__inner { height: 76px; }
-@media (min-width: 1024px) { .header__inner { height: 80px; } }
-
-/* ---- Forms ---- */
-.form-group { margin-bottom: 24px; }
-
-/* ---- Container max-width unification ---- */
-.container:not(.container--narrow) { max-width: 1200px; }
-.header .container,
-.header__inner { max-width: 1280px; }
-
-/* ---- Article hero — tighter top margin ---- */
-.article-hero { margin: 0 0 40px; }
-@media (min-width: 1024px) { .article-hero { margin: 0 0 56px; } }
-
-/* ---- Small viewports — tighter proportional rhythm ---- */
-@media (max-width: 480px) {
-  .section { padding: 64px 0 !important; }
-  .section-header { margin-bottom: 32px; }
-  .breadcrumbs { padding: 20px 0 4px !important; }
-  .page:not(#page-home) .hero { padding: 64px 0 !important; }
-  #page-home .hero { padding: 64px 0 !important; }
-  .cta-banner { padding: 40px 20px; }
-  .footer { padding: 56px 0 32px; }
-  .feature-card, .solution-card { padding: 24px; }
-}
-
-/* ============================================================
-   BRAND BOOK COMPONENTS — pilot rollout (May 2026)
-   Faithful to addis-book layout: warm paper sheet,
-   espresso headings, numbered "1 — Title" pattern,
-   diamond marker + connecting line (book p.4).
-============================================================ */
-
-/* Warm paper section — alternative to black section--alt.
-   Inherits color, so children using currentColor stay readable. */
-.section--paper{
-  background: var(--addis-paper);
-  color: var(--addis-espresso);
-  position: relative;
-  overflow: hidden;
-}
-/* Sand brand-mark fragments — large opposing corner triangles
-   echoing the Addis hourglass (book pp. 2, 8, 14). */
-.section--paper::before,
-.section--paper::after{
-  content: '';
-  position: absolute;
-  background: var(--addis-sand);
-  pointer-events: none;
-  z-index: 0;
-  opacity: 0.85;
-}
-.section--paper::before{
-  top: 0; right: 0;
-  width: 42%; height: 62%;
-  clip-path: polygon(100% 0, 100% 100%, 0 0);
-}
-.section--paper::after{
-  bottom: 0; left: 0;
-  width: 42%; height: 62%;
-  clip-path: polygon(0 100%, 0 0, 100% 100%);
-}
-@media (max-width: 768px){
-  .section--paper::before, .section--paper::after{ width: 55%; height: 38%; opacity: 0.7; }
-}
-.section--paper > .container{ position: relative; z-index: 1; }
-.section--paper .section-eyebrow{ color: var(--addis-espresso); opacity: 0.55; }
-.section--paper .section-title  { color: var(--addis-espresso); }
-.section--paper .section-subtitle{ color: var(--addis-espresso-soft); opacity: 1; }
-
-/* Principles stack — book p.4 reference layout */
-.principles{
-  max-width: 760px;
-  margin: 0 auto;
-  position: relative;
-  padding-left: 4px;
-}
-/* Connecting vertical line through diamond markers */
-.principles::before{
-  content: '';
-  position: absolute;
-  left: 9px;
-  top: 36px;
-  bottom: 36px;
-  width: 1px;
-  background: currentColor;
-  opacity: 0.35;
-}
-.principle{
-  display: grid;
-  grid-template-columns: 20px 1fr;
-  gap: 40px;
-  padding: 32px 0;
-  align-items: start;
-}
-@media (min-width: 768px){
-  .principle{ grid-template-columns: 20px 1fr; gap: 56px; padding: 40px 0; }
-}
-.principle__marker{
-  width: 12px;
-  height: 12px;
-  background: currentColor;
-  transform: rotate(45deg);
-  margin-top: 22px;
-  position: relative;
-  z-index: 1;
-}
-.principle__title{
-  font-family: 'Circe', sans-serif;
-  font-size: 32px;
-  font-weight: 700;
-  line-height: 1.05;
-  letter-spacing: -0.005em;
-  color: currentColor;
-  margin-bottom: 28px;
-  text-wrap: pretty;
-}
-@media (min-width: 768px){ .principle__title{ font-size: 40px; margin-bottom: 32px; } }
-@media (min-width: 1024px){ .principle__title{ font-size: 48px; } }
-.principle__text{
-  font-size: 14px;
-  line-height: 1.65;
-  color: currentColor;
-  opacity: 0.65;
-  max-width: 380px;
-  margin-left: 0;
-}
-@media (min-width: 768px){ .principle__text{ font-size: 15px; } }
-
-/* Dark-section variant — keep muted secondary readable on black. */
-.section--alt .principle__text,
-.section--cream .principle__text{ opacity: 0.7; }
-/* Paper section uses a tinted warm-brown secondary, more elegant than opacity. */
-.section--paper .principle__text{ color: var(--addis-espresso-soft); opacity: 1; }
-
-/* Compact variant — smaller titles, for short numbered mini-lists
-   (book p.5 "качество в системе", more dense). */
-.principles--compact{ max-width: 640px; }
-.principles--compact::before{ top: 22px; bottom: 22px; }
-.principles--compact .principle{ padding: 18px 0; gap: 28px; }
-@media (min-width: 768px){
-  .principles--compact .principle{ padding: 22px 0; gap: 32px; }
-}
-.principles--compact .principle__marker{ width: 9px; height: 9px; margin-top: 12px; }
-.principles--compact .principle__title{
-  font-size: 18px;
-  font-weight: 700;
-  letter-spacing: 0;
-  line-height: 1.25;
-  margin-bottom: 6px;
-}
-@media (min-width: 768px){
-  .principles--compact .principle__title{ font-size: 20px; margin-bottom: 8px; }
-}
-.principles--compact .principle__text{
-  font-size: 14px;
-  line-height: 1.6;
-  max-width: 100%;
-}
-
-/* CTA banner — warm espresso variant */
-.cta-banner--espresso{ background: var(--addis-espresso); }
-.cta-banner--espresso .btn--primary,
-.cta-banner--espresso .btn--secondary{
-  background: var(--addis-paper); color: var(--addis-espresso); border-color: var(--addis-paper);
-}
-.cta-banner--espresso .btn--primary:hover,
-.cta-banner--espresso .btn--secondary:hover{
-  background: #fff; border-color: #fff; color: var(--addis-espresso);
-}
-
-/* ============================================================
-   BREATHING ROOM PASS — pre-deploy lightness (May 2026)
-   Goal: business minimalism with air. Lean on Circe Light (300)
-   for secondary text, increase rhythm, hairline dividers.
-   Outranks earlier styles via specificity / declaration order.
-============================================================ */
-
-/* Type weights — lean secondary text on Circe Light */
-.hero__desc,
-.hero__stat-label,
-.section-subtitle,
-.cta-banner__text,
-.principle__text,
-.product-card__category,
-.article-card__excerpt,
-.feature-card__text,
-.solution-card__text,
-.segment-card__desc,
-.breadcrumbs,
-.footer__desc {
-  font-weight: 300;
-}
-
-/* Headlines — slight optical tightening for editorial feel */
-.section-title,
-.hero__title,
-.cta-banner__title,
-.principle__title {
-  letter-spacing: -0.01em;
-}
-
-/* Eyebrows — looser tracking, softer color */
-.section-eyebrow {
-  font-weight: 600;
-  letter-spacing: 0.16em;
-  opacity: 0.55;
-}
-
-/* Section rhythm — +20% breathing */
-.section { padding: 96px 0; }
-@media (min-width: 768px)  { .section { padding: 128px 0; } }
-@media (min-width: 1024px) { .section { padding: 160px 0; } }
-
-/* Hero — less monolithic */
-#page-home .hero { min-height: 72vh; }
-@media (min-width: 768px) { #page-home .hero { min-height: 78vh; } }
-.hero__desc { max-width: 540px; font-size: 18px; line-height: 1.7; }
-.hero__stats { gap: 32px; margin-top: 56px; }
-
-/* Section header airier */
-.section-header { margin-bottom: 64px; }
-.section-subtitle { font-size: 19px; line-height: 1.7; max-width: 600px; }
-
-/* Cards — internal air, hairline dividers */
-.feature-card, .solution-card {
-  padding: 40px 32px;
-  border: 1px solid rgba(0,0,0,0.06);
-  background: #ffffff;
-  transition: all 0.35s ease;
-}
-@media (min-width: 1024px) {
-  .feature-card, .solution-card { padding: 48px 36px; }
-}
-.feature-card:hover, .solution-card:hover {
-  border-color: rgba(0,0,0,0.18);
-  transform: translateY(-3px);
-}
-.section--alt .feature-card, .section--alt .solution-card,
-.section--cream .feature-card, .section--cream .solution-card {
-  background: transparent;
-  border-color: rgba(255,255,255,0.10);
-}
-.section--alt .feature-card:hover, .section--alt .solution-card:hover,
-.section--cream .feature-card:hover, .section--cream .solution-card:hover {
-  border-color: rgba(255,255,255,0.30);
-}
-.feature-card__title, .solution-card__title { letter-spacing: -0.01em; }
-.feature-card__text, .solution-card__text { line-height: 1.7; }
-
-/* Grid gaps — wider */
-.grid-3, .grid-4 { gap: 32px; }
-@media (min-width: 1024px) { .grid-3, .grid-4 { gap: 40px; } }
-
-/* Product card density relief */
-.product-card__name { font-weight: 700; letter-spacing: -0.005em; margin-bottom: 8px; }
-.product-card__profile { gap: 16px; }
-
-/* Mobile breathing — proportional */
-@media (max-width: 480px) {
-  .section { padding: 72px 0 !important; }
-  .section-header { margin-bottom: 40px !important; }
-  .hero__desc { font-size: 17px; }
-  .feature-card, .solution-card { padding: 28px 24px; }
-}
-
-/* ============================================================
-   CONTRAST PASS — pre-deploy readability (May 2026)
-   Restores contrast in places that BREATHING ROOM PASS made
-   too pale (Light 300 + opacity stacks). Outranks earlier
-   declarations by appearing last in source.
-============================================================ */
-
-/* Body text and secondary copy — keep Light 300 ONLY on white sections.
-   On dark sections (.section--alt, .section--cream, .hero, .footer),
-   the combination of Light 300 + low opacity is unreadable —
-   bump opacity AND use Regular 400 for legibility. */
-
-.hero__desc {
-  font-weight: 400;
-  color: rgba(255,255,255,0.92);
-}
-.hero__stat-label {
-  font-weight: 400;
-  color: rgba(255,255,255,0.78);
-}
-
-.section-eyebrow { opacity: 0.75; }
-
-.section--alt .section-subtitle,
-.section--cream .section-subtitle,
-.hero .section-subtitle {
-  font-weight: 400;
-  opacity: 0.95;
-}
-
-/* Principles on dark sections — restore weight and lift opacity */
-.section--alt .principle__text,
-.section--cream .principle__text {
-  font-weight: 400;
-  opacity: 0.85;
-}
-
-/* Feature/solution cards on dark sections — descriptions were Light 300 inherited */
-.section--alt .feature-card__text,
-.section--alt .solution-card__text,
-.section--cream .feature-card__text,
-.section--cream .solution-card__text {
-  font-weight: 400;
-  color: rgba(255,255,255,0.85);
-}
-
-/* CTA banner — was #999 + Light, unreadable on black */
-.cta-banner__text {
-  font-weight: 400;
-  color: rgba(255,255,255,0.85);
-}
-
-/* Article cards inside dark Journal section */
-.section--alt .article-card__category,
-.section--cream .article-card__category {
-  font-weight: 600;
-  opacity: 0.85;
-}
-.section--alt .article-card__excerpt,
-.section--cream .article-card__excerpt {
-  font-weight: 400;
-  opacity: 0.82;
-}
-.section--alt .article-card__meta,
-.section--cream .article-card__meta {
-  color: rgba(255,255,255,0.65);
-}
-
-/* Footer — was #555 heading and #999 links on BLACK */
-.footer__heading {
-  color: rgba(255,255,255,0.55);
-  font-weight: 700;
-}
-.footer__desc {
-  font-weight: 400;
-  color: rgba(255,255,255,0.78);
-}
-.footer__link {
-  font-weight: 400;
-  color: rgba(255,255,255,0.78);
-}
-.footer__link:hover { color: #ffffff; }
-.footer__copy {
-  font-weight: 400;
-  color: rgba(255,255,255,0.6);
-}
-
-/* Breadcrumbs back to Regular */
-.breadcrumbs { font-weight: 400; }
-
-/* Hero stat value — was using currentColor with no weight protection */
-.hero__stat-value { color: #ffffff; }
-
-/* Segment cards on home "Решения для каждого формата" — text was Light 300 + 0.8 opacity over a dark gradient with overlay. Boost weight and color. */
-.segment-card__desc {
-  font-weight: 400;
-  color: rgba(255,255,255,0.95);
-}
-.segment-card__title { color: #ffffff; }
-
-/* Solution cards on the Solutions PAGE (white bg) — bump body text weight back to Regular for readability at 14px. */
-.solution-card__text { font-weight: 400; color: #3d3d3d; }
-.solution-card__list-item { color: #2a2a2a; opacity: 1; font-weight: 400; }
-
-/* Solutions cards live on a section--alt (black) but their text colors
-   are hardcoded to dark grey — restore the white card background so
-   the cards read like proper white cards on the dark section.
-   feature-cards keep transparent + white text via earlier override. */
-.section--alt .solution-card,
-.section--cream .solution-card {
-  background: #ffffff;
-  border-color: rgba(0,0,0,0.06);
-}
-.section--alt .solution-card:hover,
-.section--cream .solution-card:hover {
-  border-color: rgba(0,0,0,0.18);
-}
-
-/* Solution cards with hero image on top — Solutions page.
-   Uses .solution-card--media modifier. Card becomes flex column,
-   image spans full bleed, button auto-aligns to bottom. */
-.solution-card--media {
-  padding: 0 !important;
-  overflow: hidden;
-  align-items: stretch !important;
-  text-align: left !important;
-}
-.solution-card__media {
-  width: 100%;
-  aspect-ratio: 4 / 3;
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-}
-.solution-card--media .solution-card__body {
-  padding: 32px 32px 36px;
-  display: flex;
-  flex-direction: column;
-  flex: 1;
-  text-align: left;
-  align-items: flex-start;
-}
-@media (min-width: 1024px) {
-  .solution-card--media .solution-card__body { padding: 36px 36px 40px; }
-}
-.solution-card--media .solution-card__title {
-  text-align: left;
-  font-size: 22px;
-  margin-bottom: 8px;
-}
-.solution-card--media .solution-card__text {
-  text-align: left;
-  margin-bottom: 16px;
-}
-.solution-card--media .solution-card__list {
-  text-align: left;
-  margin: 0 0 28px;
-  width: 100%;
-}
-.solution-card--media .solution-card__list-item {
-  text-align: left;
-}
-.solution-card--media .btn {
-  margin-top: auto !important;
-  align-self: flex-start;
-}
 </style>
 </head>
 <body>
@@ -929,11 +339,12 @@ img{max-width:100%;display:block}
 <li><a class="header__nav-link" onclick="navigate('catalog')">Каталог</a></li>
 <li><a class="header__nav-link" onclick="navigate('solutions')">Решения</a></li>
 <li><a class="header__nav-link" onclick="navigate('production')">Производство</a></li>
+<li><a class="header__nav-link" onclick="navigate('journal')">Журнал</a></li>
 <li><a class="header__nav-link" onclick="navigate('about')">О бренде</a></li>
 </ul>
 </nav>
 <div class="header__actions">
-<button class="btn btn--secondary btn--sm" onclick="window.open('files/Addis-price.pdf','_blank')">Прайс-лист</button>
+<button class="btn btn--secondary btn--sm" onclick="navigate('price-request')">Получить прайс</button>
 <button class="header__burger" id="burger" aria-label="Меню" aria-expanded="false">
 <span></span><span></span><span></span>
 </button>
@@ -949,10 +360,11 @@ img{max-width:100%;display:block}
 <a class="mobile-nav__link" onclick="mobileNavGo('production')">Производство</a>
 <a class="mobile-nav__link" onclick="mobileNavGo('training')">Обучение</a>
 <a class="mobile-nav__link" onclick="mobileNavGo('cases')">Кейсы</a>
+<a class="mobile-nav__link" onclick="mobileNavGo('journal')">Журнал</a>
 <a class="mobile-nav__link" onclick="mobileNavGo('about')">О бренде</a>
 <a class="mobile-nav__link" onclick="mobileNavGo('contacts')">Контакты</a>
 <div class="mobile-nav__divider"></div>
-<a class="mobile-nav__link" href="files/Addis-price.pdf" target="_blank" style="color:#1A1A1A;font-weight:700">Скачать прайс-лист</a>
+<a class="mobile-nav__link" onclick="mobileNavGo('price-request')" style="color:#1A1A1A;font-weight:700">Получить прайс</a>
 <a class="mobile-nav__link" onclick="mobileNavGo('faq')">FAQ</a>
 </nav>
 </div>
@@ -968,7 +380,7 @@ img{max-width:100%;display:block}
 <h1 class="hero__title">Кофе, который работает на ваш бизнес</h1>
 <p class="hero__desc">Поставляем specialty и fine commercial кофе для кофеен, ресторанов, офисов и розницы. Стабильные партии, прозрачные условия, поддержка на каждом этапе.</p>
 <div class="hero__actions">
-<button class="btn btn--primary btn--lg" onclick="window.open('files/Addis-price.pdf','_blank')">Скачать прайс-лист</button>
+<button class="btn btn--primary btn--lg" onclick="navigate('price-request')">Запросить прайс</button>
 <button class="btn btn--outline btn--lg" onclick="navigate('catalog')">Смотреть каталог</button>
 </div>
 </div>
@@ -984,10 +396,11 @@ img{max-width:100%;display:block}
 <h2 class="section-title">Решения для каждого формата</h2>
 <p class="section-subtitle">Подбираем кофе и сервис под задачи вашего бизнеса</p>
 </div>
-<div class="grid-3">
-<div class="segment-card" onclick="navigate('solutions')"><div class="segment-card__bg" style="background:url('images/segment-cafe.jpg') center/cover no-repeat"></div><div class="segment-card__overlay"></div><div class="segment-card__content"><div class="segment-card__title">Кофейни</div><div class="segment-card__desc">Эспрессо-бленды, моносорта, сезонные новинки</div></div></div>
-<div class="segment-card" onclick="navigate('solutions')"><div class="segment-card__bg" style="background:url('images/segment-restaurant.jpg') center/cover no-repeat"></div><div class="segment-card__overlay"></div><div class="segment-card__content"><div class="segment-card__title">Рестораны</div><div class="segment-card__desc">Кофе для меню, стабильность вкуса, крупные партии</div></div></div>
-<div class="segment-card" onclick="navigate('solutions')"><div class="segment-card__bg" style="background:url('images/segment-office.jpg') center/cover no-repeat"></div><div class="segment-card__overlay"></div><div class="segment-card__content"><div class="segment-card__title">Офисы</div><div class="segment-card__desc">Надёжные бленды для супер-автоматов</div></div></div>
+<div class="grid-4">
+<div class="segment-card" onclick="navigate('solutions')"><div class="segment-card__bg" style="background:linear-gradient(135deg,#606060,#303030)"></div><div class="segment-card__overlay"></div><div class="segment-card__content"><div class="segment-card__title">Кофейни</div><div class="segment-card__desc">Эспрессо-бленды, моносорта, сезонные новинки</div></div></div>
+<div class="segment-card" onclick="navigate('solutions')"><div class="segment-card__bg" style="background:linear-gradient(135deg,#505050,#202020)"></div><div class="segment-card__overlay"></div><div class="segment-card__content"><div class="segment-card__title">Рестораны</div><div class="segment-card__desc">Кофе для меню, стабильность вкуса, крупные партии</div></div></div>
+<div class="segment-card" onclick="navigate('solutions')"><div class="segment-card__bg" style="background:linear-gradient(135deg,#585858,#383838)"></div><div class="segment-card__overlay"></div><div class="segment-card__content"><div class="segment-card__title">Офисы</div><div class="segment-card__desc">Надёжные бленды для супер-автоматов</div></div></div>
+<div class="segment-card" onclick="navigate('solutions')"><div class="segment-card__bg" style="background:linear-gradient(135deg,#686868,#484848)"></div><div class="segment-card__overlay"></div><div class="segment-card__content"><div class="segment-card__title">Retail</div><div class="segment-card__desc">Фасовка для полок, маркетплейсы</div></div></div>
 </div>
 </div>
 </div>
@@ -998,49 +411,13 @@ img{max-width:100%;display:block}
 <div class="section-eyebrow">О нас</div>
 <h2 class="section-title">Наши принципы</h2>
 </div>
-<div class="principles">
-<div class="principle">
-<div class="principle__marker" aria-hidden="true"></div>
-<div class="principle__body">
-<h3 class="principle__title">1 &mdash; Ценность</h3>
-<p class="principle__text">Работаем в зоне «доступного премиума» — выгоднее импортных брендов при стабильно высоком качестве.</p>
-</div>
-</div>
-<div class="principle">
-<div class="principle__marker" aria-hidden="true"></div>
-<div class="principle__body">
-<h3 class="principle__title">2 &mdash; Продукт</h3>
-<p class="principle__text">Понятный, рабочий кофе, который не ломает процессы в вашем заведении и стабильно раскрывается в чашке.</p>
-</div>
-</div>
-<div class="principle">
-<div class="principle__marker" aria-hidden="true"></div>
-<div class="principle__body">
-<h3 class="principle__title">3 &mdash; Простота</h3>
-<p class="principle__text">Бренд с человеческим лицом. К нам легко обратиться напрямую и быстро получить решение.</p>
-</div>
-</div>
-<div class="principle">
-<div class="principle__marker" aria-hidden="true"></div>
-<div class="principle__body">
-<h3 class="principle__title">4 &mdash; Рост</h3>
-<p class="principle__text">Помогаем вашему бизнесу расти — регулярно привозим новые лоты для экспериментов с профилями и вкусом.</p>
-</div>
-</div>
-<div class="principle">
-<div class="principle__marker" aria-hidden="true"></div>
-<div class="principle__body">
-<h3 class="principle__title">5 &mdash; Глубина</h3>
-<p class="principle__text">Детально разбираем каждый лот: от терруара и особенностей урожая до точечной подстройки оборудования.</p>
-</div>
-</div>
-<div class="principle">
-<div class="principle__marker" aria-hidden="true"></div>
-<div class="principle__body">
-<h3 class="principle__title">6 &mdash; Выбор</h3>
-<p class="principle__text">Специализируемся не только на эспрессо — большой фокус на фильтр, альтернативу и дрип-кофе.</p>
-</div>
-</div>
+<div class="grid-3">
+<div class="feature-card"><div class="feature-card__title">Ценность</div><div class="feature-card__text">Мы работаем в зоне «доступного премиума» — это выгоднее импортных брендов при стабильно высочайшем качестве.</div></div>
+<div class="feature-card"><div class="feature-card__title">Продукт</div><div class="feature-card__text">Понятный, удобный и рабочий кофе, который не ломает процессы в вашей кофейне и всегда раскрывается стабильно.</div></div>
+<div class="feature-card"><div class="feature-card__title">Простота</div><div class="feature-card__text">Мы — бренд с человеческим лицом. К нам легко обратиться напрямую и всегда получить быстрое решение.</div></div>
+<div class="feature-card"><div class="feature-card__title">Рост</div><div class="feature-card__text">Мы помогаем вашему бизнесу расти, регулярно привозя новые лоты для экспериментов с профилями и вкусом.</div></div>
+<div class="feature-card"><div class="feature-card__title">Глубина</div><div class="feature-card__text">Мы детально разбираем каждый лот: от терруара и особенностей урожая до точечной подстройки оборудования.</div></div>
+<div class="feature-card"><div class="feature-card__title">Выбор</div><div class="feature-card__text">Мы специализируемся не только на эспрессо, но и делаем огромный фокус на фильтр, альтернативу и дрип-кофе.</div></div>
 </div>
 </div>
 </div>
@@ -1054,43 +431,16 @@ img{max-width:100%;display:block}
 <h2 class="section-title">Начать работать — просто</h2>
 <p class="section-subtitle">От заявки до первой поставки — от 3 рабочих дней</p>
 </div>
-<div class="principles principles--compact" style="max-width:none;margin:0">
-<div class="principle">
-<div class="principle__marker" aria-hidden="true"></div>
-<div class="principle__body">
-<h3 class="principle__title">1 &mdash; Оставьте заявку</h3>
-<p class="principle__text">Расскажите о вашем бизнесе — мы подберём решение.</p>
-</div>
-</div>
-<div class="principle">
-<div class="principle__marker" aria-hidden="true"></div>
-<div class="principle__body">
-<h3 class="principle__title">2 &mdash; Получите прайс и подборку</h3>
-<p class="principle__text">Менеджер подготовит персональный прайс и рекомендации.</p>
-</div>
-</div>
-<div class="principle">
-<div class="principle__marker" aria-hidden="true"></div>
-<div class="principle__body">
-<h3 class="principle__title">3 &mdash; Согласуйте и закажите</h3>
-<p class="principle__text">Выбираете позиции. Обжариваем за 1–2 рабочих дня.</p>
-</div>
-</div>
-<div class="principle">
-<div class="principle__marker" aria-hidden="true"></div>
-<div class="principle__body">
-<h3 class="principle__title">4 &mdash; Работаем вместе</h3>
-<p class="principle__text">Поддерживаем: обучение, настройка, консультации.</p>
-</div>
-</div>
-</div>
+<div class="process-step"><div class="process-step__number">01</div><div><div class="process-step__title">Оставьте заявку</div><div class="process-step__text">Расскажите о вашем бизнесе — мы подберём решение.</div></div></div>
+<div class="process-step"><div class="process-step__number">02</div><div><div class="process-step__title">Получите прайс и подборку</div><div class="process-step__text">Менеджер подготовит персональный прайс и рекомендации.</div></div></div>
+<div class="process-step"><div class="process-step__number">03</div><div><div class="process-step__title">Согласуйте и закажите</div><div class="process-step__text">Выбираете позиции. Обжариваем за 1–2 рабочих дня.</div></div></div>
+<div class="process-step"><div class="process-step__number">04</div><div><div class="process-step__title">Работаем вместе</div><div class="process-step__text">Поддерживаем: обучение, настройка, консультации.</div></div></div>
 </div>
 <div>
-<div class="cta-banner" style="height:100%;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center">
-<img src="images/logo-2.png" alt="Addis" style="width:96px;height:auto;margin-bottom:20px;filter:invert(1) brightness(2);opacity:0.92">
+<div class="cta-banner" style="height:100%;display:flex;flex-direction:column;justify-content:center">
 <div class="cta-banner__title" style="font-size:28px">Готовы обсудить?</div>
 <div class="cta-banner__text" style="font-size:14px;margin-bottom:24px">Оставьте заявку — перезвоним в течение часа</div>
-<button class="btn btn--secondary btn--lg" style="align-self:center" onclick="window.open('files/Addis-price.pdf','_blank')">Скачать прайс</button>
+<button class="btn btn--secondary btn--lg" style="align-self:center" onclick="navigate('price-request')">Запросить прайс</button>
 </div>
 </div>
 </div>
@@ -1118,40 +468,19 @@ img{max-width:100%;display:block}
 <h2 class="section-title">Прозрачность на каждом этапе</h2>
 <p class="section-subtitle">От выбора зелёного зерна до упаковки — контролируем каждый шаг</p>
 </div>
-<div class="principles principles--compact" style="margin:0">
-<div class="principle">
-<div class="principle__marker" aria-hidden="true"></div>
-<div class="principle__body">
-<h3 class="principle__title">1 &mdash; Закупка зелёного зерна</h3>
-<p class="principle__text">Прямые контракты с фермами Бразилии, Эфиопии, Колумбии, Кении.</p>
-</div>
-</div>
-<div class="principle">
-<div class="principle__marker" aria-hidden="true"></div>
-<div class="principle__body">
-<h3 class="principle__title">2 &mdash; Профиль обжарки</h3>
-<p class="principle__text">Каждый лот обжаривается по индивидуальному профилю.</p>
-</div>
-</div>
-<div class="principle">
-<div class="principle__marker" aria-hidden="true"></div>
-<div class="principle__body">
-<h3 class="principle__title">3 &mdash; Контроль качества</h3>
-<p class="principle__text">Каппинг каждой партии по протоколам CVA. Отбраковка — минимум 3%.</p>
-</div>
-</div>
-<div class="principle">
-<div class="principle__marker" aria-hidden="true"></div>
-<div class="principle__body">
-<h3 class="principle__title">4 &mdash; Упаковка и отгрузка</h3>
-<p class="principle__text">Дегазационные клапаны, маркировка даты обжарки.</p>
-</div>
-</div>
+<div class="timeline">
+<div class="timeline__item"><div class="timeline__dot"></div><div class="timeline__title">Закупка зелёного зерна</div><div class="timeline__text">Прямые контракты с фермами Бразилии, Эфиопии, Колумбии, Кении.</div></div>
+<div class="timeline__item"><div class="timeline__dot"></div><div class="timeline__title">Профиль обжарки</div><div class="timeline__text">Каждый лот обжаривается по индивидуальному профилю.</div></div>
+<div class="timeline__item"><div class="timeline__dot"></div><div class="timeline__title">Контроль качества</div><div class="timeline__text">Каппинг каждой партии по протоколам CVA. Отбраковка — минимум 3%.</div></div>
+<div class="timeline__item"><div class="timeline__dot"></div><div class="timeline__title">Упаковка и отгрузка</div><div class="timeline__text">Дегазационные клапаны, маркировка даты обжарки.</div></div>
 </div>
 </div>
 <div style="display:flex;align-items:center;justify-content:center">
-<div style="width:100%;aspect-ratio:4/3;border-radius:0;background:#F0F0F0;display:flex;align-items:center;justify-content:center">
-<img src="images/logo-2.png" alt="Addis" style="width:42%;max-width:240px;opacity:0.18">
+<div style="width:100%;aspect-ratio:4/3;border-radius:24px;background:linear-gradient(135deg,#C8C8C8,#A0A0A0);display:flex;align-items:center;justify-content:center">
+<div style="text-align:center;color:#fff">
+<div style="font-size:24px;margin-bottom:8px;letter-spacing:0.25em;opacity:0.5">ADDIS</div>
+<div style="font-size:14px;opacity:0.7;text-transform:uppercase;letter-spacing:0.1em">Обжарочный цех</div>
+</div>
 </div>
 </div>
 </div>
@@ -1167,28 +496,10 @@ img{max-width:100%;display:block}
 <h2 class="section-title">Запускаем не только кофе</h2>
 <p class="section-subtitle">Обучение бариста, настройка оборудования — включено в партнёрство</p>
 </div>
-<div class="principles principles--compact" style="max-width:none;margin:0">
-<div class="principle">
-<div class="principle__marker" aria-hidden="true"></div>
-<div class="principle__body">
-<h3 class="principle__title">1 &mdash; Каппинги и дегустации</h3>
-<p class="principle__text">Знакомство с линейкой, обучение оценке качества.</p>
-</div>
-</div>
-<div class="principle">
-<div class="principle__marker" aria-hidden="true"></div>
-<div class="principle__body">
-<h3 class="principle__title">2 &mdash; Настройка оборудования</h3>
-<p class="principle__text">Помощь с настройкой помола, температуры, давления.</p>
-</div>
-</div>
-<div class="principle">
-<div class="principle__marker" aria-hidden="true"></div>
-<div class="principle__body">
-<h3 class="principle__title">3 &mdash; Разработка рецептур</h3>
-<p class="principle__text">Составление кофейной карты, подбор блендов.</p>
-</div>
-</div>
+<div style="display:flex;flex-direction:column;gap:16px">
+<div style="display:flex;gap:16px;align-items:flex-start"><div style="width:40px;height:40px;border-radius:0;background:#000000;color:#fff;display:flex;align-items:center;justify-content:center;font-weight:700;flex-shrink:0">1</div><div><div style="font-weight:600;margin-bottom:4px">Каппинги и дегустации</div><div style="font-size:14px;color:#555555">Знакомство с линейкой, обучение оценке качества</div></div></div>
+<div style="display:flex;gap:16px;align-items:flex-start"><div style="width:40px;height:40px;border-radius:0;background:#000000;color:#fff;display:flex;align-items:center;justify-content:center;font-weight:700;flex-shrink:0">2</div><div><div style="font-weight:600;margin-bottom:4px">Настройка оборудования</div><div style="font-size:14px;color:#555555">Помощь с настройкой помола, температуры, давления</div></div></div>
+<div style="display:flex;gap:16px;align-items:flex-start"><div style="width:40px;height:40px;border-radius:0;background:#000000;color:#fff;display:flex;align-items:center;justify-content:center;font-weight:700;flex-shrink:0">3</div><div><div style="font-weight:600;margin-bottom:4px">Разработка рецептур</div><div style="font-size:14px;color:#555555">Составление кофейной карты, подбор блендов</div></div></div>
 </div>
 <div style="margin-top:32px"><button class="btn btn--primary btn--lg" onclick="navigate('training')">Подробнее об обучении</button></div>
 </div>
@@ -1203,7 +514,23 @@ img{max-width:100%;display:block}
 </div>
 </div>
 
-<div class="section" style="display:none">
+<div class="section">
+<div class="container">
+<div class="section-header section-header--center">
+<div class="section-eyebrow">Кейсы</div>
+<h2 class="section-title">Нам доверяют</h2>
+<p class="section-subtitle">Реальные результаты наших партнёров</p>
+</div>
+<div class="grid-3">
+<div class="case-card"><div class="case-card__image" style="background:linear-gradient(135deg,#D0D0D0,#B0B0B0)"></div><div class="case-card__body"><div class="case-card__label">Кофейня</div><div class="case-card__title">Сеть &#171;Утро&#187; — 12 точек</div><div class="case-card__text">Стабильность вкуса выросла, стоимость зерна снизилась на 15%.</div><div class="case-card__metrics"><div><div class="case-card__metric-value">&#8722;15%</div><div class="case-card__metric-label">стоимость</div></div><div><div class="case-card__metric-value">+23%</div><div class="case-card__metric-label">повторные</div></div></div></div></div>
+<div class="case-card"><div class="case-card__image" style="background:linear-gradient(135deg,#C8C8C8,#A0A0A0)"></div><div class="case-card__body"><div class="case-card__label">Ресторан</div><div class="case-card__title">Ресторан &#171;Базис&#187;</div><div class="case-card__text">Полностью пересобрали кофейное меню. Добавили фильтр-меню.</div><div class="case-card__metrics"><div><div class="case-card__metric-value">+38%</div><div class="case-card__metric-label">выручка</div></div><div><div class="case-card__metric-value">4.9&#9733;</div><div class="case-card__metric-label">рейтинг</div></div></div></div></div>
+<div class="case-card"><div class="case-card__image" style="background:linear-gradient(135deg,#B8B8B8,#A0A0A0)"></div><div class="case-card__body"><div class="case-card__label">Офис</div><div class="case-card__title">IT-компания &#171;Нексус&#187;</div><div class="case-card__text">Кофе-точка в офисе на 300 человек с автодоставкой.</div><div class="case-card__metrics"><div><div class="case-card__metric-value">300+</div><div class="case-card__metric-label">чашек в день</div></div><div><div class="case-card__metric-value">98%</div><div class="case-card__metric-label">довольных</div></div></div></div></div>
+</div>
+<div class="text-center" style="margin-top:40px"><button class="btn btn--outline btn--lg" onclick="navigate('cases')">Все кейсы</button></div>
+</div>
+</div>
+
+<div class="section section--alt">
 <div class="container">
 <div class="section-header section-header--center">
 <div class="section-eyebrow">Журнал</div>
@@ -1221,7 +548,7 @@ img{max-width:100%;display:block}
 <div class="cta-banner__title">Начните работать с Addis сегодня</div>
 <div class="cta-banner__text">Запросите прайс — подберём оптимальный ассортимент под ваш формат и объёмы.</div>
 <div class="cta-banner__actions">
-<button class="btn btn--secondary btn--lg" onclick="window.open('files/Addis-price.pdf','_blank')">Скачать прайс-лист</button>
+<button class="btn btn--secondary btn--lg" onclick="navigate('price-request')">Запросить прайс</button>
 <button class="btn btn--outline btn--lg" style="border-color:rgba(255,255,255,0.3);color:#ffffff" onclick="navigate('contacts')">Связаться с нами</button>
 </div>
 </div>
@@ -1237,16 +564,17 @@ img{max-width:100%;display:block}
 <div class="hero__badge">Для HoReCa</div>
 <h1 class="hero__title" style="font-size:36px">Всё, что нужно вашему кофейному бизнесу</h1>
 <p class="hero__desc">Поставки specialty и fine commercial кофе для кофеен, ресторанов, отелей и офисов.</p>
-<div class="hero__actions"><button class="btn btn--primary btn--lg" onclick="window.open('files/Addis-price.pdf','_blank')">Скачать прайс-лист</button><button class="btn btn--outline btn--lg" onclick="navigate('catalog')">Каталог кофе</button></div>
+<div class="hero__actions"><button class="btn btn--primary btn--lg" onclick="navigate('price-request')">Запросить прайс</button><button class="btn btn--outline btn--lg" onclick="navigate('catalog')">Каталог кофе</button></div>
 </div>
 </div>
 <div class="section" style="padding-top:0">
 <div class="container">
 <div class="section-header section-header--center"><div class="section-eyebrow">Для кого</div><h2 class="section-title">Кому подходит Addis</h2></div>
-<div class="grid-3">
+<div class="grid-4">
 <div class="feature-card"><div class="feature-card__title">Кофейни</div><div class="feature-card__text">От моно-локаций до сетей. Эспрессо-бленды, моносорта, сезонные лоты.</div></div>
 <div class="feature-card"><div class="feature-card__title">Рестораны</div><div class="feature-card__text">Кофе для гастрономического меню. Стабильный бленд, крупные партии.</div></div>
 <div class="feature-card"><div class="feature-card__title">Офисы</div><div class="feature-card__text">Кофе для команды: надёжные бленды, удобная фасовка, подписка.</div></div>
+<div class="feature-card"><div class="feature-card__title">Retail</div><div class="feature-card__text">Фасовка для полок и маркетплейсов. Собственная торговая марка.</div></div>
 </div>
 </div>
 </div>
@@ -1258,7 +586,7 @@ img{max-width:100%;display:block}
 <div class="feature-card"><div class="feature-card__title">Моносорта</div><div class="feature-card__text">Эфиопия, Колумбия, Кения, Бразилия, Гватемала.</div></div>
 <div class="feature-card"><div class="feature-card__title">Сезонные лоты</div><div class="feature-card__text">Микролоты и экспериментальные обработки.</div></div>
 <div class="feature-card"><div class="feature-card__title">Молотый кофе</div><div class="feature-card__text">Помол под турку, френч-пресс, аэропресс, фильтр.</div></div>
-<div class="feature-card"><div class="feature-card__title">Дрип-пакеты</div><div class="feature-card__text">Фильтр-кофе в удобной фасовке для офисов.</div></div>
+<div class="feature-card"><div class="feature-card__title">Дрип-пакеты</div><div class="feature-card__text">Фильтр-кофе в удобной фасовке для офисов и ритейла.</div></div>
 <div class="feature-card"><div class="feature-card__title">Private Label</div><div class="feature-card__text">Обжарка и упаковка под вашим брендом.</div></div>
 </div>
 </div>
@@ -1266,36 +594,10 @@ img{max-width:100%;display:block}
 <div class="section">
 <div class="container container--narrow">
 <div class="section-header section-header--center"><div class="section-eyebrow">Условия</div><h2 class="section-title">Как мы работаем с B2B</h2></div>
-<div class="principles principles--compact" style="margin:0">
-<div class="principle">
-<div class="principle__marker" aria-hidden="true"></div>
-<div class="principle__body">
-<h3 class="principle__title">1 &mdash; Минимальный заказ от 10 кг</h3>
-<p class="principle__text">Гибкие объёмы. Фасовка 200 г, 1, 10, 50, 100, 150, 200, 300, 500, 800 г и 1 кг.</p>
-</div>
-</div>
-<div class="principle">
-<div class="principle__marker" aria-hidden="true"></div>
-<div class="principle__body">
-<h3 class="principle__title">2 &mdash; Бесплатные образцы</h3>
-<p class="principle__text">Отправляем до 5 образцов на дегустацию перед заказом.</p>
-</div>
-</div>
-<div class="principle">
-<div class="principle__marker" aria-hidden="true"></div>
-<div class="principle__body">
-<h3 class="principle__title">3 &mdash; Доставка 1–2 рабочих дня</h3>
-<p class="principle__text">По Москве и МО. По России — от 2 дней.</p>
-</div>
-</div>
-<div class="principle">
-<div class="principle__marker" aria-hidden="true"></div>
-<div class="principle__body">
-<h3 class="principle__title">4 &mdash; Персональный менеджер</h3>
-<p class="principle__text">Один контакт для всех вопросов: заказы, консультации, обучение.</p>
-</div>
-</div>
-</div>
+<div class="process-step"><div class="process-step__number">01</div><div><div class="process-step__title">Минимальный заказ от 10 кг</div><div class="process-step__text">Гибкие объёмы. Фасовка 200 г, 1, 10, 50, 100, 150, 200, 300, 500, 800 г и 1 кг.</div></div></div>
+<div class="process-step"><div class="process-step__number">02</div><div><div class="process-step__title">Бесплатные образцы</div><div class="process-step__text">Отправляем до 5 образцов на дегустацию перед заказом.</div></div></div>
+<div class="process-step"><div class="process-step__number">03</div><div><div class="process-step__title">Доставка 1–2 рабочих дня</div><div class="process-step__text">По Москве и МО. По России — от 2 дней.</div></div></div>
+<div class="process-step"><div class="process-step__number">04</div><div><div class="process-step__title">Персональный менеджер</div><div class="process-step__text">Один контакт для всех вопросов: заказы, консультации, обучение.</div></div></div>
 </div>
 </div>
 <div class="section section--cream">
@@ -1364,10 +666,11 @@ img{max-width:100%;display:block}
 </div>
 <div class="section section--alt" style="padding-top:0">
 <div class="container">
-<div class="grid-3">
-<div class="solution-card solution-card--media"><div class="solution-card__media" style="background-image:url('images/segment-cafe.jpg')"></div><div class="solution-card__body"><div class="solution-card__title">Для кофейни</div><div class="solution-card__text">Полный ассортимент для кофейного бара.</div><div class="solution-card__list"><div class="solution-card__list-item">2–3 эспрессо-бленда под разный профиль</div><div class="solution-card__list-item">3–5 моносортов для фильтра</div><div class="solution-card__list-item">Сезонная ротация 2–4 позиции в квартал</div><div class="solution-card__list-item">Обучение бариста</div></div><button class="btn btn--primary" onclick="window.open('files/Addis-price.pdf','_blank')">Скачать прайс</button></div></div>
-<div class="solution-card solution-card--media"><div class="solution-card__media" style="background-image:url('images/segment-restaurant.jpg')"></div><div class="solution-card__body"><div class="solution-card__title">Для ресторана</div><div class="solution-card__text">Кофе как часть гастрономического опыта.</div><div class="solution-card__list"><div class="solution-card__list-item">1 надёжный эспрессо-бленд</div><div class="solution-card__list-item">1–2 премиальных моносорта</div><div class="solution-card__list-item">Дрип-пакеты для room service</div><div class="solution-card__list-item">Обучение официантов</div></div><button class="btn btn--primary" onclick="window.open('files/Addis-price.pdf','_blank')">Скачать прайс</button></div></div>
-<div class="solution-card solution-card--media"><div class="solution-card__media" style="background-image:url('images/segment-office.jpg')"></div><div class="solution-card__body"><div class="solution-card__title">Для офиса</div><div class="solution-card__text">Кофе, который радует команду каждый день.</div><div class="solution-card__list"><div class="solution-card__list-item">1–2 бленда под супер-автомат</div><div class="solution-card__list-item">Фасовка 1 кг или 2.5 кг</div><div class="solution-card__list-item">Подписка с доставкой</div><div class="solution-card__list-item">Консультация по оборудованию</div></div><button class="btn btn--primary" onclick="window.open('files/Addis-price.pdf','_blank')">Скачать прайс</button></div></div>
+<div class="grid-2">
+<div class="solution-card"><div class="solution-card__title">Для кофейни</div><div class="solution-card__text">Полный ассортимент для кофейного бара.</div><div class="solution-card__list"><div class="solution-card__list-item">2–3 эспрессо-бленда под разный профиль</div><div class="solution-card__list-item">3–5 моносортов для фильтра</div><div class="solution-card__list-item">Сезонная ротация 2–4 позиции в квартал</div><div class="solution-card__list-item">Обучение бариста</div></div><button class="btn btn--primary" style="margin-top:24px" onclick="navigate('price-request')">Запросить подборку</button></div>
+<div class="solution-card"><div class="solution-card__title">Для ресторана</div><div class="solution-card__text">Кофе как часть гастрономического опыта.</div><div class="solution-card__list"><div class="solution-card__list-item">1 надёжный эспрессо-бленд</div><div class="solution-card__list-item">1–2 премиальных моносорта</div><div class="solution-card__list-item">Дрип-пакеты для room service</div><div class="solution-card__list-item">Обучение официантов</div></div><button class="btn btn--primary" style="margin-top:24px" onclick="navigate('price-request')">Запросить подборку</button></div>
+<div class="solution-card"><div class="solution-card__title">Для офиса</div><div class="solution-card__text">Кофе, который радует команду каждый день.</div><div class="solution-card__list"><div class="solution-card__list-item">1–2 бленда под супер-автомат</div><div class="solution-card__list-item">Фасовка 1 кг или 2.5 кг</div><div class="solution-card__list-item">Подписка с доставкой</div><div class="solution-card__list-item">Консультация по оборудованию</div></div><button class="btn btn--primary" style="margin-top:24px" onclick="navigate('price-request')">Запросить подборку</button></div>
+<div class="solution-card"><div class="solution-card__title">Для retail</div><div class="solution-card__text">Фасовка для полок и маркетплейсов.</div><div class="solution-card__list"><div class="solution-card__list-item">Фасовка 250 г, 500 г, 1 кг</div><div class="solution-card__list-item">Дизайн упаковки под ваш бренд</div><div class="solution-card__list-item">Маркировка и сертификация</div><div class="solution-card__list-item">Логистика на маркетплейсы</div></div><button class="btn btn--primary" style="margin-top:24px" onclick="navigate('price-request')">Запросить подборку</button></div>
 </div>
 </div>
 </div>
@@ -1407,53 +710,16 @@ img{max-width:100%;display:block}
 </div>
 </div>
 </div>
-</div>
 <div class="section section--alt">
 <div class="container container--narrow">
 <div class="section-header section-header--center"><div class="section-eyebrow">Контроль качества</div><h2 class="section-title">Этапы контроля</h2></div>
-<div class="principles principles--compact" style="margin:0">
-<div class="principle">
-<div class="principle__marker" aria-hidden="true"></div>
-<div class="principle__body">
-<h3 class="principle__title">1 &mdash; Входной контроль зелёного зерна</h3>
-<p class="principle__text">Проверка влажности, размера, дефектов.</p>
-</div>
-</div>
-<div class="principle">
-<div class="principle__marker" aria-hidden="true"></div>
-<div class="principle__body">
-<h3 class="principle__title">2 &mdash; Тестовая обжарка</h3>
-<p class="principle__text">Обжарка 100 г образца для построения профиля.</p>
-</div>
-</div>
-<div class="principle">
-<div class="principle__marker" aria-hidden="true"></div>
-<div class="principle__body">
-<h3 class="principle__title">3 &mdash; Промышленная обжарка</h3>
-<p class="principle__text">Обжарка партии по утверждённому профилю.</p>
-</div>
-</div>
-<div class="principle">
-<div class="principle__marker" aria-hidden="true"></div>
-<div class="principle__body">
-<h3 class="principle__title">4 &mdash; Финальный каппинг</h3>
-<p class="principle__text">Каждая партия проходит дегустацию перед упаковкой.</p>
-</div>
-</div>
-<div class="principle">
-<div class="principle__marker" aria-hidden="true"></div>
-<div class="principle__body">
-<h3 class="principle__title">5 &mdash; Архивация образцов</h3>
-<p class="principle__text">Хранение контрольного образца в течение 2 месяцев для работы с рекламациями.</p>
-</div>
-</div>
-<div class="principle">
-<div class="principle__marker" aria-hidden="true"></div>
-<div class="principle__body">
-<h3 class="principle__title">6 &mdash; Упаковка и маркировка</h3>
-<p class="principle__text">Вакуумная упаковка с клапаном. Дата обжарки на каждой пачке.</p>
-</div>
-</div>
+<div class="timeline">
+<div class="timeline__item"><div class="timeline__dot"></div><div class="timeline__title">Входной контроль зелёного зерна</div><div class="timeline__text">Проверка влажности, размера, дефектов.</div></div>
+<div class="timeline__item"><div class="timeline__dot"></div><div class="timeline__title">Тестовая обжарка</div><div class="timeline__text">Обжарка 100 г образца для построения профиля.</div></div>
+<div class="timeline__item"><div class="timeline__dot"></div><div class="timeline__title">Промышленная обжарка</div><div class="timeline__text">Обжарка партии по утверждённому профилю.</div></div>
+<div class="timeline__item"><div class="timeline__dot"></div><div class="timeline__title">Финальный каппинг</div><div class="timeline__text">Каждая партия проходит дегустацию перед упаковкой.</div></div>
+<div class="timeline__item"><div class="timeline__dot"></div><div class="timeline__title">Архивация образцов</div><div class="timeline__text">Хранение контрольного образца в течение 2 месяцев для работы с рекламациями.</div></div>
+<div class="timeline__item"><div class="timeline__dot"></div><div class="timeline__title">Упаковка и маркировка</div><div class="timeline__text">Вакуумная упаковка с клапаном. Дата обжарки на каждой пачке.</div></div>
 </div>
 </div>
 </div>
@@ -1544,36 +810,10 @@ img{max-width:100%;display:block}
 <div class="section">
 <div class="container container--narrow">
 <div class="section-header"><div class="section-eyebrow">Принципы</div><h2 class="section-title">Во что мы верим</h2></div>
-<div class="principles principles--compact" style="margin:0">
-<div class="principle">
-<div class="principle__marker" aria-hidden="true"></div>
-<div class="principle__body">
-<h3 class="principle__title">1 &mdash; Прозрачность важнее пафоса</h3>
-<p class="principle__text">Мы рассказываем, откуда зерно, как обжариваем и сколько стоит.</p>
-</div>
-</div>
-<div class="principle">
-<div class="principle__marker" aria-hidden="true"></div>
-<div class="principle__body">
-<h3 class="principle__title">2 &mdash; Стабильность — это качество</h3>
-<p class="principle__text">Лучший кофе — тот, который каждый раз одинаково хорош.</p>
-</div>
-</div>
-<div class="principle">
-<div class="principle__marker" aria-hidden="true"></div>
-<div class="principle__body">
-<h3 class="principle__title">3 &mdash; Кофе — это инструмент бизнеса</h3>
-<p class="principle__text">Мы помогаем использовать его максимально эффективно.</p>
-</div>
-</div>
-<div class="principle">
-<div class="principle__marker" aria-hidden="true"></div>
-<div class="principle__body">
-<h3 class="principle__title">4 &mdash; Доступный specialty</h3>
-<p class="principle__text">Specialty не должен быть элитарным.</p>
-</div>
-</div>
-</div>
+<div class="process-step"><div class="process-step__number">&#9670;</div><div><div class="process-step__title">Прозрачность важнее пафоса</div><div class="process-step__text">Мы рассказываем, откуда зерно, как обжариваем и сколько стоит.</div></div></div>
+<div class="process-step"><div class="process-step__number">&#9670;</div><div><div class="process-step__title">Стабильность — это качество</div><div class="process-step__text">Лучший кофе — тот, который каждый раз одинаково хорош.</div></div></div>
+<div class="process-step"><div class="process-step__number">&#9670;</div><div><div class="process-step__title">Кофе — это инструмент бизнеса</div><div class="process-step__text">Мы помогаем использовать его максимально эффективно.</div></div></div>
+<div class="process-step"><div class="process-step__number">&#9670;</div><div><div class="process-step__title">Доступный specialty</div><div class="process-step__text">Specialty не должен быть элитарным.</div></div></div>
 </div>
 </div>
 </section>
@@ -1595,7 +835,7 @@ img{max-width:100%;display:block}
 <div><div style="font-size:12px;color:#777777;text-transform:uppercase;letter-spacing:0.05em;margin-bottom:4px">Режим работы</div><div style="font-size:16px;color:#555555">Пн–Пт: 9:00 – 18:00</div></div>
 </div>
 </div>
-<div style="display:flex;gap:12px;flex-wrap:wrap"><a class="btn btn--outline btn--sm" href="https://t.me/addiscoffeecompany" target="_blank" rel="noopener">Telegram</a><a class="btn btn--outline btn--sm" href="https://www.instagram.com/addiscoffeecompany" target="_blank" rel="noopener">Instagram</a></div>
+<div style="display:flex;gap:12px;flex-wrap:wrap"><button class="btn btn--outline btn--sm">Telegram</button><button class="btn btn--outline btn--sm">WhatsApp</button><button class="btn btn--outline btn--sm">Instagram</button></div>
 </div>
 <div style="background:#F0F0F0;border-radius:0;padding:32px;border:none">
 <h3 style="font-size:18px;margin-bottom:24px">Быстрая заявка</h3>
@@ -1675,12 +915,12 @@ img{max-width:100%;display:block}
 <div class="footer__grid">
 <div class="footer__brand"><div class="footer__logo"><img src="images/logo.png" alt="Addis" style="width:86px;height:86px;object-fit:contain;mix-blend-mode:multiply"></div><p class="footer__desc">Specialty и fine commercial кофе для бизнеса. Обжарка, поставки, обучение, поддержка.</p></div>
 <div><div class="footer__heading">Каталог</div><div class="footer__links"><span class="footer__link" onclick="navigate('catalog')">Все позиции</span><span class="footer__link" onclick="navigate('catalog')">Эспрессо-бленды</span><span class="footer__link" onclick="navigate('catalog')">Моносорта</span><span class="footer__link" onclick="navigate('catalog')">Сезонные лоты</span><span class="footer__link" onclick="navigate('catalog')">Дрип-пакеты</span></div></div>
-<div><div class="footer__heading">Бизнес</div><div class="footer__links"><span class="footer__link" onclick="navigate('business')">Для HoReCa</span><span class="footer__link" onclick="navigate('solutions')">Решения</span><span class="footer__link" onclick="navigate('training')">Обучение</span><span class="footer__link" onclick="navigate('production')">Производство</span><span class="footer__link" onclick="navigate('cases')">Кейсы</span><a class="footer__link" href="files/Addis-price.pdf" target="_blank" style="cursor:pointer">Скачать прайс</a></div></div>
-<div><div class="footer__heading">Компания</div><div class="footer__links"><span class="footer__link" onclick="navigate('about')">О бренде</span><span class="footer__link" onclick="navigate('faq')">FAQ</span><span class="footer__link" onclick="navigate('contacts')">Контакты</span></div></div>
+<div><div class="footer__heading">Бизнес</div><div class="footer__links"><span class="footer__link" onclick="navigate('business')">Для HoReCa</span><span class="footer__link" onclick="navigate('solutions')">Решения</span><span class="footer__link" onclick="navigate('training')">Обучение</span><span class="footer__link" onclick="navigate('production')">Производство</span><span class="footer__link" onclick="navigate('cases')">Кейсы</span><span class="footer__link" onclick="navigate('price-request')">Получить прайс</span></div></div>
+<div><div class="footer__heading">Компания</div><div class="footer__links"><span class="footer__link" onclick="navigate('about')">О бренде</span><span class="footer__link" onclick="navigate('journal')">Журнал</span><span class="footer__link" onclick="navigate('faq')">FAQ</span><span class="footer__link" onclick="navigate('contacts')">Контакты</span></div></div>
 </div>
 <div class="footer__bottom">
 <div class="footer__copy">&#169; 2026 Addis. Все права защищены.</div>
-<div style="display:flex;gap:16px"><a class="footer__link" href="https://t.me/addiscoffeecompany" target="_blank" rel="noopener">Telegram</a><a class="footer__link" href="https://www.instagram.com/addiscoffeecompany" target="_blank" rel="noopener">Instagram</a></div>
+<div style="display:flex;gap:16px"><span class="footer__link">Telegram</span><span class="footer__link">WhatsApp</span><span class="footer__link">Instagram</span></div>
 </div>
 </div>
 </footer>
@@ -1695,21 +935,21 @@ img{max-width:100%;display:block}
 (function(){
 
 var products=[
-{id:'e1',name:'Эфиопия Heirloom',type:'Эспрессо',category:'espresso',notes:'Шоколад, сухофрукты, орехи, цитрусовые ноты',price:0,unit:'кг',tags:['mono'],acidity:'9/15',body:'11/15',origin:'Местные разновидности / натуральная / урожай 2025',c1:'#7A4A3A',c2:'#4A2B20',qScore:82.5,fp:{'bouquet': 6, 'smell': 6, 'aftertaste': 6, 'aroma': 7, 'acidity': 6, 'sweetness': 7, 'body': 7}},
-{id:'e2',name:'Уганда Вугар Элгон',type:'Эспрессо',category:'espresso',notes:'Шоколад, орехи, перец, фрукты, ягоды',price:0,unit:'кг',tags:['mono'],acidity:'14/15',body:'12/15',origin:'SL 12, SL 14, Бурбон / мытая / урожай 2026',c1:'#6E3E4FFF',c2:'#3D1B28',qScore:83.75,fp:{'bouquet': 8, 'aftertaste': 7, 'smell': 9, 'aroma': 8, 'acidity': 9, 'sweetness': 8, 'body': 8}},
-{id:'e3',name:'Бразилия Мока Пиберри',type:'Эспрессо',category:'espresso',notes:'Карамель, сухофрукты, орехи, шоколад',price:0,unit:'кг',tags:['mono'],acidity:'11/15',body:'11/15',origin:'Мока Пиберри / натуральная / урожай 2026',c1:'#8B5A2B',c2:'#4A3219',qScore:83,fp:{'bouquet': 7.5, 'smell': 7, 'aftertaste': 7, 'aroma': 7.5, 'acidity': 7, 'sweetness': 8, 'body': 7}},
-{id:'e4',name:'Колумбия Декаф',type:'Эспрессо',category:'espresso',notes:'Тростниковый сахар, косточковые фрукты, шоколад',price:0,unit:'кг',tags:['mono'],acidity:'11/15',body:'11/15',origin:'Катурра / мытая / EA Sugar Cane Декаф / урожай 2025',c1:'#4A5D23',c2:'#2B3B10',qScore:83,fp:{'bouquet': 7, 'smell': 7, 'aftertaste': 7, 'aroma': 7.5, 'acidity': 7, 'sweetness': 7, 'body': 7}},
-{id:'b1',name:'Addis Jebena',type:'Бленд',category:'blend',notes:'Сухофрукты, орехи, молочный шоколад',price:0,unit:'кг',tags:[],acidity:'5/15',body:'6/15',origin:'Бразилия 80% + Уганда робуста 20%',c1:'#4A4E69',c2:'#22223B',fp:{'acidity': 3, 'sweetness': 4, 'body': 4}},
-{id:'b2',name:'Addis Buna',type:'Бленд',category:'blend',notes:'Сухофрукты, орехи, молочный шоколад, цитрус',price:0,unit:'кг',tags:['bestseller'],acidity:'5/15',body:'6/15',origin:'Бразилия 50% + Эфиопия 50%',c1:'#8E5572',c2:'#441D35',fp:{'acidity': 3, 'sweetness': 4, 'body': 4}},
-{id:'f1',name:'Уганда Вугар Элгон',type:'Фильтр',category:'filter',notes:'Шоколад, орехи, перец, фрукты, ягоды',price:0,unit:'кг',tags:['mono','new'],acidity:'14/15',body:'12/15',origin:'SL 12, SL 14, Бурбон / мытая / урожай 2026',c1:'#D4A373',c2:'#9C6644',qScore:83.75,fp:{'bouquet': 9, 'smell': 10, 'aftertaste': 8, 'aroma': 9, 'acidity': 9, 'sweetness': 8, 'body': 8}},
-{id:'f2',name:'Бразилия Мока Пиберри',type:'Фильтр',category:'filter',notes:'Сухофрукты, орехи, шоколад',price:0,unit:'кг',tags:['mono'],acidity:'11/15',body:'11/15',origin:'Мока Пиберри / натуральная / урожай 2026',c1:'#E3B873',c2:'#A37833',qScore:83,fp:{'bouquet': 7.5, 'aftertaste': 7, 'smell': 7, 'aroma': 7.5, 'acidity': 7, 'sweetness': 8, 'body': 7}},
-{id:'f3',name:'Бразилия Ранчо Гранде',type:'Фильтр',category:'filter',notes:'Белое вино, вяленые фрукты, тёмный шоколад',price:0,unit:'кг',tags:['mono','special'],acidity:'12/15',body:'14/15',origin:'Топазио, Катуаи / полуанаэробная / урожай 2026',c1:'#A98467',c2:'#6B4C3A',qScore:86.75,fp:{'smell': 10, 'aroma': 10, 'bouquet': 9, 'aftertaste': 9, 'acidity': 8, 'sweetness': 9, 'body': 9}},
-{id:'f4',name:'Кения АА',type:'Фильтр',category:'filter',notes:'Чёрная смородина, апельсин, клюква, шоколад',price:0,unit:'кг',tags:['mono'],acidity:'14/15',body:'12/15',origin:'Местные разновидности / мытая / урожай 2026',c1:'#E07A5F',c2:'#813405',qScore:86.75,fp:{'smell': 9, 'aroma': 10, 'bouquet': 9, 'aftertaste': 8, 'acidity': 9, 'sweetness': 8, 'body': 8}},
-{id:'f5',name:'Колумбия Декаф',type:'Фильтр',category:'filter',notes:'Тростниковый сахар, косточковые фрукты, шоколад',price:0,unit:'кг',tags:['mono'],acidity:'11/15',body:'11/15',origin:'Катурра / мытая / EA Sugar Cane Декаф / урожай 2025',c1:'#CCD5AE',c2:'#83916A',qScore:83,fp:{'bouquet': 7, 'smell': 7, 'aftertaste': 7, 'aroma': 7.5, 'acidity': 7, 'sweetness': 7, 'body': 7}},
-{id:'f6',name:'Бурунди Бурасира',type:'Фильтр',category:'filter',notes:'Апельсин, малина, персик, карамель',price:0,unit:'кг',tags:['mono','new'],acidity:'14/15',body:'12/15',origin:'Красный Бурбон / мытая / урожай 2026',c1:'#F4A261',c2:'#C74F31',qScore:85,fp:{'smell': 9, 'aroma': 8, 'bouquet': 8, 'aftertaste': 7, 'acidity': 9, 'sweetness': 8, 'body': 8}},
-{id:'f7',name:'Руанда Нова',type:'Фильтр',category:'filter',notes:'Классическая африканская арабика с яркой кислотностью',price:0,unit:'кг',tags:['mono','new'],acidity:'14/15',body:'12/15',origin:'Красный Бурбон / мытая / урожай 2026',c1:'#2A9D8F',c2:'#162633',qScore:85,qMod:'+',fp:{'bouquet': 9, 'smell': 9, 'aftertaste': 8, 'aroma': 8, 'acidity': 9, 'sweetness': 8, 'body': 8}},
-{id:'f8',name:'Колумбия Вельвет Андес',type:'Фильтр',category:'filter',notes:'Ананас, помело, карамель, ягоды, можжевельник',price:0,unit:'кг',tags:['mono','special'],acidity:'14/15',body:'12/15',origin:'Кастильо, Катурра / инфьюз / урожай 2026',c1:'#E9C46A',c2:'#D48241',qScore:86,fp:{'bouquet': 9, 'smell': 10, 'aftertaste': 8, 'aroma': 10, 'acidity': 9, 'sweetness': 8, 'body': 8}},
-{id:'f9',name:'Эфиопия Челелекту',type:'Фильтр',category:'filter',notes:'Пряности, цветы, черемуха, черный чай, темные ягоды',price:0,unit:'кг',tags:['mono','special'],acidity:'14/15',body:'12/15',origin:'Местные разновидности / мытая / урожай 2026',c1:'#B5838D',c2:'#4D4855',qScore:85.25,fp:{'bouquet': 9, 'smell': 10, 'aftertaste': 8, 'aroma': 10, 'acidity': 9, 'sweetness': 9, 'body': 8}},
+{id:'e1',name:'Эфиопия Heirloom',type:'Эспрессо',category:'espresso',notes:'Шоколад, сухофрукты, орехи, цитрусовые ноты',price:0,unit:'кг',tags:['mono'],acidity:'6/10',body:'7/10',origin:'Местные разновидности / натуральная / урожай 2025',c1:'#7A4A3A',c2:'#4A2B20',qScore:82.5,fp:{'bouquet': 6, 'smell': 6, 'aftertaste': 6, 'aroma': 7, 'acidity': 6, 'sweetness': 7, 'body': 7}},
+{id:'e2',name:'Уганда Вугар Элгон',type:'Эспрессо',category:'espresso',notes:'Шоколад, орехи, перец, фрукты, ягоды',price:0,unit:'кг',tags:['mono'],acidity:'9/10',body:'8/10',origin:'SL 12, SL 14, Бурбон / мытая / урожай 2026',c1:'#6E3E4FFF',c2:'#3D1B28',qScore:83.75,fp:{'bouquet': 8, 'aftertaste': 7, 'smell': 9, 'aroma': 8, 'acidity': 9, 'sweetness': 8, 'body': 8}},
+{id:'e3',name:'Бразилия Мока Пиберри',type:'Эспрессо',category:'espresso',notes:'Карамель, сухофрукты, орехи, шоколад',price:0,unit:'кг',tags:['mono'],acidity:'7/10',body:'7/10',origin:'Мока Пиберри / натуральная / урожай 2026',c1:'#8B5A2B',c2:'#4A3219',qScore:83,fp:{'bouquet': 7.5, 'smell': 7, 'aftertaste': 7, 'aroma': 7.5, 'acidity': 7, 'sweetness': 8, 'body': 7}},
+{id:'e4',name:'Колумбия Декаф',type:'Эспрессо',category:'espresso',notes:'Тростниковый сахар, косточковые фрукты, шоколад',price:0,unit:'кг',tags:['mono'],acidity:'7/10',body:'7/10',origin:'Катурра / мытая / EA Sugar Cane Декаф / урожай 2025',c1:'#4A5D23',c2:'#2B3B10',qScore:83,fp:{'bouquet': 7, 'smell': 7, 'aftertaste': 7, 'aroma': 7.5, 'acidity': 7, 'sweetness': 7, 'body': 7}},
+{id:'b1',name:'Addis Jebena',type:'Бленд',category:'blend',notes:'Сухофрукты, орехи, молочный шоколад',price:0,unit:'кг',tags:[],acidity:'3/10',body:'4/10',origin:'Бразилия 80% + Уганда робуста 20%',c1:'#4A4E69',c2:'#22223B',fp:{'acidity': 3, 'sweetness': 4, 'body': 4}},
+{id:'b2',name:'Addis Buna',type:'Бленд',category:'blend',notes:'Сухофрукты, орехи, молочный шоколад, цитрус',price:0,unit:'кг',tags:['bestseller'],acidity:'3/10',body:'4/10',origin:'Бразилия 50% + Эфиопия 50%',c1:'#8E5572',c2:'#441D35',fp:{'acidity': 3, 'sweetness': 4, 'body': 4}},
+{id:'f1',name:'Уганда Вугар Элгон',type:'Фильтр',category:'filter',notes:'Шоколад, орехи, перец, фрукты, ягоды',price:0,unit:'кг',tags:['mono','new'],acidity:'9/10',body:'8/10',origin:'SL 12, SL 14, Бурбон / мытая / урожай 2026',c1:'#D4A373',c2:'#9C6644',qScore:83.75,fp:{'bouquet': 9, 'smell': 10, 'aftertaste': 8, 'aroma': 9, 'acidity': 9, 'sweetness': 8, 'body': 8}},
+{id:'f2',name:'Бразилия Мока Пиберри',type:'Фильтр',category:'filter',notes:'Сухофрукты, орехи, шоколад',price:0,unit:'кг',tags:['mono'],acidity:'7/10',body:'7/10',origin:'Мока Пиберри / натуральная / урожай 2026',c1:'#E3B873',c2:'#A37833',qScore:83,fp:{'bouquet': 7.5, 'aftertaste': 7, 'smell': 7, 'aroma': 7.5, 'acidity': 7, 'sweetness': 8, 'body': 7}},
+{id:'f3',name:'Бразилия Ранчо Гранде',type:'Фильтр',category:'filter',notes:'Белое вино, вяленые фрукты, тёмный шоколад',price:0,unit:'кг',tags:['mono','special'],acidity:'8/10',body:'9/10',origin:'Топазио, Катуаи / полуанаэробная / урожай 2026',c1:'#A98467',c2:'#6B4C3A',qScore:86.75,fp:{'smell': 10, 'aroma': 10, 'bouquet': 9, 'aftertaste': 9, 'acidity': 8, 'sweetness': 9, 'body': 9}},
+{id:'f4',name:'Кения АА',type:'Фильтр',category:'filter',notes:'Чёрная смородина, апельсин, клюква, шоколад',price:0,unit:'кг',tags:['mono'],acidity:'9/10',body:'8/10',origin:'Местные разновидности / мытая / урожай 2026',c1:'#E07A5F',c2:'#813405',qScore:86.75,fp:{'smell': 9, 'aroma': 10, 'bouquet': 9, 'aftertaste': 8, 'acidity': 9, 'sweetness': 8, 'body': 8}},
+{id:'f5',name:'Колумбия Декаф',type:'Фильтр',category:'filter',notes:'Тростниковый сахар, косточковые фрукты, шоколад',price:0,unit:'кг',tags:['mono'],acidity:'7/10',body:'7/10',origin:'Катурра / мытая / EA Sugar Cane Декаф / урожай 2025',c1:'#CCD5AE',c2:'#83916A',qScore:83,fp:{'bouquet': 7, 'smell': 7, 'aftertaste': 7, 'aroma': 7.5, 'acidity': 7, 'sweetness': 7, 'body': 7}},
+{id:'f6',name:'Бурунди Бурасира',type:'Фильтр',category:'filter',notes:'Апельсин, малина, персик, карамель',price:0,unit:'кг',tags:['mono','new'],acidity:'9/10',body:'8/10',origin:'Красный Бурбон / мытая / урожай 2026',c1:'#F4A261',c2:'#C74F31',qScore:85,fp:{'smell': 9, 'aroma': 8, 'bouquet': 8, 'aftertaste': 7, 'acidity': 9, 'sweetness': 8, 'body': 8}},
+{id:'f7',name:'Руанда Нова',type:'Фильтр',category:'filter',notes:'Классическая африканская арабика с яркой кислотностью',price:0,unit:'кг',tags:['mono','new'],acidity:'9/10',body:'8/10',origin:'Красный Бурбон / мытая / урожай 2026',c1:'#2A9D8F',c2:'#162633',qScore:85,qMod:'+',fp:{'bouquet': 9, 'smell': 9, 'aftertaste': 8, 'aroma': 8, 'acidity': 9, 'sweetness': 8, 'body': 8}},
+{id:'f8',name:'Колумбия Вельвет Андес',type:'Фильтр',category:'filter',notes:'Ананас, помело, карамель, ягоды, можжевельник',price:0,unit:'кг',tags:['mono','special'],acidity:'9/10',body:'8/10',origin:'Кастильо, Катурра / инфьюз / урожай 2026',c1:'#E9C46A',c2:'#D48241',qScore:86,fp:{'bouquet': 9, 'smell': 10, 'aftertaste': 8, 'aroma': 10, 'acidity': 9, 'sweetness': 8, 'body': 8}},
+{id:'f9',name:'Эфиопия Челелекту',type:'Фильтр',category:'filter',notes:'Пряности, цветы, черемуха, черный чай, темные ягоды',price:0,unit:'кг',tags:['mono','special'],acidity:'9/10',body:'8/10',origin:'Местные разновидности / мытая / урожай 2026',c1:'#B5838D',c2:'#4D4855',qScore:85.25,fp:{'bouquet': 9, 'smell': 10, 'aftertaste': 8, 'aroma': 10, 'acidity': 9, 'sweetness': 9, 'body': 8}},
 {id:'acc-scale-timemore',name:'Весы Timemore Black Mirror Basic Plus',category:'accessories',type:'Аксессуар',price:5500,unit:'шт.',notes:'Точные кофейные весы со встроенным таймером',tags:['accessories','new'],featured:true,c1:'#333333',c2:'#1A1A1A'},
 {id:'acc-tamper-motta',name:'Темпер Motta 58 мм',category:'accessories',type:'Аксессуар',price:3200,unit:'шт.',notes:'Классический стальной темпер с деревянной ручкой',tags:['accessories'],featured:false,c1:'#8B5A2B',c2:'#4A3219'},
 {id:'acc-portafilter-e61',name:'Бездонный холдер E61',category:'accessories',type:'Аксессуар',price:4800,unit:'шт.',notes:'Для контроля экстракции и красивых шотов',tags:['accessories'],featured:false,c1:'#CCCCCC',c2:'#999999'},
@@ -1717,8 +957,8 @@ var products=[
 {id:'cacao-natural',name:'Какао натуральный',category:'cacao',type:'Какао',price:900,unit:'500 г',notes:'Натуральный какао-порошок без добавления сахара. Идеально подходит для выпечки и домашних напитков.',tags:['cacao'],featured:true,c1:'#4A2E15',c2:'#2B180A'},
 {id:'cacao-alkalized',name:'Какао алкализованный',category:'cacao',type:'Какао',price:1050,unit:'500 г',notes:'Какао-порошок с более мягким, густым шоколадным вкусом и глубоким темным цветом.',tags:['cacao'],featured:false,c1:'#381C09',c2:'#1A0A02'},
 {id:'hot-chocolate',name:'Горячий шоколад',category:'cacao',type:'Какао',price:850,unit:'500 г',notes:'Классическая смесь для приготовления густого согревающего шоколада.',tags:['cacao','new'],featured:true,c1:'#6B3E2E',c2:'#422418'},
-{id:'d1',name:'Уганда Вугар Элгон',type:'Дрип-кофе',category:'drip',notes:'Шоколад, орехи, перец, фрукты, ягоды',price:0,unit:'8 шт. x 14г',tags:['drip'],acidity:'14/15',body:'12/15',origin:'SL 12, SL 14, Бурбон / мытая / урожай 2026',image:'images/drip-box.png',c1:'#D4A373',c2:'#9C6644',qScore:83.75,fp:{'bouquet': 9, 'smell': 10, 'aftertaste': 8, 'aroma': 9, 'acidity': 9, 'sweetness': 8, 'body': 8}},{id:'d2',name:'Бразилия Мока Пиберри',type:'Дрип-кофе',category:'drip',notes:'Сухофрукты, орехи, шоколад',price:0,unit:'8 шт. x 14г',tags:['drip'],acidity:'11/15',body:'11/15',origin:'Мока Пиберри / натуральная / урожай 2026',image:'images/drip-box.png',c1:'#E3B873',c2:'#A37833',qScore:83,fp:{'bouquet': 7.5, 'aftertaste': 7, 'smell': 7, 'aroma': 7.5, 'acidity': 7, 'sweetness': 8, 'body': 7}},{id:'d3',name:'Бразилия Ранчо Гранде',type:'Дрип-кофе',category:'drip',notes:'Белое вино, вяленые фрукты, тёмный шоколад',price:0,unit:'8 шт. x 14г',tags:['drip'],acidity:'12/15',body:'14/15',origin:'Топазио, Катуаи / полуанаэробная / урожай 2026',image:'images/drip-box.png',c1:'#A98467',c2:'#6B4C3A',qScore:86.75,fp:{'smell': 10, 'aroma': 10, 'bouquet': 9, 'aftertaste': 9, 'acidity': 8, 'sweetness': 9, 'body': 9}},{id:'d4',name:'Кения АА',type:'Дрип-кофе',category:'drip',notes:'Чёрная смородина, апельсин, клюква, шоколад',price:0,unit:'8 шт. x 14г',tags:['drip'],acidity:'14/15',body:'12/15',origin:'Местные разновидности / мытая / урожай 2026',image:'images/drip-box.png',c1:'#E07A5F',c2:'#813405',qScore:86.75,fp:{'smell': 9, 'aroma': 10, 'bouquet': 9, 'aftertaste': 8, 'acidity': 9, 'sweetness': 8, 'body': 8}},{id:'d5',name:'Колумбия Декаф',type:'Дрип-кофе',category:'drip',notes:'Тростниковый сахар, косточковые фрукты, шоколад',price:0,unit:'8 шт. x 14г',tags:['drip'],acidity:'11/15',body:'11/15',origin:'Катурра / мытая / EA Sugar Cane Декаф / урожай 2025',image:'images/drip-box.png',c1:'#CCD5AE',c2:'#83916A',qScore:83,fp:{'bouquet': 7, 'smell': 7, 'aftertaste': 7, 'aroma': 7.5, 'acidity': 7, 'sweetness': 7, 'body': 7}},{id:'d6',name:'Бурунди Бурасира',type:'Дрип-кофе',category:'drip',notes:'Апельсин, малина, персик, карамель',price:0,unit:'8 шт. x 14г',tags:['drip'],acidity:'14/15',body:'12/15',origin:'Красный Бурбон / мытая / урожай 2026',image:'images/drip-box.png',c1:'#F4A261',c2:'#C74F31',qScore:85,fp:{'smell': 9, 'aroma': 8, 'bouquet': 8, 'aftertaste': 7, 'acidity': 9, 'sweetness': 8, 'body': 8}},{id:'d7',name:'Руанда Нова',type:'Дрип-кофе',category:'drip',notes:'Классическая африканская арабика с яркой кислотностью',price:0,unit:'8 шт. x 14г',tags:['drip'],acidity:'14/15',body:'12/15',origin:'Красный Бурбон / мытая / урожай 2026',image:'images/drip-box.png',c1:'#2A9D8F',c2:'#162633',qScore:85,qMod:'+',fp:{'bouquet': 9, 'smell': 9, 'aftertaste': 8, 'aroma': 8, 'acidity': 9, 'sweetness': 8, 'body': 8}},{id:'d8',name:'Колумбия Вельвет Андес',type:'Дрип-кофе',category:'drip',notes:'Ананас, помело, карамель, ягоды, можжевельник',price:0,unit:'8 шт. x 14г',tags:['drip'],acidity:'14/15',body:'12/15',origin:'Кастильо, Катурра / инфьюз / урожай 2026',image:'images/drip-box.png',c1:'#E9C46A',c2:'#D48241',qScore:86,fp:{'bouquet': 9, 'smell': 10, 'aftertaste': 8, 'aroma': 10, 'acidity': 9, 'sweetness': 8, 'body': 8}},{id:'d9',name:'Эфиопия Челелекту',type:'Дрип-кофе',category:'drip',notes:'Пряности, цветы, черемуха, черный чай, темные ягоды',price:0,unit:'8 шт. x 14г',tags:['drip'],acidity:'14/15',body:'12/15',origin:'Местные разновидности / мытая / урожай 2026',image:'images/drip-box.png',c1:'#B5838D',c2:'#4D4855',qScore:85.25,fp:{'bouquet': 9, 'smell': 10, 'aftertaste': 8, 'aroma': 10, 'acidity': 9, 'sweetness': 9, 'body': 8}},{id:'dm1',name:'Addis Drip Mix #1 (Классика)',type:'Дрип-кофе',category:'drip',notes:'Сбалансированный микс 4 разных сортов (шоколад, карамель, орехи).',price:0,unit:'8 шт. x 14г',tags:['drip'],acidity:'5/15',body:'8/15',origin:'Бразилия, Уганда, Колумбия',image:'images/drip-box.png',c1:'#1A1A1A',c2:'#333333'},
-{id:'dm2',name:'Addis Drip Mix #2 (Кислотность)',type:'Дрип-кофе',category:'drip',notes:'Яркий микс 4 сортов (ягоды, фрукты, цветы).',price:0,unit:'8 шт. x 14г',tags:['drip'],acidity:'11/15',body:'6/15',origin:'Кения, Эфиопия, Руанда, Бурунди',image:'images/drip-box.png',c1:'#1A1A1A',c2:'#333333'},
+{id:'d1',name:'Уганда Вугар Элгон',type:'Дрип-кофе',category:'drip',notes:'Шоколад, орехи, перец, фрукты, ягоды',price:0,unit:'8 шт. x 14г',tags:['drip'],acidity:'9/10',body:'8/10',origin:'SL 12, SL 14, Бурбон / мытая / урожай 2026',image:'images/drip-box.png',c1:'#D4A373',c2:'#9C6644',qScore:83.75,fp:{'bouquet': 9, 'smell': 10, 'aftertaste': 8, 'aroma': 9, 'acidity': 9, 'sweetness': 8, 'body': 8}},{id:'d2',name:'Бразилия Мока Пиберри',type:'Дрип-кофе',category:'drip',notes:'Сухофрукты, орехи, шоколад',price:0,unit:'8 шт. x 14г',tags:['drip'],acidity:'7/10',body:'7/10',origin:'Мока Пиберри / натуральная / урожай 2026',image:'images/drip-box.png',c1:'#E3B873',c2:'#A37833',qScore:83,fp:{'bouquet': 7.5, 'aftertaste': 7, 'smell': 7, 'aroma': 7.5, 'acidity': 7, 'sweetness': 8, 'body': 7}},{id:'d3',name:'Бразилия Ранчо Гранде',type:'Дрип-кофе',category:'drip',notes:'Белое вино, вяленые фрукты, тёмный шоколад',price:0,unit:'8 шт. x 14г',tags:['drip'],acidity:'8/10',body:'9/10',origin:'Топазио, Катуаи / полуанаэробная / урожай 2026',image:'images/drip-box.png',c1:'#A98467',c2:'#6B4C3A',qScore:86.75,fp:{'smell': 10, 'aroma': 10, 'bouquet': 9, 'aftertaste': 9, 'acidity': 8, 'sweetness': 9, 'body': 9}},{id:'d4',name:'Кения АА',type:'Дрип-кофе',category:'drip',notes:'Чёрная смородина, апельсин, клюква, шоколад',price:0,unit:'8 шт. x 14г',tags:['drip'],acidity:'9/10',body:'8/10',origin:'Местные разновидности / мытая / урожай 2026',image:'images/drip-box.png',c1:'#E07A5F',c2:'#813405',qScore:86.75,fp:{'smell': 9, 'aroma': 10, 'bouquet': 9, 'aftertaste': 8, 'acidity': 9, 'sweetness': 8, 'body': 8}},{id:'d5',name:'Колумбия Декаф',type:'Дрип-кофе',category:'drip',notes:'Тростниковый сахар, косточковые фрукты, шоколад',price:0,unit:'8 шт. x 14г',tags:['drip'],acidity:'7/10',body:'7/10',origin:'Катурра / мытая / EA Sugar Cane Декаф / урожай 2025',image:'images/drip-box.png',c1:'#CCD5AE',c2:'#83916A',qScore:83,fp:{'bouquet': 7, 'smell': 7, 'aftertaste': 7, 'aroma': 7.5, 'acidity': 7, 'sweetness': 7, 'body': 7}},{id:'d6',name:'Бурунди Бурасира',type:'Дрип-кофе',category:'drip',notes:'Апельсин, малина, персик, карамель',price:0,unit:'8 шт. x 14г',tags:['drip'],acidity:'9/10',body:'8/10',origin:'Красный Бурбон / мытая / урожай 2026',image:'images/drip-box.png',c1:'#F4A261',c2:'#C74F31',qScore:85,fp:{'smell': 9, 'aroma': 8, 'bouquet': 8, 'aftertaste': 7, 'acidity': 9, 'sweetness': 8, 'body': 8}},{id:'d7',name:'Руанда Нова',type:'Дрип-кофе',category:'drip',notes:'Классическая африканская арабика с яркой кислотностью',price:0,unit:'8 шт. x 14г',tags:['drip'],acidity:'9/10',body:'8/10',origin:'Красный Бурбон / мытая / урожай 2026',image:'images/drip-box.png',c1:'#2A9D8F',c2:'#162633',qScore:85,qMod:'+',fp:{'bouquet': 9, 'smell': 9, 'aftertaste': 8, 'aroma': 8, 'acidity': 9, 'sweetness': 8, 'body': 8}},{id:'d8',name:'Колумбия Вельвет Андес',type:'Дрип-кофе',category:'drip',notes:'Ананас, помело, карамель, ягоды, можжевельник',price:0,unit:'8 шт. x 14г',tags:['drip'],acidity:'9/10',body:'8/10',origin:'Кастильо, Катурра / инфьюз / урожай 2026',image:'images/drip-box.png',c1:'#E9C46A',c2:'#D48241',qScore:86,fp:{'bouquet': 9, 'smell': 10, 'aftertaste': 8, 'aroma': 10, 'acidity': 9, 'sweetness': 8, 'body': 8}},{id:'d9',name:'Эфиопия Челелекту',type:'Дрип-кофе',category:'drip',notes:'Пряности, цветы, черемуха, черный чай, темные ягоды',price:0,unit:'8 шт. x 14г',tags:['drip'],acidity:'9/10',body:'8/10',origin:'Местные разновидности / мытая / урожай 2026',image:'images/drip-box.png',c1:'#B5838D',c2:'#4D4855',qScore:85.25,fp:{'bouquet': 9, 'smell': 10, 'aftertaste': 8, 'aroma': 10, 'acidity': 9, 'sweetness': 9, 'body': 8}},{id:'dm1',name:'Addis Drip Mix #1 (Классика)',type:'Дрип-кофе',category:'drip',notes:'Сбалансированный микс 4 разных сортов (шоколад, карамель, орехи).',price:0,unit:'8 шт. x 14г',tags:['drip'],acidity:'3/10',body:'5/10',origin:'Бразилия, Уганда, Колумбия',image:'images/drip-box.png',c1:'#1A1A1A',c2:'#333333'},
+{id:'dm2',name:'Addis Drip Mix #2 (Кислотность)',type:'Дрип-кофе',category:'drip',notes:'Яркий микс 4 сортов (ягоды, фрукты, цветы).',price:0,unit:'8 шт. x 14г',tags:['drip'],acidity:'7/10',body:'4/10',origin:'Кения, Эфиопия, Руанда, Бурунди',image:'images/drip-box.png',c1:'#1A1A1A',c2:'#333333'},
 {id:'tea-1',name:'Английский завтрак',type:'Чай черный листовой',category:'tea',notes:'Крепкий, насыщенный купаж черных чаев',brew:'4–5 г на 250 мл воды, 95–100 °C, 3–5 мин.',price:0,unit:'200 гр',tags:['tea-black'],c1:'#8B4513',c2:'#A0522D'},
 {id:'tea-2',name:'Эрл Грей',type:'Чай черный листовой',category:'tea',notes:'Черный чай с ароматом бергамота',brew:'4–5 г на 250 мл воды, 95–100 °C, 3–5 мин.',price:0,unit:'200 гр',tags:['tea-black'],c1:'#8B4513',c2:'#A0522D'},
 {id:'tea-3',name:'Цейлонский чёрный чай OP',type:'Чай черный листовой',category:'tea',notes:'Классический черный чай с чистым и сбалансированным вкусом',brew:'4–5 г на 250 мл воды, 95–100 °C, 3–5 мин.',price:0,unit:'200 гр',tags:['tea-black'],c1:'#8B4513',c2:'#A0522D'},
@@ -1792,10 +1032,6 @@ var sw=lg?'55%':'65%';
 var sh=lg?'65%':'75%';
 var fs=lg?'80px':'36px';
 var ns=lg?'14px':'11px';
-// Real bag render available?
-if(/^(e|b|f)\d+$/.test(p.id)){
-  return '<img src="images/bags/'+p.id+'.png" style="width:100%;height:100%;object-fit:cover;object-position:center;display:block" alt="'+p.name+'">';
-}
 if(p.image){return '<img src="'+p.image+'" style="width:75%;height:75%;object-fit:contain;mix-blend-mode:multiply" alt="">';}
 var sn=p.name.split(' ').slice(0,2).join(' ');
 return '<div style="width:'+sw+';height:'+sh+';border-radius:0;background:linear-gradient(135deg,'+p.c1+','+p.c2+');display:flex;flex-direction:column;align-items:center;justify-content:center"><div style="font-family:\"Circe\",sans-serif;font-size:'+fs+';color:rgba(255,255,255,0.8);font-weight:700">A</div><div style="font-size:'+ns+';color:rgba(255,255,255,0.8);margin-top:4px;text-align:center;padding:0 8px">'+sn+'</div></div>';
@@ -1815,7 +1051,7 @@ details = '<div class="product-card__profile"><span class="product-card__param">
 details = '<div style="font-size:14px;color:#555555;margin-bottom:16px;min-height:50px">'+(p.notes||'')+'</div>';
 }
 
-var priceHtml = ((p.price&&p.price>0)?'<div style="display:flex;align-items:baseline;justify-content:center;gap:8px;margin-top:auto;padding-top:12px"><span class="product-card__price">'+p.price.toLocaleString()+' &#8381;</span><span class="product-card__price-unit">'+p.unit+'</span></div>':'');
+var priceHtml = ((p.price&&p.price>0)?'<div style="display:flex;align-items:baseline;justify-content:center;gap:8px;margin-top:auto;padding-top:12px"><span class="product-card__price">'+p.price.toLocaleString()+' &#8381;</span><span class="product-card__price-unit">'+p.unit+'</span></div><div class="product-card__actions"><button class="btn btn--primary btn--sm" onclick="event.stopPropagation();window.navigateApp(\'price-request\')">В запрос</button><button class="btn btn--outline btn--sm" onclick="event.stopPropagation();window.showProduct(\''+p.id+'\')">Подробнее</button></div>':'<div class="product-card__actions" style="margin-top:auto;padding-top:16px"><button class="btn btn--primary btn--sm" style="width:100%" onclick="event.stopPropagation();window.navigateApp(\'price-request\')">Запросить прайс</button></div>');
 
 return '<div class="product-card" onclick="window.showProduct(\''+p.id+'\')"><div class="product-card__image">'+makeBag(p,false)+b+'</div><div class="product-card__body"><div class="product-card__category">'+p.type+'</div><div class="product-card__name">'+p.name+'</div>'+details+priceHtml+'</div></div>';
 }
@@ -1872,8 +1108,6 @@ if(bc)bc.textContent=p.name;
 var related=[];
 for(var j=0;j<products.length;j++){
 if(products[j].id===pid)continue;
-if(!/^(e|b|f)\d+$/.test(products[j].id))continue;
-if(products[j].category==='drip')continue;
 if(products[j].category===p.category||products[j].tags.some(function(t){return p.tags.indexOf(t)!==-1})){
 related.push(products[j]);
 if(related.length>=4)break;
@@ -1918,8 +1152,8 @@ html+='<div style="font-size:16px;color:#555555;line-height:1.75;margin-bottom:3
 }
 
 html+='<div style="display:flex;gap:12px;flex-wrap:wrap">';
-html+='<button class="btn btn--primary btn--lg" onclick="window.open(\'files/Addis-price.pdf\',\'_blank\')">Скачать прайс-лист</button>';
-html+='<button class="btn btn--outline btn--lg" onclick="window.navigateApp(\'contacts\')">Связаться с менеджером</button>';
+html+='<button class="btn btn--primary btn--lg" onclick="window.navigateApp(\'price-request\')">В корзину (запрос)</button>';
+html+='<button class="btn btn--outline btn--lg" onclick="window.navigateApp(\'catalog\')">Вернуться в каталог</button>';
 html+='</div>';
 html+='<div style="margin-top:32px;padding:24px;background:#F0F0F0;border-radius:0;border-left:3px solid #000000">';
 html+='<div style="font-weight:600;margin-bottom:8px">Для HoReCa</div>';
@@ -1939,8 +1173,7 @@ var metrics = [
 for(var m=0; m<metrics.length; m++){
   var val = p.fp[metrics[m].k];
   if(val !== undefined) {
-    var displayed = Math.round(val * 1.5);
-    html+='<div class="taste-bar"><span class="taste-bar__label" style="min-width:96px">'+metrics[m].l+'</span><div class="taste-bar__track" style="height:8px"><div class="taste-bar__fill" style="width:'+(val*10)+'%"></div></div><span style="font-size:14px;font-weight:600;min-width:36px;text-align:right">'+displayed+'/15</span></div>';
+    html+='<div class="taste-bar"><span class="taste-bar__label" style="min-width:96px">'+metrics[m].l+'</span><div class="taste-bar__track" style="height:8px"><div class="taste-bar__fill" style="width:'+(val*10)+'%"></div></div><span style="font-size:14px;font-weight:600;min-width:30px;text-align:right">'+val+'/10</span></div>';
   }
 }
 html+='</div>';
@@ -1968,11 +1201,8 @@ switchPage('product');
 function renderCatalog(){
 var filtered=products;
 
-// HIDE products without bag image (only e/b/f have real renders) + hide drips
-filtered = filtered.filter(function(p){ return /^(e|b|f)\d+$/.test(p.id); });
-
 if(window.currentGroup === 'coffee') {
-  filtered = filtered.filter(function(p){ return p.category==='espresso'||p.category==='filter'||p.category==='blend'; });
+  filtered = filtered.filter(function(p){ return p.category==='espresso'||p.category==='filter'||p.category==='blend'||p.category==='drip'; });
 } else if(window.currentGroup === 'tea') {
   filtered = filtered.filter(function(p){ return p.category==='tea'; });
 } else if(window.currentGroup === 'cacao') {
@@ -2134,7 +1364,7 @@ backToTop.classList.remove('back-to-top--visible');
 }
 
 function initApp(){
-var featured=products.filter(function(p){return p.featured && /^(e|b|f)\d+$/.test(p.id);});
+var featured=products.filter(function(p){return p.featured;});
 var homeF=document.getElementById('homeFeatured');
 if(homeF){
 var hf='';

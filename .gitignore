@@ -1,0 +1,19 @@
+# Dev assets — not for deploy
+uploads/
+bags_preview.html
+
+# Design system docs / scaffolding (not part of the deployed site)
+README.md
+SKILL.md
+ui_kits/
+preview/
+slides/
+assets/
+deck-stage.js
+colors_and_type.css
+
+# OS / editor
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
