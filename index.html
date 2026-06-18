@@ -1301,20 +1301,21 @@ img{max-width:100%;display:block}
 <div style="margin-bottom:32px"><h1 class="section-title" style="margin-bottom:8px">Каталог кофе</h1><p class="text-secondary" id="catalogSubtitle">Specialty кофе с оценками Q Grade</p></div>
 <style>#filterChips::-webkit-scrollbar{display:none;}</style>
 <div id="catalogFilters" style="margin-bottom:32px">
-    <div style="display:flex;gap:8px;margin-bottom:16px;flex-wrap:wrap" id="primaryFilters">
-        <button class="chip chip--active" data-group="all">Все товары</button>
-        <button class="chip" data-group="coffee">Кофе</button>
+    <!-- ITERATION: coffee-only. Чтобы вернуть остальные группы — убрать display:none ниже -->
+    <div style="display:none;gap:8px;margin-bottom:16px;flex-wrap:wrap" id="primaryFilters">
+        <button class="chip" data-group="all">Все товары</button>
+        <button class="chip chip--active" data-group="coffee">Кофе</button>
         <button class="chip" data-group="tea">Чай</button>
         <button class="chip" data-group="cacao">Какао</button>
         <button class="chip" data-group="accessories">Аксессуары</button>
     </div>
-    <div id="subFiltersWrapper" style="display:none; padding-top:16px; border-top:1px solid #E8E8E8">
-        <div style="display:none;gap:8px;flex-wrap:wrap" id="subFilters-coffee" class="sub-filter-group">
+    <div id="subFiltersWrapper" style="display:block; padding-top:0; border-top:none">
+        <div style="display:flex;gap:8px;flex-wrap:wrap" id="subFilters-coffee" class="sub-filter-group">
             <button class="chip chip--sm chip--active" data-filter="coffee-all">Весь кофе</button>
             <button class="chip chip--sm" data-filter="new">Новинки</button>
             <button class="chip chip--sm" data-filter="espresso">Эспрессо</button>
             <button class="chip chip--sm" data-filter="filter">Фильтр</button>
-            <button class="chip chip--sm" data-filter="drip">Дрип-кофе</button>
+            <button class="chip chip--sm" data-filter="drip" style="display:none">Дрип-кофе</button>
             <button class="chip chip--sm" data-filter="mono">Моносорта</button>
             <button class="chip chip--sm" data-filter="blend">Бленды</button>
         </div>
@@ -2113,6 +2114,7 @@ backToTop.classList.remove('back-to-top--visible');
 }
 
 function initApp(){
+window.articles = window.articles || [];
 var featured=products.filter(function(p){return p.featured && /^(e|b|f)\d+$/.test(p.id);});
 var homeF=document.getElementById('homeFeatured');
 if(homeF){
@@ -2129,8 +2131,8 @@ homeJ.innerHTML=hj;
 }
 
 // 2-level filter logic — must be set BEFORE first renderCatalog() call
-window.currentGroup = 'all';
-window.currentFilter = 'all';
+window.currentGroup = 'coffee';
+window.currentFilter = 'coffee-all';
 renderCatalog();
 renderJournal();
 renderFAQ();
