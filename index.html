@@ -149,7 +149,41 @@ img{max-width:100%;display:block}
 .quote-card__author{font-weight:600}
 .quote-card__role{font-size:14px;color:#777777}
 
-.catalog-products{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:32px 24px;justify-content:center}
+.catalog-products{display:grid;grid-template-columns:repeat(auto-fill,minmax(380px,1fr));gap:24px;align-items:start}
+.pcard-spec{background:#fff;border:1px solid #E8E8E8;cursor:pointer;overflow:hidden;transition:all .35s ease;display:flex;flex-direction:column}
+.pcard-spec:hover{transform:translateY(-3px);box-shadow:0 18px 50px rgba(0,0,0,0.10)}
+.pcard-spec__top{position:relative;display:flex;gap:18px;padding:22px 22px 18px}
+.pcard-spec__top--dark{background:#000;color:#fff}
+.pcard-spec__top--light{background:#fff;color:#000}
+.pcard-spec__photo{flex:none;width:104px;height:135px;border-radius:2px;overflow:hidden;background:#0d0d12}
+.pcard-spec__top--light .pcard-spec__photo{background:#f3f3f3}
+.pcard-spec__photo img{width:100%;height:100%;object-fit:cover;display:block}
+.pcard-spec__head{flex:1;min-width:0}
+.pcard-spec__cat{font-size:10px;letter-spacing:0.1em;text-transform:uppercase;opacity:.5;margin-bottom:6px}
+.pcard-spec__name{font-size:19px;font-weight:700;line-height:1.15;margin-bottom:12px}
+.pcard-spec__facts{display:grid;grid-template-columns:1fr 1fr;gap:9px 12px}
+.pcard-spec__fact-l{font-size:9px;letter-spacing:0.06em;text-transform:uppercase;opacity:.45}
+.pcard-spec__fact-v{font-size:12px;font-weight:700;margin-top:2px;line-height:1.2}
+.pcard-spec__badge{position:absolute;top:14px;right:14px;font-size:10px;font-weight:700;letter-spacing:0.05em;text-transform:uppercase;padding:4px 9px;background:#fff;color:#000}
+.pcard-spec__top--light .pcard-spec__badge{background:#000;color:#fff}
+.pcard-spec__bottom{padding:16px 22px 18px}
+.pcard-spec__qrow{display:flex;justify-content:space-between;align-items:center;gap:12px;transition:margin .3s ease}
+.pcard-spec:hover .pcard-spec__qrow{margin-bottom:14px}
+.pcard-spec__q{display:flex;align-items:baseline;gap:7px}
+.pcard-spec__q-l{font-size:10px;color:#999;letter-spacing:0.07em}
+.pcard-spec__q-v{font-size:23px;font-weight:700;color:#000}
+.pcard-spec__chips{display:flex;flex-wrap:wrap;gap:6px;justify-content:flex-end;max-width:210px}
+.pcard-spec__chip{font-size:11px;padding:4px 10px;border:1px solid rgba(0,0,0,0.18);color:#333;border-radius:999px;white-space:nowrap}
+.pcard-spec__reveal{max-height:0;opacity:0;overflow:hidden;transition:max-height .42s ease,opacity .35s ease}
+.pcard-spec:hover .pcard-spec__reveal{max-height:260px;opacity:1}
+.pcard-spec__reveal-inner{border-top:1px solid #EEE;margin-top:10px;padding-top:12px}
+.pcard-spec__radar-t{font-size:10px;letter-spacing:0.1em;text-transform:uppercase;color:#999;margin:2px 0 12px}
+.pcard-spec__rrow{display:flex;align-items:center;gap:10px;margin-bottom:6px}
+.pcard-spec__rlab{width:104px;font-size:10px;letter-spacing:0.05em;text-transform:uppercase;color:#999;text-align:right;flex:none}
+.pcard-spec__dots{display:flex;gap:3px}
+.pcard-spec__dot{width:6px;height:6px;border-radius:50%;background:#e2e2e2}
+.pcard-spec__dot--on{background:#000}
+.pcard-spec__buy{width:100%;padding:13px;font-size:13px;font-weight:700;border:2px solid #000;background:#000;color:#fff;cursor:pointer;font-family:'Circe',sans-serif;border-radius:999px;margin-top:14px}
 
 .article-hero{position:relative;height:55vh;min-height:400px;display:flex;align-items:flex-end;padding-bottom:64px;border-radius:0;overflow:hidden;margin:0 0 48px;background:#000}
 .article-hero__bg{position:absolute;inset:0;background-size:cover;background-position:center;z-index:0;opacity:0.8}
@@ -1782,22 +1816,44 @@ return '<div style="width:'+sw+';height:'+sh+';border-radius:0;background:linear
 }
 
 function renderProductCard(p){
-var b='';
-var badgeHtml='';
-if(p.tags.indexOf('new')!==-1)badgeHtml+='<span class="product-card__badge" style="background:#fff;color:#000;border:1px solid #000">Новинка</span>';
-if(p.qScore)badgeHtml+='<span class="product-card__badge">Q '+p.qScore+(p.qMod||'')+'</span>';
-if(badgeHtml) b='<div class="product-card__badges">'+badgeHtml+'</div>';
-
-var details='';
-if(p.fp && p.origin) {
-details = '<div class="product-card__profile"><span class="product-card__param">Кислотность '+p.acidity+'</span><span class="product-card__param">Тело '+p.body+'</span><span class="product-card__param">'+p.origin.split(',')[0].trim()+'</span></div><div class="taste-bar"><span class="taste-bar__label">Кислотность</span><div class="taste-bar__track"><div class="taste-bar__fill" style="width:'+(p.fp.acidity*10)+'%"></div></div></div><div class="taste-bar"><span class="taste-bar__label">Сладость</span><div class="taste-bar__track"><div class="taste-bar__fill" style="width:'+(p.fp.sweetness*10)+'%"></div></div></div><div class="taste-bar"><span class="taste-bar__label">Плотность</span><div class="taste-bar__track"><div class="taste-bar__fill" style="width:'+(p.fp.body*10)+'%"></div></div></div>';
-} else {
-details = '<div style="font-size:14px;color:#555555;margin-bottom:16px;min-height:50px">'+(p.notes||'')+'</div>';
+var esp=(p.category==='espresso'||p.category==='blend');
+var tone=esp?'pcard-spec__top--dark':'pcard-spec__top--light';
+var cat=p.type||(esp?'Эспрессо':'Фильтр');
+var badge='';
+if(p.tags.indexOf('new')!==-1)badge='<div class="pcard-spec__badge">Новинка</div>';
+else if(p.tags.indexOf('seasonal')!==-1)badge='<div class="pcard-spec__badge">Сезон</div>';
+var facts=[];
+if(p.origin){var op=p.origin.split('/').map(function(x){return x.trim();}).filter(Boolean);
+if(op[0])facts.push(['Разновидность',op[0]]);
+if(op[1])facts.push(['Обработка',op[1]]);
+if(op[2])facts.push(['Урожай',op[2].replace(/^урожай\s*/i,'')]);}
+if(facts.length<4&&p.acidity)facts.push(['Кислотность',p.acidity]);
+if(facts.length<4&&p.body)facts.push(['Тело',p.body]);
+var factsHtml='';
+for(var i=0;i<Math.min(facts.length,4);i++){factsHtml+='<div class="pcard-spec__fact"><div class="pcard-spec__fact-l">'+facts[i][0]+'</div><div class="pcard-spec__fact-v">'+facts[i][1]+'</div></div>';}
+var chips='';
+if(p.notes){var ds=p.notes.split(',').slice(0,3);for(var j=0;j<ds.length;j++){chips+='<span class="pcard-spec__chip">'+ds[j].trim()+'</span>';}}
+var radar='';
+if(p.fp){
+var ra=[['Аромат','aroma'],['Букет','bouquet'],['Послевкусие','aftertaste'],['Кислотность','acidity'],['Сладость','sweetness'],['Тело','body']];
+for(var r=0;r<ra.length;r++){
+var v=p.fp[ra[r][1]];if(v===undefined)continue;
+var fv=Math.round(v);var dots='';
+for(var d=0;d<10;d++){dots+='<span class="pcard-spec__dot'+(d<fv?' pcard-spec__dot--on':'')+'"></span>';}
+radar+='<div class="pcard-spec__rrow"><div class="pcard-spec__rlab">'+ra[r][0]+'</div><div class="pcard-spec__dots">'+dots+'</div></div>';
 }
-
-var priceHtml = ((p.price&&p.price>0)?'<div style="display:flex;align-items:baseline;justify-content:center;gap:8px;margin-top:auto;padding-top:12px"><span class="product-card__price">'+p.price.toLocaleString()+' &#8381;</span><span class="product-card__price-unit">'+p.unit+'</span></div>':'');
-
-return '<div class="product-card" onclick="window.showProduct(\''+p.id+'\')"><div class="product-card__image">'+makeBag(p,false)+b+'</div><div class="product-card__body"><div class="product-card__category">'+p.type+'</div><div class="product-card__name">'+p.name+'</div>'+details+priceHtml+'</div></div>';
+}
+var radarBlock=radar?'<div class="pcard-spec__radar-t">Профиль каппинга</div>'+radar:'';
+var qHtml=p.qScore?'<div class="pcard-spec__q"><span class="pcard-spec__q-l">Q-SCORE</span><span class="pcard-spec__q-v">'+p.qScore+(p.qMod||'')+'</span></div>':'<div></div>';
+var priceTxt=(p.price&&p.price>0)?('В заказ · '+p.price.toLocaleString()+' ₽'+(p.unit?' '+p.unit:'')):'Запросить цену';
+var buy='<button class="pcard-spec__buy" onclick="event.stopPropagation();window.open(\'files/Addis-price.pdf\',\'_blank\')">'+priceTxt+'</button>';
+return '<div class="pcard-spec" onclick="window.showProduct(\''+p.id+'\')">'
++'<div class="pcard-spec__top '+tone+'">'+badge
++'<div class="pcard-spec__photo">'+makeBag(p,false)+'</div>'
++'<div class="pcard-spec__head"><div class="pcard-spec__cat">'+cat+'</div><div class="pcard-spec__name">'+p.name+'</div>'
++'<div class="pcard-spec__facts">'+factsHtml+'</div></div></div>'
++'<div class="pcard-spec__bottom"><div class="pcard-spec__qrow">'+qHtml+'<div class="pcard-spec__chips">'+chips+'</div></div>'
++'<div class="pcard-spec__reveal"><div class="pcard-spec__reveal-inner">'+radarBlock+buy+'</div></div></div></div>';
 }
 
 function renderArticleCard(a){
