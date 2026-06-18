@@ -1808,7 +1808,30 @@ var fs=lg?'80px':'36px';
 var ns=lg?'14px':'11px';
 // Real bag render available?
 if(/^(e|b|f)\d+$/.test(p.id)){
-  return '<img src="images/bags/'+p.id+'.png" style="width:100%;height:100%;object-fit:cover;object-position:center;display:block" alt="'+p.name+'">';
+var esp=(p.category==='espresso'||p.category==='blend');
+var w=lg?190:104,h=Math.round(w*1.30);
+var ink=esp?'#fff':'#000';
+var bagBg=esp?'linear-gradient(150deg,#242424 0%,#0a0a0a 55%,#000 100%)':'linear-gradient(150deg,#ffffff 0%,#f4f4f4 60%,#ececec 100%)';
+var labelBg=esp?'#E7DFCE':'#FFFFFF';
+var sheen=esp?'linear-gradient(105deg,transparent 40%,rgba(255,255,255,0.07) 50%,transparent 60%)':'linear-gradient(105deg,transparent 40%,rgba(0,0,0,0.025) 50%,transparent 60%)';
+var sub=(p.category==='blend')?'BLEND':(esp?'ESPRESSO':'FILTER');
+var wm=esp?'background:linear-gradient(180deg,#fff 0%,#c9c9c9 55%,#9a9a9a 100%);-webkit-background-clip:text;background-clip:text;color:transparent;':'color:#000;';
+var qtxt=(p.qScore||'')+(p.qMod||'');
+var on=Math.round((parseFloat(p.qScore)||0)/18),dots='';
+for(var i=0;i<5;i++)dots+='<span style="width:'+(w*0.028)+'px;height:'+(w*0.028)+'px;border-radius:50%;background:#1A1A1A;opacity:'+(i<on?0.85:0.18)+'"></span>';
+return '<div style="position:relative;width:'+w+'px;height:'+h+'px;margin:auto">'
++'<div style="position:absolute;inset:0;background:'+bagBg+';border-radius:3px 3px 4px 4px;'+(esp?'':'border:1px solid #e4e4e4;')+'box-shadow:'+(esp?'0 8px 20px rgba(0,0,0,.26)':'0 8px 20px rgba(0,0,0,.09)')+';overflow:hidden">'
++'<div style="position:absolute;inset:0;background:'+sheen+'"></div>'
++'<div style="position:absolute;top:'+(w*0.15)+'px;left:0;right:0;display:flex;flex-direction:column;align-items:center;color:'+ink+'">'
++'<div style="'+wm+'font-weight:700;font-size:'+(w*0.215)+'px;letter-spacing:-0.02em;line-height:.9">ADDIS</div>'
++'<div style="color:'+ink+';font-size:'+(w*0.092)+'px;letter-spacing:0.13em;margin-top:'+(w*0.02)+'px">'+sub+'</div>'
++'<div style="width:'+(w*0.42)+'px;height:1.5px;background:'+ink+';opacity:.85;margin-top:'+(w*0.05)+'px"></div></div>'
++'<div style="position:absolute;left:'+(w*0.06)+'px;right:'+(w*0.06)+'px;bottom:'+(w*0.06)+'px;background:'+labelBg+';color:#1A1A1A;'+(esp?'':'border:1px solid #ddd;')+'padding:'+(w*0.05)+'px '+(w*0.055)+'px">'
++'<div style="font-size:'+(w*0.05)+'px;letter-spacing:0.06em;opacity:.5">НАЗВАНИЕ</div>'
++'<div style="font-size:'+(w*0.062)+'px;font-weight:700;line-height:1.15;margin-top:'+(w*0.01)+'px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">'+(p.name||'').toUpperCase()+'</div>'
++'<div style="height:1px;background:#1A1A1A;opacity:.12;margin:'+(w*0.05)+'px 0"></div>'
++'<div style="display:flex;justify-content:space-between;align-items:center"><span style="font-size:'+(w*0.05)+'px;font-weight:700;letter-spacing:0.04em">Q '+qtxt+'</span><div style="display:flex;gap:'+(w*0.018)+'px">'+dots+'</div></div>'
++'</div></div></div>';
 }
 if(p.image){return '<img src="'+p.image+'" style="width:75%;height:75%;object-fit:contain;mix-blend-mode:multiply" alt="">';}
 var sn=p.name.split(' ').slice(0,2).join(' ');
