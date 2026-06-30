@@ -1322,7 +1322,7 @@ img{max-width:100%;display:block}
 </div>
 <div class="section section--cream">
 <div class="container container--narrow">
-<div class="cta-banner"><div class="cta-banner__title">Готовы начать сотрудничество?</div><div class="cta-banner__text">Оставьте заявку — менеджер свяжется с вами в течение часа.</div><div class="cta-banner__actions"><button class="btn btn--secondary btn--lg" onclick="navigate('price-request')">Запросить прайс</button><button class="btn btn--outline btn--lg" style="border-color:rgba(255,255,255,0.3);color:#ffffff" onclick="navigate('contacts')">Позвонить</button></div></div>
+<div class="cta-banner"><div class="cta-banner__title">Готовы начать сотрудничество?</div><div class="cta-banner__text">Скачайте прайс-лист — изучите ассортимент и свяжитесь с нами.</div><div class="cta-banner__actions"><button class="btn btn--secondary btn--lg" onclick="window.open('files/Addis-price.pdf','_blank')">Скачать прайс</button><button class="btn btn--outline btn--lg" style="border-color:rgba(255,255,255,0.3);color:#ffffff" onclick="navigate('contacts')">Позвонить</button></div></div>
 </div>
 </div>
 </section>
@@ -1396,7 +1396,7 @@ img{max-width:100%;display:block}
 </div>
 <div class="section">
 <div class="container container--narrow">
-<div class="cta-banner"><div class="cta-banner__title">Не знаете, что выбрать?</div><div class="cta-banner__text">Расскажите о вашем бизнесе — мы подберём оптимальное решение.</div><div class="cta-banner__actions"><button class="btn btn--secondary btn--lg" onclick="navigate('price-request')">Получить подборку</button></div></div>
+<div class="cta-banner"><div class="cta-banner__title">Не знаете, что выбрать?</div><div class="cta-banner__text">Скачайте прайс-лист — изучите ассортимент и свяжитесь с нами.</div><div class="cta-banner__actions"><button class="btn btn--secondary btn--lg" onclick="window.open('files/Addis-price.pdf','_blank')">Скачать прайс</button></div></div>
 </div>
 </div>
 </section>
@@ -1628,30 +1628,15 @@ img{max-width:100%;display:block}
 </div>
 </section>
 
-<!-- PRICE REQUEST -->
+<!-- PRICE REQUEST — redirected to PDF download -->
 <section class="page" id="page-price-request">
-<div class="container"><div class="breadcrumbs"><span class="breadcrumbs__link" onclick="navigate('home')">Главная</span><span class="breadcrumbs__sep">/</span><span class="breadcrumbs__current">Получить прайс</span></div></div>
+<div class="container"><div class="breadcrumbs"><span class="breadcrumbs__link" onclick="navigate('home')">Главная</span><span class="breadcrumbs__sep">/</span><span class="breadcrumbs__current">Прайс-лист</span></div></div>
 <div class="section" style="padding-top:0">
 <div class="container container--narrow">
-<div class="section-header section-header--center"><div class="section-eyebrow">Прайс-лист</div><h1 class="section-title">Получить прайс-лист</h1><p class="section-subtitle">Заполните форму — менеджер подготовит персональный прайс</p></div>
-<div style="max-width:640px;margin:0 auto">
-<div style="background:#F0F0F0;border-radius:0;padding:40px;border:none">
-<form onsubmit="handleFormSubmit(event)">
-<div class="form-row">
-<div class="form-group"><label class="form-label">Имя *</label><input type="text" class="form-input" placeholder="Ваше имя" required></div>
-<div class="form-group"><label class="form-label">Компания</label><input type="text" class="form-input" placeholder="Название компании"></div>
-</div>
-<div class="form-row">
-<div class="form-group"><label class="form-label">Телефон *</label><input type="tel" class="form-input" placeholder="+7 (___) ___-__-__" required></div>
-<div class="form-group"><label class="form-label">Email</label><input type="email" class="form-input" placeholder="email @company.ru"></div>
-</div>
-<div class="form-group"><label class="form-label">Формат бизнеса *</label><select class="form-select" required><option value="">Выберите формат</option><option>Кофейня</option><option>Ресторан</option><option>Отель</option><option>Офис / Коворкинг</option><option>Retail / Маркетплейс</option><option>Дистрибуция</option><option>Другое</option></select></div>
-<div class="form-group"><label class="form-label">Примерный объём (кг/мес)</label><select class="form-select"><option value="">Выберите объём</option><option>до 10 кг</option><option>10–30 кг</option><option>30–100 кг</option><option>100–300 кг</option><option>300+ кг</option></select></div>
-<div class="form-group"><label class="form-label">Комментарий</label><textarea class="form-textarea" placeholder="Расскажите подробнее о ваших задачах"></textarea></div>
-<button type="submit" class="btn btn--primary btn--full btn--lg">Отправить заявку</button>
-<div class="form-hint text-center" style="margin-top:16px">Нажимая кнопку, вы соглашаетесь с политикой обработки данных</div>
-</form>
-</div>
+<div class="section-header section-header--center"><div class="section-eyebrow">Прайс-лист</div><h1 class="section-title">Скачать прайс-лист</h1><p class="section-subtitle">Изучите наш ассортимент и свяжитесь с нами для обсуждения сотрудничества</p></div>
+<div style="text-align:center">
+<button class="btn btn--primary btn--lg" onclick="window.open('files/Addis-price.pdf','_blank')">Скачать прайс-лист (PDF)</button>
+<div style="margin-top:32px"><button class="btn btn--outline btn--lg" onclick="navigate('contacts')">Связаться с нами</button></div>
 </div>
 </div>
 </div>
